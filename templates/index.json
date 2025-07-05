@@ -1,0 +1,62 @@
+{
+  "sections": {
+    // "header": {
+    //   "type": "header"
+    // },
+    "home-banner": {
+      "type": "home-banner"
+    },
+    "home-bar-slider": {
+      "type": "home-bar-slider"
+    },
+    "home-new-arrivals": {
+      "type": "home-new-arrivals"
+    },
+    "home-categories": {
+      "type": "home-categories"
+    },
+    "home-featured-brands": {
+      "type": "home-featured-brands"
+    },
+    "home-promotional-slider": {
+      "type": "home-promotional-slider"
+    },
+    "home-offer-countdown": {
+      "type": "home-offer-countdown"
+    },
+    "home-new-arrivals-slide": {
+      "type": "home-new-arrivals-slide"
+    },
+    "home-offer-products": {
+      "type": "home-offer-products"
+    },
+    "home-reels": {
+      "type": "home-reels"
+    },
+    "home-information-bar": {
+      "type": "home-information-bar"
+    },
+    "home-review": {
+      "type": "home-review"
+    },
+    // "footer": {
+    //   "type": "footer"
+    // }
+  },
+  "order": [
+    // "header",
+    "home-banner",
+    "home-bar-slider",
+    "home-new-arrivals",
+    "home-categories",
+    "home-featured-brands",
+    "home-promotional-slider",
+    "home-offer-countdown",
+    "home-new-arrivals-slide",
+    "home-offer-products",
+    "home-reels",
+    "home-information-bar",
+    "home-review",
+    // "footer"
+  ]
+}

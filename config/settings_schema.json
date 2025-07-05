@@ -1,0 +1,19 @@
+[
+  {
+    "name": "General Settings",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "text",
+        "id": "announcement_text",
+        "label": "Announcement Text",
+        "default": "Welcome to our store!"
+      }
+    ]
+  }
+]

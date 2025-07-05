@@ -1,0 +1,18 @@
+{
+  "sections": {
+    // "header": {
+    //   "type": "header"
+    // },
+    "man-banner": {
+      "type": "man-banner"
+    },
+    // "footer": {
+    //   "type": "footer"
+    // }
+  },
+  "order": [
+    // "header",
+    "man-banner",
+    // "footer"
+  ]
+}

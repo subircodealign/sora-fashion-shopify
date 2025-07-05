@@ -1,0 +1,296 @@
+{% comment %} sections/footer.liquid {% endcomment %}
+
+<footer class="w-full bg-secondary px-6 md:px-24 py-12">
+  <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-12">
+    <div class="w-full flex flex-col lg:flex-row justify-start items-start gap-12 lg:gap-24">
+      <!-- Left Column - Brand Info & Newsletter -->
+      <div class="flex-1 flex flex-col gap-12">
+        <!-- Brand Logo & Description -->
+        <div class="flex flex-col gap-9">
+          {% if section.settings.logo_svg != blank %}
+            <div class="w-24 h-7">
+              {{ section.settings.logo_svg }}
+            </div>
+          {% elsif section.settings.logo_image != blank %}
+            <div class="w-[101px] h-7">
+              {{ section.settings.logo_image | image_url: width: 96 | image_tag: 
+                loading: 'lazy',
+                alt: shop.name,
+                class: 'h-full w-auto object-contain'
+              }}
+            </div>
+          {% else %}
+            <div class="w-24 h-7 flex">
+              <div class="w-5 h-7 bg-white"></div>
+              <div class="w-7 h-7 bg-white ml-[-1px]"></div>
+              <div class="w-11 h-7 bg-white ml-[-1px]"></div>
+              <div class="w-2.5 h-2.5 bg-white absolute ml-[31px] mt-[8px]"></div>
+            </div>
+          {% endif %}
+          
+          <p class="text-white text-sm font-normal font-figtree leading-[20px]">
+            {{ section.settings.description }}
+          </p>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="flex flex-col gap-6">
+          <h3 class="text-white text-xl font-medium font-figtree leading-loose">
+            {{ section.settings.newsletter_title }}
+          </h3>
+          <p class="text-white text-sm font-normal font-figtree leading-tight">
+            {{ section.settings.newsletter_subtitle }}
+          </p>
+          {% form 'customer', class: 'flex flex-wrap items-center gap-4' %}
+            <input 
+              type="email" 
+              name="contact[email]" 
+              placeholder="Enter your email address"
+              class="w-72 px-4 py-[15px] border border-stone-300 bg-transparent text-white placeholder-white text-base font-normal font-poppins flex-1"
+              required
+            >
+            <button type="submit" class="w-[125px] px-6 py-3 bg-white flex justify-center items-center gap-1 hover:bg-gray-100 transition-colors">
+              <span class="text-secondary text-base font-normal font-figtree leading-relaxed">
+                {{ section.settings.newsletter_button }}
+              </span>
+            </button>
+          {% endform %}
+        </div>
+      </div>
+
+      <!-- Right Column - Navigation & Contact -->
+      <div class="flex-1 flex flex-col lg:flex-row justify-between gap-12">
+        <!-- Company Links -->
+        <div class="flex flex-col gap-9">
+          <h3 class="text-white text-xl font-medium font-figtree leading-loose">
+            {{ section.settings.menu_title }}
+          </h3>
+          <div class="grid grid-cols-2 lg:flex lg:flex-col gap-6">
+            {% for block in section.blocks %}
+              {% if block.type == 'menu_item' %}
+                <a href="{{ block.settings.link }}" class="text-white text-lg font-normal font-figtree leading-7 hover:underline">
+                  {{ block.settings.title }}
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="w-full lg:w-80 flex flex-col gap-9">
+          <h3 class="text-white text-xl font-medium font-figtree leading-loose">
+            {{ section.settings.contact_title }}
+          </h3>
+          <div class="flex flex-col gap-6">
+            <!-- Address -->
+            <div class="flex items-center gap-4">
+              <div class="w-6 h-6 flex items-center justify-center">
+                {% render 'icon-location' %}
+              </div>
+              <p class="text-white text-lg font-normal font-figtree leading-7">
+                {{ section.settings.address }}
+              </p>
+            </div>
+
+            <!-- Email -->
+            <div class="flex items-center gap-4">
+              <div class="w-6 h-6 flex items-center justify-center">
+                {% render 'icon-email' %}
+              </div>
+              <a href="mailto:{{ section.settings.email }}" class="text-white text-lg font-normal font-figtree leading-7 hover:underline">
+                {{ section.settings.email }}
+              </a>
+            </div>
+
+            <!-- Phone -->
+            <div class="flex items-center gap-4">
+              <div class="w-6 h-6 flex items-center justify-center">
+                {% render 'icon-phone' %}
+              </div>
+              <a href="tel:{{ section.settings.phone | remove: ' ' }}" class="text-white text-lg font-normal font-figtree leading-7 hover:underline">
+                {{ section.settings.phone }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="w-full flex flex-col items-center gap-6">
+      <div class="w-full h-px bg-white"></div>
+      <p class="text-white text-xs font-normal font-figtree leading-none">
+        {{ section.settings.copyright }}
+      </p>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Logo Settings"
+    },
+    {
+      "type": "html",
+      "id": "logo_svg",
+      "label": "Logo SVG Code",
+      "info": "Paste your SVG code here"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Logo Image",
+      "info": "Alternative to SVG logo"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Bringing AI-powered solutions to life through custom software development, game creation, marketing, and ecommerce."
+    },
+    {
+      "type": "header",
+      "content": "Newsletter"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_title",
+      "label": "Title",
+      "default": "Sign up to our newsletter"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_subtitle",
+      "label": "Subtitle",
+      "default": "Get weekly access to our best deals, tips and tricks!"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_button",
+      "label": "Button Text",
+      "default": "Subscribe"
+    },
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "text",
+      "id": "menu_title",
+      "label": "Menu Title",
+      "default": "Company"
+    },
+    {
+      "type": "header",
+      "content": "Contact Information"
+    },
+    {
+      "type": "text",
+      "id": "contact_title",
+      "label": "Contact Title",
+      "default": "Get in touch"
+    },
+    {
+      "type": "text",
+      "id": "address",
+      "label": "Address",
+      "default": "Green House City, Malborne, UK"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email",
+      "default": "info@sora.fashion"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone",
+      "default": "+4510 451500015"
+    },
+    {
+      "type": "header",
+      "content": "Copyright"
+    },
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": "Copyright Text",
+      "default": "Copyright © 2025 Sora | Powered by Sora"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu_item",
+      "name": "Menu Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Link Text",
+          "default": "Menu Item"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer",
+      "category": "Layout",
+      "blocks": [
+        {
+          "type": "menu_item",
+          "settings": {
+            "title": "Man",
+            "link": "/collections/man"
+          }
+        },
+        {
+          "type": "menu_item",
+          "settings": {
+            "title": "Woman",
+            "link": "/collections/woman"
+          }
+        },
+        {
+          "type": "menu_item",
+          "settings": {
+            "title": "New Arrivals",
+            "link": "/collections/new-arrivals"
+          }
+        },
+        {
+          "type": "menu_item",
+          "settings": {
+            "title": "Seasons",
+            "link": "/collections/seasons"
+          }
+        },
+        {
+          "type": "menu_item",
+          "settings": {
+            "title": "Blogs",
+            "link": "/blogs/news"
+          }
+        },
+        {
+          "type": "menu_item",
+          "settings": {
+            "title": "Contact",
+            "link": "/pages/contact"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

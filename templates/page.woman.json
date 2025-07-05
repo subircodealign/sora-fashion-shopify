@@ -1,0 +1,18 @@
+{
+  "sections": {
+    // "header": {
+    //   "type": "header"
+    // },
+    "woman-banner": {
+      "type": "woman-banner"
+    },
+    // "footer": {
+    //   "type": "footer"
+    // }
+  },
+  "order": [
+    // "header",
+    "woman-banner",
+    // "footer"
+  ]
+}
