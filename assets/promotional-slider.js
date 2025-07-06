@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function scrollToSlide(index) {
     if (index < 0 || index >= totalSlides) return;
 
-    // Looping from last slide to first slide
+    
     if (currentIndex === totalSlides - 1 && index === 0) {
       ignoreScrollEvents = true;
       slider.scrollLeft = 0;
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Initialize slider on page load
+
   scrollToSlide(0);
   resetAutoSlide();
 });

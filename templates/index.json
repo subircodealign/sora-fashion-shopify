@@ -1,16 +1,14 @@
 {
   "sections": {
-    // "header": {
-    //   "type": "header"
-    // },
+ 
     "home-banner": {
       "type": "home-banner"
     },
     "home-bar-slider": {
       "type": "home-bar-slider"
     },
-    "home-new-arrivals": {
-      "type": "home-new-arrivals"
+    "home-new-arrivals-products": {
+      "type": "home-new-arrivals-products"
     },
     "home-categories": {
       "type": "home-categories"
@@ -39,15 +37,13 @@
     "home-review": {
       "type": "home-review"
     },
-    // "footer": {
-    //   "type": "footer"
-    // }
+
   },
   "order": [
-    // "header",
+   
     "home-banner",
     "home-bar-slider",
-    "home-new-arrivals",
+    "home-new-arrivals-products",
     "home-categories",
     "home-featured-brands",
     "home-promotional-slider",
@@ -57,6 +53,6 @@
     "home-reels",
     "home-information-bar",
     "home-review",
-    // "footer"
+  
   ]
 }

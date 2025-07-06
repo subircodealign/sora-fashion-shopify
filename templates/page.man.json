@@ -1,18 +1,18 @@
 {
   "sections": {
-    // "header": {
-    //   "type": "header"
-    // },
+ 
     "man-banner": {
       "type": "man-banner"
     },
-    // "footer": {
-    //   "type": "footer"
-    // }
+    "man-new-arrivals-products": {
+      "type": "man-new-arrivals-products"
+    },
+ 
   },
   "order": [
-    // "header",
+ 
     "man-banner",
-    // "footer"
+    "man-new-arrivals-products"
+ 
   ]
 }

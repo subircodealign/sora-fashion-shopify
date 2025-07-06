@@ -6,7 +6,16 @@
   primary_button_text: section.settings.primary_button_text,
   primary_button_link: section.settings.primary_button_link,
   secondary_button_text: section.settings.secondary_button_text,
-  secondary_button_link: section.settings.secondary_button_link
+  secondary_button_link: section.settings.secondary_button_link,
+
+  badge_text_color: section.settings.badge_text_color,
+  badge_border_color: section.settings.badge_border_color,
+  heading_color: section.settings.heading_color,
+  subheading_color: section.settings.subheading_color,
+  primary_button_bg_color: section.settings.primary_button_bg_color,
+  primary_button_text_color: section.settings.primary_button_text_color,
+  secondary_button_border_color: section.settings.secondary_button_border_color,
+  secondary_button_text_color: section.settings.secondary_button_text_color
 %}
 
 
@@ -19,11 +28,24 @@
       "id": "background_image",
       "label": "Background Image"
     },
+
     {
       "type": "text",
       "id": "badge_text",
       "label": "Badge Text",
       "default": "Just Arrived"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge Text Color",
+      "default": "#2F2F2F"
+    },
+    {
+      "type": "color",
+      "id": "badge_border_color",
+      "label": "Badge Border Color",
+      "default": "#2F2F2F"
     },
     {
       "type": "text",
@@ -32,9 +54,21 @@
       "default": "Elevate Your Wardrobe With Our New Arrivals"
     },
     {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#2F2F2F"
+    },
+    {
       "type": "textarea",
       "id": "subheading",
       "label": "Subheading"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading Color",
+      "default": "#8B8B8B"
     },
     {
       "type": "text",
@@ -47,6 +81,18 @@
       "label": "Primary Button Link"
     },
     {
+      "type": "color",
+      "id": "primary_button_bg_color",
+      "label": "Primary Button Background Color",
+      "default": "#6B749E"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_text_color",
+      "label": "Primary Button Text Color",
+      "default": "#FFFFFF"
+    },
+    {
       "type": "text",
       "id": "secondary_button_text",
       "label": "Secondary Button Text"
@@ -55,6 +101,18 @@
       "type": "url",
       "id": "secondary_button_link",
       "label": "Secondary Button Link"
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_border_color",
+      "label": "Secondary Button Border Color",
+      "default": "#6B749E"
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_text_color",
+      "label": "Secondary Button Text Color",
+      "default": "#6B749E"
     }
   ],
   "presets": [

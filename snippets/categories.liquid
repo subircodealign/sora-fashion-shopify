@@ -1,3 +1,11 @@
+{% if section_heading != blank %}
+  <div class="w-[1012px] pb-[48px] mx-auto">
+    <h2 class="text-[48px] font-catalina text-center text-primary leading-[64px]">
+      {{ section_heading }}
+    </h2>
+  </div>
+{% endif %}
+
 <div class="w-full flex flex-col lg:flex-row gap-6 px-24 pb-24">
 
   <!-- Main Image Part -->
@@ -34,6 +42,7 @@
   <!-- Right Side Cards Part -->
   <div class="lg:w-1/3 flex flex-col gap-6">
     
+    <!-- Card 1 -->
     <div class="relative group overflow-hidden flex-1">
       {% if card_1_image != blank %}
         <img src="{{ card_1_image | image_url: width: 800 }}" alt="{{ card_1_title | escape }}" width="453" height="341"
