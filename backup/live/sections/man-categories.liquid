@@ -1,0 +1,112 @@
+{% render 'categories',
+  section_heading: section.settings.section_heading,
+  main_image: section.settings.main_image,
+  main_title: section.settings.main_title,
+  main_description: section.settings.main_description,
+  main_link: section.settings.main_link,
+  main_button: section.settings.main_button,
+  card_1_image: section.settings.card_1_image,
+  card_1_title: section.settings.card_1_title,
+  card_1_description: section.settings.card_1_description,
+  card_1_link: section.settings.card_1_link,
+  card_1_button: section.settings.card_1_button,
+  card_2_image: section.settings.card_2_image,
+  card_2_title: section.settings.card_2_title,
+  card_2_description: section.settings.card_2_description,
+  card_2_link: section.settings.card_2_link,
+  card_2_button: section.settings.card_2_button
+%}
+
+{% schema %}
+{
+  "name": "Man Categories Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading",
+      "default": "Spring styles to wear together or apart, whatever the weather."
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main Image"
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title"
+    },
+    {
+      "type": "textarea",
+      "id": "main_description",
+      "label": "Main Description"
+    },
+    {
+      "type": "url",
+      "id": "main_link",
+      "label": "Main Link"
+    },
+    {
+      "type": "text",
+      "id": "main_button",
+      "label": "Main Button Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_1_image",
+      "label": "Card 1 Image"
+    },
+    {
+      "type": "text",
+      "id": "card_1_title",
+      "label": "Card 1 Title"
+    },
+    {
+      "type": "textarea",
+      "id": "card_1_description",
+      "label": "Card 1 Description"
+    },
+    {
+      "type": "url",
+      "id": "card_1_link",
+      "label": "Card 1 Link"
+    },
+    {
+      "type": "text",
+      "id": "card_1_button",
+      "label": "Card 1 Button Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_2_image",
+      "label": "Card 2 Image"
+    },
+    {
+      "type": "text",
+      "id": "card_2_title",
+      "label": "Card 2 Title"
+    },
+    {
+      "type": "textarea",
+      "id": "card_2_description",
+      "label": "Card 2 Description"
+    },
+    {
+      "type": "url",
+      "id": "card_2_link",
+      "label": "Card 2 Link"
+    },
+    {
+      "type": "text",
+      "id": "card_2_button",
+      "label": "Card 2 Button Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Man Categories Section"
+    }
+  ]
+}
+{% endschema %}

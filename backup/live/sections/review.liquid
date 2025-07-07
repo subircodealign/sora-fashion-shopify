@@ -1,0 +1,97 @@
+
+
+<div class="w-full mb-24 flex justify-center px-[94px] review-section">
+
+  <div class="w-full px-[50px] pt-[51px] pb-[99px] outline outline-1 outline-offset-[-1px] outline-stone-300 flex flex-col relative overflow-hidden">
+
+    <!-- Slider Wrapper -->
+    <div class="w-full flex transition-all duration-500 ease-in-out product-slider" style="gap: 0px;">
+
+      {% for block in section.blocks %}
+        <div class="w-full flex-shrink-0 flex flex-col items-center justify-center gap-9" style="min-width: 100%;" data-review-slide>
+
+          <!-- User Info -->
+          <div class="flex justify-center items-center gap-4">
+            {% if block.settings.avatar != blank %}
+              <img class="w-[60px] h-[60px] object-cover" 
+                   src="{{ block.settings.avatar | image_url: width: 60, height: 60 }}" 
+                   width="60" height="60" 
+                   alt="{{ block.settings.name }}">
+            {% endif %}
+
+            <div class="flex flex-col justify-start items-start">
+              <div class="text-center text-primary text-2xl font-medium leading-9 font-[Figtree]">
+                {{ block.settings.name }}
+              </div>
+              <div class="text-primary text-base font-normal leading-relaxed font-[Figtree]">
+                {{ block.settings.designation }}
+              </div>
+            </div>
+          </div>
+
+          <!-- Review Text -->
+          <div class="text-center text-primary text-[32px] font-normal leading-[48px] font-catalina  mx-[93px]">
+            {{ block.settings.review }}
+          </div>
+
+        </div>
+      {% endfor %}
+
+    </div>
+
+    <!-- Arrows -->
+    <button class="p-2.5 outline outline-1 outline-offset-[-1px] outline-zinc-500 flex items-center justify-center hover:bg-zinc-100 transition absolute h-[44px] w-[44px] left-[49px] top-1/2 -translate-y-1/2 slider-prev">
+      {% render 'icon-prev-button' %}
+    </button>
+
+    <button class="p-2.5 outline outline-1 outline-offset-[-1px] outline-zinc-500 flex items-center justify-center hover:bg-zinc-100 transition absolute right-[49px] h-[44px] w-[44px] top-1/2 -translate-y-1/2 slider-next">
+      {% render 'icon-next-button' %}
+    </button>
+
+  </div>
+</div>
+<script src="{{ 'one-card-slider.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Home Review Slider",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Single Review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Customer Image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer Name",
+          "default": "Customer Name"
+        },
+        {
+          "type": "text",
+          "id": "designation",
+          "label": "Customer Designation",
+          "default": "Customer"
+        },
+        {
+          "type": "textarea",
+          "id": "review",
+          "label": "Review Text",
+          "default": "This is a sample customer review."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Review Slider",
+      "category": "Testimonials"
+    }
+  ]
+}
+{% endschema %}

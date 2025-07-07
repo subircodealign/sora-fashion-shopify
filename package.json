@@ -2,13 +2,22 @@
   "name": "fashion-shopify-theme",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "build:css": "tailwindcss -i ./assets/tailwind.css -o ./assets/theme.css --minify",
-    "dev:css": "tailwindcss -i ./assets/tailwind.css -o ./assets/theme.css --watch",
-    "dev":"shopify theme dev",
-    "build": "npm run build:css",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+"scripts": {
+  "backup:dev": "shopify theme pull --store=sora-fashion-dev.myshopify.com --theme=134983778352 --path=./backup/dev",
+  "backup:live": "shopify theme pull --store=sora-fashion-dev.myshopify.com --theme=134982959152 --path=./backup/live",
+  "backup:all": "npm run backup:live && npm run backup:dev",
+  "merge:settings": "node scripts/merge-settings.js",
+  "push:dev": "shopify theme push --store=sora-fashion-dev.myshopify.com --theme=134983778352",
+  "push:live": "shopify theme push --store=sora-fashion-dev.myshopify.com --theme=134982959152",
+  "dev": "shopify theme dev",
+  "build:css": "tailwindcss -i ./assets/tailwind.css -o ./assets/theme.css --minify",
+  "dev:css": "tailwindcss -i ./assets/tailwind.css -o ./assets/theme.css --watch",
+  "diff:settings": "node scripts/diff-settings.js",
+
+  "deploy:live": "npm run backup:all && npm run merge:settings && npm run push:live",
+  "test": "echo \"Error: no test specified\" && exit 1"
+}
+,
   "keywords": [],
   "author": "",
   "license": "ISC",

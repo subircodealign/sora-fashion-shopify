@@ -5,6 +5,13 @@
       <h2 class="text-[48px] leading-[64px] font-catalina text-primary">
         {{ section.settings.heading }}
       </h2>
+       <nav class="space-x-6 text-primary text-[20px] leading-[32px]">
+        {% for block in section.blocks %}
+          {% if block.type == 'category_link' %}
+            <a href="{{ block.settings.link }}" class="hover:text-gray-900">{{ block.settings.label }}</a>
+          {% endif %}
+        {% endfor %}
+      </nav>
     </div>
 
 
