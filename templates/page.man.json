@@ -2,17 +2,40 @@
   "sections": {
  
     "man-banner": {
-      "type": "man-banner"
+      "type": "banner"
+    },
+     "man-bar-slider": {
+      "type": "bar-slider"
     },
     "man-new-arrivals-products": {
-      "type": "man-new-arrivals-products"
+      "type": "paginated-new-arrivals-products"
     },
- 
+  "man-categories": {
+      "type": "categories"
+    },
+    "man-featured-brands": {
+      "type": "featured-brands"
+    },
+    "man-reels": {
+      "type": "reels"
+    },
+    "man-information-bar": {
+      "type": "information-bar"
+    },
+    "man-review": {
+      "type": "review"
+    },
   },
   "order": [
  
     "man-banner",
-    "man-new-arrivals-products"
+    "man-bar-slider",
+    "man-new-arrivals-products",
+    "man-categories",
+    "man-featured-brands",
+    "man-reels",
+    "man-information-bar",
+    "man-review"
  
   ]
 }

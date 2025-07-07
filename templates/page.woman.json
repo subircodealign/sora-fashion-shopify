@@ -1,18 +1,40 @@
 {
   "sections": {
-    // "header": {
-    //   "type": "header"
-    // },
+    
     "woman-banner": {
-      "type": "woman-banner"
+      "type": "banner"
     },
-    // "footer": {
-    //   "type": "footer"
-    // }
+    "woman-bar-slider": {
+      "type": "bar-slider"
+    },
+      "woman-paginated-new-arrivals-products": {
+      "type": "paginated-new-arrivals-products"
+    },
+
+ "woman-categories": {
+      "type": "categories"
+    },
+     "woman-featured-brands": {
+      "type": "featured-brands"
+    },
+       "woman-reels": {
+      "type": "reels"
+    },
+      "woman-information-bar": {
+      "type": "information-bar"
+    },
+    "woman-review": {
+      "type": "review"
+    },
   },
   "order": [
-    // "header",
     "woman-banner",
-    // "footer"
+    "woman-bar-slider",
+    "woman-paginated-new-arrivals-products",
+    "woman-categories",
+    "woman-featured-brands",
+    "woman-reels",
+    "woman-information-bar",
+    "woman-review"
   ]
 }
