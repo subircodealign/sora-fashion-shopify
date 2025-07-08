@@ -50,7 +50,7 @@
             "name": "New Apparels",
             "settings": {
               "label": "New Apparels",
-              "link": "",
+              "link": "shopify://pages/new-apparels",
               "has_dropdown": true,
               "show_dropdown_icon": true,
               "dropdown_label_1": "",
@@ -66,7 +66,7 @@
             "name": "Seasons",
             "settings": {
               "label": "Seasons",
-              "link": "",
+              "link": "shopify://pages/seasons",
               "has_dropdown": true,
               "show_dropdown_icon": true,
               "dropdown_label_1": "",
@@ -82,7 +82,7 @@
             "name": "Blogs",
             "settings": {
               "label": "Blogs",
-              "link": "",
+              "link": "shopify://pages/blogs",
               "has_dropdown": false,
               "show_dropdown_icon": true,
               "dropdown_label_1": "",
@@ -98,7 +98,7 @@
             "name": "Contact",
             "settings": {
               "label": "Contact",
-              "link": "",
+              "link": "shopify://pages/contact",
               "has_dropdown": false,
               "show_dropdown_icon": true,
               "dropdown_label_1": "",

@@ -1,0 +1,74 @@
+<div class="w-[1246px] h-[915px] inline-flex justify-start items-center gap-6">
+  <!-- Left Side (Image + Thumbnails) -->
+  <div class="w-[608.3px] h-[915.37px] p-3 outline outline-1 outline-offset-[-1.17px] outline-neutral-100 inline-flex flex-col justify-center items-start gap-3">
+    <!-- Main Image -->
+    <img class="self-stretch flex-1" src="{{ product.featured_image | img_url: '585x687' }}" alt="{{ product.title }}" />
+
+    <!-- Thumbnails -->
+    <div class="self-stretch inline-flex justify-between items-center">
+      {% for image in product.images limit:3 %}
+        <img class="flex-1 h-48 outline outline-[5.84px] outline-white" src="{{ image | img_url: '195x194' }}" alt="{{ product.title }}" />
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Right Side (Product Info) -->
+  <div class="flex-1 h-[915px] inline-flex flex-col justify-between items-start">
+    <!-- Title + Rating -->
+    <div class="self-stretch relative flex flex-col justify-start items-start gap-3.5">
+      <h1 class="text-zinc-800 text-3xl font-semibold leading-9">{{ product.title }}</h1>
+      
+      <div class="inline-flex items-center gap-[5px]">
+        <div class="w-28 flex justify-between items-center">
+          {% for i in (1..5) %}
+            <div class="w-6 h-6 relative">
+              <div class="w-4 h-4 absolute left-[2.85px] top-[2.85px] bg-yellow-400"></div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="text-zinc-500 text-2xl leading-9">94</div>
+      </div>
+
+
+      <p class="text-zinc-800 text-base leading-relaxed">
+        The Deep Cleanse Detox Facial is a rejuvenating skincare treatment designed to thoroughly cleanse the skin, remove impurities, and restore a healthy, radiant glow.
+      </p>
+    </div>
+
+
+    <div class="inline-flex items-center gap-8">
+      <div class="text-zinc-500 text-2xl font-medium line-through leading-9">300.00$</div>
+      <div class="text-slate-500 text-3xl font-semibold leading-9">250.00$ ONLY</div>
+    </div>
+
+
+    <div class="flex flex-col items-start gap-3.5">
+      <h2 class="text-zinc-800 text-2xl font-medium leading-9">Purpose:</h2>
+      <ul class="text-zinc-800 text-xl leading-loose list-disc list-inside">
+        <li>Removes dirt, oil, and toxins from deep within the pores.</li>
+        <li>Exfoliates dead skin cells for a smoother texture.</li>
+        <li>Promotes detoxification and revitalizes dull, tired skin.</li>
+      </ul>
+    </div>
+
+    <!-- Benefits -->
+    <div class="flex flex-col items-start gap-3.5">
+      <h2 class="text-zinc-800 text-2xl font-semibold leading-9">Benefits:</h2>
+      <ul class="text-zinc-800 text-xl leading-loose list-disc list-inside">
+        <li>Clears clogged pores and prevents acne.</li>
+        <li>Enhances skin clarity and texture.</li>
+        <li>Promotes blood circulation for a natural glow.</li>
+      </ul>
+    </div>
+
+    <!-- Buttons -->
+    <div class="inline-flex items-center gap-8">
+      <button class="w-96 px-6 py-3 outline outline-1 outline-slate-500 flex justify-center items-center gap-1 text-slate-500 text-base">
+        Buy Now
+      </button>
+      <button class="flex-1 px-6 py-3 outline outline-1 outline-slate-500 flex justify-center items-center gap-1 text-slate-500 text-base">
+        Add To Cart
+      </button>
+    </div>
+  </div>
+</div>

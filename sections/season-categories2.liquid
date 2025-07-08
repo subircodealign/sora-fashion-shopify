@@ -1,0 +1,71 @@
+
+ <div class="px-24 pb-24">
+     <div class="relative group overflow-hidden">
+    {% if section.settings.img3 != blank %}
+      <img src="{{ section.settings.img3 | image_url: width: 1248 }}" alt="{{ section.settings.title3 | escape }}" width="1248" height="707"
+        class="w-full h-[707px] object-cover object-left transition-transform duration-500 group-hover:scale-105" loading="lazy">
+    {% else %}
+      <img src="https://placehold.co/1248x707" alt="Image 3 Placeholder" width="1248" height="707"
+        class="w-full h-[707px] object-cover object-left">
+    {% endif %}
+
+    <div class="absolute top-0 left-0 p-8 flex flex-col justify-between h-[calc(100%-5px)] bg-opacity-90 max-w-[310px]">
+      <div class="space-y-6">
+        <h3 class="text-primary text-[32px] font-normal font-catalina leading-[48px]">
+          {{ section.settings.title3 | default: "Kids Collection" }}
+        </h3>
+        <p class="text-accent text-lg font-normal font-catalina leading-7">
+          {{ section.settings.desc3 | default: "Default description for image 3." }}
+        </p>
+      </div>
+
+      <a href="{{ section.settings.link3 }}" class="mt-6 px-6 py-3 border border-secondary inline-flex items-center gap-1 justify-center transition-colors">
+        <span class="text-secondary text-[16px] font-normal font-figtree leading-relaxed">
+          {{ section.settings.btn3 | default: "View More" }}
+        </span>
+        <span class="w-6 h-6 flex items-center justify-center">
+          {% render 'icon-arrow' %}
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+  {% schema %}
+{
+  "name": "Season Categories2",
+  "settings": [
+
+    {
+      "type": "image_picker",
+      "id": "img3",
+      "label": "Image 3"
+    },
+    {
+      "type": "text",
+      "id": "title3",
+      "label": "Image 3 Title"
+    },
+    {
+      "type": "textarea",
+      "id": "desc3",
+      "label": "Image 3 Description"
+    },
+    {
+      "type": "url",
+      "id": "link3",
+      "label": "Image 3 Link"
+    },
+    {
+      "type": "text",
+      "id": "btn3",
+      "label": "Image 3 Button Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Season Categories2 Section"
+    }
+  ]
+}
+{% endschema %}
