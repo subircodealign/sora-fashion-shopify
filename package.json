@@ -13,7 +13,6 @@
   "build:css": "tailwindcss -i ./assets/tailwind.css -o ./assets/theme.css --minify",
   "dev:css": "tailwindcss -i ./assets/tailwind.css -o ./assets/theme.css --watch",
   "diff:settings": "node scripts/diff-settings.js",
-
   "deploy:live": "npm run backup:all && npm run merge:settings && npm run push:live",
   "test": "echo \"Error: no test specified\" && exit 1"
 }
