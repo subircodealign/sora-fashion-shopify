@@ -18,7 +18,7 @@ try {
   const mergedSettings = { ...devSettings, ...liveSettings };
 
   fs.writeFileSync(livePath, JSON.stringify(mergedSettings, null, 2));
-  console.log('✅ Successfully merged settings_data.json');
+  console.log('Successfully merged settings_data.json');
 } catch (err) {
-  console.error('❌ Error:', err.message);
+  console.error('Error:', err.message);
 }

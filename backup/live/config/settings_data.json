@@ -12,12 +12,12 @@
               "link": "shopify://pages/man",
               "has_dropdown": true,
               "show_dropdown_icon": true,
-              "dropdown_label_1": "",
-              "dropdown_link_1": "",
-              "dropdown_label_2": "",
-              "dropdown_link_2": "",
-              "dropdown_label_3": "",
-              "dropdown_link_3": ""
+              "dropdown_label_1": "Pants",
+              "dropdown_link_1": "shopify://pages/man-pants",
+              "dropdown_label_2": "Shirts",
+              "dropdown_link_2": "shopify://pages/man-shirts",
+              "dropdown_label_3": "T-Shirts",
+              "dropdown_link_3": "shopify://pages/man-t-shirts"
             }
           },
           "menu_item_pqfDDn": {
@@ -28,12 +28,12 @@
               "link": "shopify://pages/woman",
               "has_dropdown": true,
               "show_dropdown_icon": true,
-              "dropdown_label_1": "",
-              "dropdown_link_1": "",
-              "dropdown_label_2": "",
-              "dropdown_link_2": "",
-              "dropdown_label_3": "",
-              "dropdown_link_3": ""
+              "dropdown_label_1": "Western",
+              "dropdown_link_1": "shopify://pages/woman-western",
+              "dropdown_label_2": "Trending",
+              "dropdown_link_2": "shopify://pages/woman-trendy",
+              "dropdown_label_3": "Cosmetics",
+              "dropdown_link_3": "shopify://pages/cosmetics"
             }
           },
           "menu_item_9YM6Xi": {
@@ -41,7 +41,7 @@
             "name": "New Apparels",
             "settings": {
               "label": "New Apparels",
-              "link": "",
+              "link": "shopify://pages/new-apparels",
               "has_dropdown": true,
               "show_dropdown_icon": true,
               "dropdown_label_1": "",
@@ -57,7 +57,7 @@
             "name": "Seasons",
             "settings": {
               "label": "Seasons",
-              "link": "",
+              "link": "shopify://pages/seasons",
               "has_dropdown": true,
               "show_dropdown_icon": true,
               "dropdown_label_1": "",
@@ -73,7 +73,7 @@
             "name": "Blogs",
             "settings": {
               "label": "Blogs",
-              "link": "",
+              "link": "shopify://pages/blogs",
               "has_dropdown": false,
               "show_dropdown_icon": true,
               "dropdown_label_1": "",
@@ -89,7 +89,7 @@
             "name": "Contact",
             "settings": {
               "label": "Contact",
-              "link": "",
+              "link": "shopify://pages/contact",
               "has_dropdown": false,
               "show_dropdown_icon": true,
               "dropdown_label_1": "",
@@ -839,6 +839,109 @@
           "card_2_description": "",
           "card_2_link": "",
           "card_2_button": ""
+        }
+      },
+      "season-categories": {
+        "type": "season-categories",
+        "settings": {
+          "section_heading": "Spring styles to wear together or apart, whatever the weather.",
+          "img1": "shopify://shop_images/605cd461267839d5fe34da414bd461ab7841b749.jpg",
+          "title1": "Winter Fashion",
+          "desc1": "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us",
+          "link1": "",
+          "btn1": "",
+          "img2": "shopify://shop_images/5af2c472c3a995ef0b7bcb10dfb627222196cbfa.jpg",
+          "title2": "Winter Fashion",
+          "desc2": "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us",
+          "link2": "",
+          "btn2": "Explore More"
+        }
+      },
+      "season-categories2": {
+        "type": "season-categories2",
+        "settings": {
+          "img3": "shopify://shop_images/4bab9f8790185a3b7bf3ee1169cc7614ad0ee34c.jpg",
+          "title3": "Party & Wedding Fashion",
+          "desc3": "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us",
+          "link3": "",
+          "btn3": "Explore More"
+        }
+      },
+      "new-apparels-categories": {
+        "type": "new-apparels-categories",
+        "settings": {
+          "section_heading": "Spring styles to wear together or apart, whatever the weather.",
+          "main_image": "shopify://shop_images/category-women1.webp",
+          "main_title": "",
+          "main_description": "",
+          "main_link": "",
+          "main_button": "",
+          "card_1_image": "shopify://shop_images/category-women2.webp",
+          "card_1_title": "",
+          "card_1_description": "",
+          "card_1_link": "",
+          "card_1_button": "",
+          "card_2_image": "shopify://shop_images/category-women3.webp",
+          "card_2_title": "",
+          "card_2_description": "",
+          "card_2_link": "",
+          "card_2_button": ""
+        }
+      },
+      "blogs-pagination": {
+        "type": "blogs-pagination",
+        "settings": {
+          "heading": "Our More Blogs",
+          "subheading": "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us",
+          "per_page": 8,
+          "blog": "news"
+        }
+      },
+      "man-pants": {
+        "type": "man-pants",
+        "settings": {
+          "heading": "Our pants  Collection",
+          "per_page": 12,
+          "collection": "new-arrivals",
+          "product_list": []
+        }
+      },
+      "man-shirts": {
+        "type": "man-shirts",
+        "settings": {
+          "heading": "Our Shirt Collections",
+          "per_page": 12,
+          "collection": "",
+          "product_list": [
+            "full-shirt",
+            "browne-winter-sweater-1",
+            "browne-winter-sweater",
+            "gift-card",
+            "new-kurta-s-for-boys",
+            "mash-winter-sweater",
+            "print-sweater-for-winter",
+            "selling-plans-ski-wax",
+            "slim-gray-t-shirt-for-boys",
+            "the-3p-fulfilled-snowboard"
+          ]
+        }
+      },
+      "man-tshirts": {
+        "type": "man-tshirts",
+        "settings": {
+          "heading": "T-shirts Collection",
+          "per_page": 12,
+          "collection": "new-arrivals",
+          "product_list": []
+        }
+      },
+      "woman-western": {
+        "type": "woman-western",
+        "settings": {
+          "heading": "Our Western Collections",
+          "per_page": 12,
+          "collection": "new-arrivals",
+          "product_list": []
         }
       }
     },
