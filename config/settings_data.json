@@ -21,12 +21,24 @@
               "link": "shopify://pages/man",
               "has_dropdown": true,
               "show_dropdown_icon": true,
-              "dropdown_label_1": "Pants",
-              "dropdown_link_1": "shopify://pages/man-pants",
-              "dropdown_label_2": "Shirts",
-              "dropdown_link_2": "shopify://pages/man-shirts",
-              "dropdown_label_3": "T-Shirts",
-              "dropdown_link_3": "shopify://pages/man-t-shirts"
+              "mega_heading_1": "Best Sellers",
+              "mega_heading_link_1": "",
+              "mega_heading_2": "New Arrivals",
+              "mega_heading_link_2": "",
+              "mega_heading_3": "Bundles & Combo",
+              "mega_heading_link_3": "",
+              "mega_heading_4": "Trending Sales",
+              "mega_heading_link_4": "",
+              "submenu_label_1": "Fashion",
+              "submenu_link_1": "",
+              "submenu_label_2": "Pants",
+              "submenu_link_2": "shopify://pages/man-pants",
+              "submenu_label_3": "Shirts",
+              "submenu_link_3": "shopify://pages/man-shirts",
+              "submenu_label_4": "T-Shirts",
+              "submenu_link_4": "shopify://pages/man-t-shirts",
+              "manual_product_1": "browne-winter-sweater",
+              "manual_product_2": "browne-winter-sweater-1"
             }
           },
           "menu_item_pqfDDn": {
@@ -37,12 +49,24 @@
               "link": "shopify://pages/woman",
               "has_dropdown": true,
               "show_dropdown_icon": true,
-              "dropdown_label_1": "Western",
-              "dropdown_link_1": "shopify://pages/woman-western",
-              "dropdown_label_2": "Trending",
-              "dropdown_link_2": "shopify://pages/woman-trendy",
-              "dropdown_label_3": "Cosmetics",
-              "dropdown_link_3": "shopify://pages/cosmetics"
+              "mega_heading_1": "",
+              "mega_heading_link_1": "",
+              "mega_heading_2": "",
+              "mega_heading_link_2": "",
+              "mega_heading_3": "",
+              "mega_heading_link_3": "",
+              "mega_heading_4": "",
+              "mega_heading_link_4": "",
+              "submenu_label_1": "",
+              "submenu_link_1": "",
+              "submenu_label_2": "",
+              "submenu_link_2": "",
+              "submenu_label_3": "",
+              "submenu_link_3": "",
+              "submenu_label_4": "",
+              "submenu_link_4": "",
+              "manual_product_1": "",
+              "manual_product_2": ""
             }
           },
           "menu_item_9YM6Xi": {
@@ -53,12 +77,24 @@
               "link": "shopify://pages/new-apparels",
               "has_dropdown": true,
               "show_dropdown_icon": true,
-              "dropdown_label_1": "",
-              "dropdown_link_1": "",
-              "dropdown_label_2": "",
-              "dropdown_link_2": "",
-              "dropdown_label_3": "",
-              "dropdown_link_3": ""
+              "mega_heading_1": "",
+              "mega_heading_link_1": "",
+              "mega_heading_2": "",
+              "mega_heading_link_2": "",
+              "mega_heading_3": "",
+              "mega_heading_link_3": "",
+              "mega_heading_4": "",
+              "mega_heading_link_4": "",
+              "submenu_label_1": "",
+              "submenu_link_1": "",
+              "submenu_label_2": "",
+              "submenu_link_2": "",
+              "submenu_label_3": "",
+              "submenu_link_3": "",
+              "submenu_label_4": "",
+              "submenu_link_4": "",
+              "manual_product_1": "",
+              "manual_product_2": ""
             }
           },
           "menu_item_q7V7JT": {
@@ -69,12 +105,24 @@
               "link": "shopify://pages/seasons",
               "has_dropdown": true,
               "show_dropdown_icon": true,
-              "dropdown_label_1": "",
-              "dropdown_link_1": "",
-              "dropdown_label_2": "",
-              "dropdown_link_2": "",
-              "dropdown_label_3": "",
-              "dropdown_link_3": ""
+              "mega_heading_1": "",
+              "mega_heading_link_1": "",
+              "mega_heading_2": "",
+              "mega_heading_link_2": "",
+              "mega_heading_3": "",
+              "mega_heading_link_3": "",
+              "mega_heading_4": "",
+              "mega_heading_link_4": "",
+              "submenu_label_1": "",
+              "submenu_link_1": "",
+              "submenu_label_2": "",
+              "submenu_link_2": "",
+              "submenu_label_3": "",
+              "submenu_link_3": "",
+              "submenu_label_4": "",
+              "submenu_link_4": "",
+              "manual_product_1": "",
+              "manual_product_2": ""
             }
           },
           "menu_item_KXzUYB": {
@@ -85,12 +133,24 @@
               "link": "shopify://pages/blogs",
               "has_dropdown": false,
               "show_dropdown_icon": true,
-              "dropdown_label_1": "",
-              "dropdown_link_1": "",
-              "dropdown_label_2": "",
-              "dropdown_link_2": "",
-              "dropdown_label_3": "",
-              "dropdown_link_3": ""
+              "mega_heading_1": "",
+              "mega_heading_link_1": "",
+              "mega_heading_2": "",
+              "mega_heading_link_2": "",
+              "mega_heading_3": "",
+              "mega_heading_link_3": "",
+              "mega_heading_4": "",
+              "mega_heading_link_4": "",
+              "submenu_label_1": "",
+              "submenu_link_1": "",
+              "submenu_label_2": "",
+              "submenu_link_2": "",
+              "submenu_label_3": "",
+              "submenu_link_3": "",
+              "submenu_label_4": "",
+              "submenu_link_4": "",
+              "manual_product_1": "",
+              "manual_product_2": ""
             }
           },
           "menu_item_VJRkDG": {
@@ -101,12 +161,24 @@
               "link": "shopify://pages/contact",
               "has_dropdown": false,
               "show_dropdown_icon": true,
-              "dropdown_label_1": "",
-              "dropdown_link_1": "",
-              "dropdown_label_2": "",
-              "dropdown_link_2": "",
-              "dropdown_label_3": "",
-              "dropdown_link_3": ""
+              "mega_heading_1": "",
+              "mega_heading_link_1": "",
+              "mega_heading_2": "",
+              "mega_heading_link_2": "",
+              "mega_heading_3": "",
+              "mega_heading_link_3": "",
+              "mega_heading_4": "",
+              "mega_heading_link_4": "",
+              "submenu_label_1": "",
+              "submenu_link_1": "",
+              "submenu_label_2": "",
+              "submenu_link_2": "",
+              "submenu_label_3": "",
+              "submenu_link_3": "",
+              "submenu_label_4": "",
+              "submenu_link_4": "",
+              "manual_product_1": "",
+              "manual_product_2": ""
             }
           }
         },
@@ -389,54 +461,6 @@
           "message_y4RFnU"
         ],
         "settings": {}
-      },
-      "new-arrivals-products": {
-        "type": "new-arrivals-products",
-        "blocks": {
-          "category_link_NLP87j": {
-            "type": "category_link",
-            "name": "Man",
-            "settings": {
-              "label": "Man",
-              "link": ""
-            }
-          },
-          "category_link_8NFk9C": {
-            "type": "category_link",
-            "name": "Woman",
-            "settings": {
-              "label": "Woman",
-              "link": ""
-            }
-          },
-          "category_link_MDEhBY": {
-            "type": "category_link",
-            "name": "Child",
-            "settings": {
-              "label": "Child",
-              "link": ""
-            }
-          },
-          "category_link_PYECVQ": {
-            "type": "category_link",
-            "name": "Accessories",
-            "settings": {
-              "label": "Accessories",
-              "link": ""
-            }
-          }
-        },
-        "block_order": [
-          "category_link_NLP87j",
-          "category_link_8NFk9C",
-          "category_link_MDEhBY",
-          "category_link_PYECVQ"
-        ],
-        "settings": {
-          "heading": "Our New Arrivals",
-          "collection": "new-arrivals",
-          "product_list": []
-        }
       },
       "featured-brands": {
         "type": "featured-brands",
@@ -985,6 +1009,14 @@
             "the-compare-at-price-snowboard",
             "the-complete-snowboard"
           ]
+        }
+      },
+      "home-new-arrivals-products": {
+        "type": "home-new-arrivals-products",
+        "settings": {
+          "heading": "Our New Arrivals",
+          "collection": "",
+          "product_list": []
         }
       }
     },

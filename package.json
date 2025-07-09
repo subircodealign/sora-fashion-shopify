@@ -9,7 +9,6 @@
 
   "deploy:live": "npm run backup:all && npm run merge:settings && npm run build:css && npm run push:live",
 
-
   "copy:fixed-dev":"cp ./backup/dev/config/settings_data.json ./config/settings_data.json",
   "copy:live":"cp ./backup/live/config/settings_data.json ./config/settings_data.json",
 
