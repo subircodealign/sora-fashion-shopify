@@ -1,9 +1,9 @@
 <style>
-  /* Hide scrollbar for Webkit browsers */
+
   #promo-carousel::-webkit-scrollbar {
     display: none;
   }
-  /* Hide scrollbar for IE, Edge and Firefox */
+
   #promo-carousel {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -20,9 +20,10 @@
       style="scroll-padding-left: 33.33vw; scroll-padding-right: 33.33vw;">
 
       {% for block in section.blocks %}
-        <div
-          class="slide snap-center flex-shrink-0 w-[640px] h-96 relative mx-3 overflow-hidden"
-          style="scroll-snap-align: center;">
+       <div
+  class="slide snap-center flex-shrink-0 w-[930px] object-cover h-[434px] relative {% unless forloop.last %}mr-6{% endunless %} overflow-hidden"
+  style="scroll-snap-align: center;">
+
           <img src="{{ block.settings.image | image_url: width: 930, height:434 }}" width=930px height=434px alt="Promo Image" class="w-full h-full object-cover" />
 
           {% if forloop.index == 2 %}

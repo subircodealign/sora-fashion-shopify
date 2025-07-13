@@ -105,6 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
       currentPage = page;
       renderProducts();
       renderPagination();
+
+    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
 });

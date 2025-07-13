@@ -60,11 +60,11 @@
               "submenu_label_1": "Fashion",
               "submenu_link_1": "",
               "submenu_label_2": "Western",
-              "submenu_link_2": "",
+              "submenu_link_2": "shopify://pages/woman-western",
               "submenu_label_3": "Trending",
-              "submenu_link_3": "",
+              "submenu_link_3": "shopify://pages/woman-trendy",
               "submenu_label_4": "Cosmetics",
-              "submenu_link_4": "",
+              "submenu_link_4": "shopify://pages/cosmetics",
               "manual_product_1": "browne-winter-sweater",
               "manual_product_2": "browne-winter-sweater-1"
             }

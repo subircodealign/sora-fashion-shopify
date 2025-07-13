@@ -5,9 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentIndex = 0;
   const totalSlides = slides.length;
-  let scrollTimeout = null;
   let autoSlide = null;
-  let ignoreScrollEvents = false;
+  let isManualScroll = false;
 
   function updateDots(index) {
     dots.forEach((dot, i) => {
@@ -19,46 +18,42 @@ document.addEventListener('DOMContentLoaded', () => {
   function scrollToSlide(index) {
     if (index < 0 || index >= totalSlides) return;
 
-    
-    if (currentIndex === totalSlides - 1 && index === 0) {
-      ignoreScrollEvents = true;
-      slider.scrollLeft = 0;
-      currentIndex = 0;
-      updateDots(0);
-      resetAutoSlide();
-
-      setTimeout(() => {
-        ignoreScrollEvents = false;
-      }, 150);
-
-      return;
-    }
-
     const slide = slides[index];
     if (!slide) return;
 
     const slideLeft = slide.offsetLeft;
     const slideWidth = slide.offsetWidth;
     const sliderWidth = slider.offsetWidth;
-
     const scrollPosition = slideLeft - (sliderWidth / 2) + (slideWidth / 2);
 
+
+    isManualScroll = true;
     slider.scrollTo({ left: scrollPosition, behavior: 'smooth' });
 
-    if (scrollTimeout) clearTimeout(scrollTimeout);
+    currentIndex = index;
+    updateDots(index);
+    resetAutoSlide();
 
-    scrollTimeout = setTimeout(() => {
-      currentIndex = index;
-      updateDots(index);
-      resetAutoSlide();
-    }, 350);
+ 
+    setTimeout(() => {
+      isManualScroll = false;
+    }, 600);
   }
 
+  function resetAutoSlide() {
+    if (autoSlide) clearInterval(autoSlide);
+    autoSlide = setInterval(() => {
+      let nextIndex = (currentIndex + 1) % totalSlides;
+      scrollToSlide(nextIndex);
+    }, 5000);
+  }
+
+
+  let scrollTimeout;
   slider.addEventListener('scroll', () => {
-    if (ignoreScrollEvents) return;
+    if (isManualScroll) return;
 
     if (scrollTimeout) clearTimeout(scrollTimeout);
-
     scrollTimeout = setTimeout(() => {
       const center = slider.scrollLeft + slider.offsetWidth / 2;
 
@@ -74,26 +69,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      if (closestIndex !== currentIndex) {
-        currentIndex = closestIndex;
-        updateDots(closestIndex);
-        resetAutoSlide();
-      }
-    }, 200);
+      currentIndex = closestIndex;
+      updateDots(currentIndex);
+      resetAutoSlide();
+    }, 100);
   });
 
-  function resetAutoSlide() {
-    if (autoSlide) clearInterval(autoSlide);
-    autoSlide = setInterval(() => {
-      let nextIndex = (currentIndex + 1) % totalSlides;
-      scrollToSlide(nextIndex);
-    }, 5000);
-  }
-
+ 
   dots.forEach((dot, idx) => {
     dot.addEventListener('click', () => {
       scrollToSlide(idx);
-      resetAutoSlide();
     });
   });
 
