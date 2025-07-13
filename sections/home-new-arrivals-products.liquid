@@ -1,5 +1,5 @@
-<section class="py-24 bg-white px-16 md:px-24">
-  <div class="container mx-auto">
+<section class="py-24 bg-white px-16 md:pl-[154px] md:pr-[139px] lg:px-24">
+  <div class="">
     
     <div class="flex justify-between items-center mb-12">
       <h2 class="text-[48px] leading-[64px] font-catalina text-primary">
@@ -15,31 +15,61 @@
       </nav>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+{%- assign count = 0 -%}
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center">
+
 
   {%- if section.settings.collection != blank -%}
     {%- assign products = collections[section.settings.collection].products -%}
     {%- for product in products -%}
-      {% render 'product-cards', product: product %}
+      {%- assign count = count | plus: 1 -%}
+      {%- if count <= 6 -%}
+        <div>
+          {% render 'product-cards', product: product %}
+        </div>
+      {%- elsif count <= 8 -%}
+        <div class="hidden lg:block">
+          {% render 'product-cards', product: product %}
+        </div>
+      {%- endif -%}
     {%- endfor -%}
   {%- endif -%}
 
   {%- if section.settings.product_list != blank -%}
     {%- for product in section.settings.product_list -%}
-      {% render 'product-cards', product: product %}
+      {%- assign count = count | plus: 1 -%}
+      {%- if count <= 6 -%}
+        <div>
+          {% render 'product-cards', product: product %}
+        </div>
+      {%- elsif count <= 8 -%}
+        <div class="hidden lg:block">
+          {% render 'product-cards', product: product %}
+        </div>
+      {%- endif -%}
     {%- endfor -%}
   {%- endif -%}
 
   {%- for block in section.blocks -%}
     {%- if block.type == 'manual_product' and block.settings.product != blank -%}
       {%- assign manual_product = all_products[block.settings.product] -%}
-      {% if manual_product != blank %}
-        {% render 'product-cards', product: manual_product %}
-      {% endif %}
+      {%- if manual_product != blank -%}
+        {%- assign count = count | plus: 1 -%}
+        {%- if count <= 6 -%}
+          <div>
+            {% render 'product-cards', product: manual_product %}
+          </div>
+        {%- elsif count <= 8 -%}
+          <div class="hidden lg:block">
+            {% render 'product-cards', product: manual_product %}
+          </div>
+        {%- endif -%}
+      {%- endif -%}
     {%- endif -%}
   {%- endfor -%}
 
 </div>
+
 
 
   </div>

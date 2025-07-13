@@ -1,12 +1,23 @@
+{% assign page_type = request.page_type %}
+
 {% if section_heading != blank %}
-  <div class="w-[1012px] mt-24 pb-[48px] mx-auto">
+
+  
+
+  <div class="w-[1012px] pb-[48px] mx-auto
+     {% if page_type == 'index' %}
+    mt-0
+    {% else %}
+     mt-24
+     {% endif %}
+    ">
     <h2 class="text-[48px] font-catalina text-center text-primary leading-[64px]">
       {{ section_heading }}
     </h2>
   </div>
 {% endif %}
 
-<div class="w-full flex flex-col lg:flex-row gap-6 px-24 pb-24">
+<div class="w-full flex gap-6 px-24 pb-24">
 
   <!-- Main Image Part -->
   <div class="lg:w-2/3 relative group overflow-hidden">

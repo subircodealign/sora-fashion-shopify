@@ -1,14 +1,20 @@
-<div class="border p-4 flex flex-col">
+<div class="border p-4 flex flex-col w-full max-w-[294px]">
 
 
-  <a href="{{ product.url }}" class="block mb-4 ">
-    <img src="{{ product.featured_image | image_url: width: 279, height: 262 }}" alt="{{ product.title }}" width="262" height="279" class="w-full h-[279px] object-cover">
-  </a>
+    <a href="{{ product.url }}" class="block mb-4">
+      <img
+        src="{{ product.featured_image | image_url: width: 262, height: 279 }}"
+        width="262"
+        height="279"
+        alt="{{ product.title }}"
+        class="w-[262px] h-[279px] object-cover mx-auto"
+      />
+    </a>
 
   <div class="flex-grow">
 
     <a href="{{ product.url }}">
-      <button class="text-primary font-semibold text-[18px] leading-[28px] mb-1 hover:underline ">
+      <button class="text-primary font-semibold text-[18px] leading-[28px] mb-1 hover:underline text-left ">
         {{ product.title }}
       </button>
     </a>

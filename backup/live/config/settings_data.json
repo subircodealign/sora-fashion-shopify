@@ -51,11 +51,11 @@
               "submenu_label_1": "Fashion",
               "submenu_link_1": "",
               "submenu_label_2": "Western",
-              "submenu_link_2": "",
+              "submenu_link_2": "shopify://pages/woman-western",
               "submenu_label_3": "Trending",
-              "submenu_link_3": "",
+              "submenu_link_3": "shopify://pages/woman-trendy",
               "submenu_label_4": "Cosmetics",
-              "submenu_link_4": "",
+              "submenu_link_4": "shopify://pages/cosmetics",
               "manual_product_1": "browne-winter-sweater",
               "manual_product_2": "browne-winter-sweater-1"
             }
@@ -620,7 +620,7 @@
       "home-banner": {
         "type": "home-banner",
         "settings": {
-          "background_image": "shopify://shop_images/hero.webp",
+          "background_image": "shopify://shop_images/young-woman-standing-against-white-background_1.webp",
           "badge_text": "Just Arrived",
           "badge_text_color": "#2f2f2f",
           "badge_border_color": "#2f2f2f",
@@ -641,7 +641,7 @@
       "man-banner": {
         "type": "man-banner",
         "settings": {
-          "background_image": "shopify://shop_images/55543ac2888fd3fc0a1592d9247219082ad514e3_1_1.webp",
+          "background_image": "shopify://shop_images/monochrome-portrait-man-showing-vulnerability-self-acceptance.webp",
           "badge_text": "Just Arrived",
           "badge_text_color": "#ffffff",
           "badge_border_color": "#ffffff",
@@ -752,7 +752,7 @@
       "woman-banner": {
         "type": "woman-banner",
         "settings": {
-          "background_image": "shopify://shop_images/ff0183e1e85b04fc274fa23fb9b1e40c8ca4ab8f_1_1.webp",
+          "background_image": "shopify://shop_images/beautiful-smiling-woman-with-clean-skin-natural-makeup-white-teeth-gray-background.webp",
           "badge_text": "Just Arrived",
           "badge_text_color": "#2f2f2f",
           "badge_border_color": "#2f2f2f",
