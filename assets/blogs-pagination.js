@@ -89,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
           currentPage = page;
           renderBlogs();
           renderPagination();
+          container.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
     });
