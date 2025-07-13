@@ -1,0 +1,77 @@
+{% assign current_handle = product.handle %}
+{% assign current_collection = product.collections.first %}
+
+{% if current_collection.products_count > 1 %}
+  <div class="mb-24 mx-24">
+    <h2 class="text-[48px] leading-[64px] font-catalina text-primary text-center mb-12">Related Products</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      {% assign shown_count = 0 %}
+      {% for related_product in current_collection.products %}
+        {% if related_product.handle != current_handle %}
+          {% assign shown_count = shown_count | plus: 1 %}
+          <div class="border p-4 flex flex-col">
+
+            <a href="{{ related_product.url }}" class="block mb-4">
+              <img src="{{ related_product.featured_image | image_url: width: 279, height: 262 }}" alt="{{ related_product.title }}" width="262" height="279" class="w-full h-[279px] object-cover">
+            </a>
+
+            <div class="flex-grow">
+              <a href="{{ related_product.url }}">
+                <button class="text-primary font-semibold text-[18px] leading-[28px] mb-1 hover:underline">
+                  {{ related_product.title }}
+                </button>
+              </a>
+
+              <p class="text-[24px] leading-[36px] font-bold mb-3">
+                {{ related_product.price | money_without_currency }}$
+              </p>
+
+              <div class="flex space-x-2 mb-4">
+                {% assign color_options = related_product.options_with_values | where: "name", "Color" %}
+                {% if color_options.size > 0 %}
+                  {% for option in color_options %}
+                    {% for value in option.values limit:3 %}
+                      {% assign color_class = '' %}
+                      {% assign color_value = value | downcase | strip %}
+
+                      {% case color_value %}
+                        {% when 'steel blue' %}{% assign color_class = 'bg-[#6B749E]' %}
+                        {% when 'brownish red' %}{% assign color_class = 'bg-[#9E5A4F]' %}
+                        {% when 'light brown' %}{% assign color_class = 'bg-[#AD8A77]' %}
+                        {% when 'black' %}{% assign color_class = 'bg-[#2F2F2F]' %}
+                        {% when 'soft ivory' %}{% assign color_class = 'bg-[#EBE1DC]' %}
+                        {% when 'soft sand' %}{% assign color_class = 'bg-[#E5C3A1]' %}
+                        {% when 'purple' %}{% assign color_class = 'bg-[#886B9E]' %}
+                        {% when 'light cool gray' %}{% assign color_class = 'bg-[#C0C6C6]' %}
+                        {% else %}{% assign color_class = '' %}
+                      {% endcase %}
+
+                      {% if color_class != '' %}
+                        <span class="w-3 h-3 rounded-full {{ color_class }}" title="{{ value }}"></span>
+                      {% elsif value != blank %}
+                        <span class="w-3 h-3 rounded-full" style="background-color: {{ value }};" title="{{ value }}"></span>
+                      {% else %}
+                        <span class="w-3 h-3 rounded-full bg-gray-300"></span>
+                      {% endif %}
+                    {% endfor %}
+                  {% endfor %}
+                {% else %}
+                  <span class="w-3 h-3 rounded-full bg-gray-300"></span>
+                {% endif %}
+              </div>
+            </div>
+
+            <button type="button" class="mt-auto border border-secondary text-secondary text-[16px] leading-[26px] px-6 py-3 flex items-center justify-center hover:bg-gray-100 transition duration-150">
+              Add To Cart {% render 'icon-add-cart' %}
+            </button>
+          </div>
+
+          {% if shown_count >= 4 %}
+            {% break %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,1022 @@
+{
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "menu_item_8cKHMD": {
+            "type": "menu_item",
+            "name": "Man",
+            "settings": {
+              "label": "Man",
+              "link": "shopify://pages/man",
+              "has_dropdown": true,
+              "show_dropdown_icon": true,
+              "mega_heading_1": "Best Sellers",
+              "mega_heading_link_1": "",
+              "mega_heading_2": "New Arrivals",
+              "mega_heading_link_2": "",
+              "mega_heading_3": "Bundles & Combo",
+              "mega_heading_link_3": "",
+              "mega_heading_4": "Trending Sales",
+              "mega_heading_link_4": "",
+              "submenu_label_1": "Fashion",
+              "submenu_link_1": "",
+              "submenu_label_2": "Pants",
+              "submenu_link_2": "shopify://pages/man-pants",
+              "submenu_label_3": "Shirts",
+              "submenu_link_3": "shopify://pages/man-shirts",
+              "submenu_label_4": "T-Shirts",
+              "submenu_link_4": "shopify://pages/man-t-shirts",
+              "manual_product_1": "browne-winter-sweater-2",
+              "manual_product_2": "winter-jacket-for-girls-2"
+            }
+          },
+          "menu_item_pqfDDn": {
+            "type": "menu_item",
+            "name": "Woman",
+            "settings": {
+              "label": "Woman",
+              "link": "shopify://pages/woman",
+              "has_dropdown": true,
+              "show_dropdown_icon": true,
+              "mega_heading_1": "Best Sellers",
+              "mega_heading_link_1": "",
+              "mega_heading_2": "New Arrivals",
+              "mega_heading_link_2": "",
+              "mega_heading_3": "Bundles & Combo",
+              "mega_heading_link_3": "",
+              "mega_heading_4": "Trending Sales",
+              "mega_heading_link_4": "",
+              "submenu_label_1": "Fashion",
+              "submenu_link_1": "",
+              "submenu_label_2": "Western",
+              "submenu_link_2": "",
+              "submenu_label_3": "Trending",
+              "submenu_link_3": "",
+              "submenu_label_4": "Cosmetics",
+              "submenu_link_4": "",
+              "manual_product_1": "browne-winter-sweater",
+              "manual_product_2": "browne-winter-sweater-1"
+            }
+          },
+          "menu_item_9YM6Xi": {
+            "type": "menu_item",
+            "name": "New Apparels",
+            "settings": {
+              "label": "New Apparels",
+              "link": "shopify://pages/new-apparels",
+              "has_dropdown": true,
+              "show_dropdown_icon": true,
+              "mega_heading_1": "",
+              "mega_heading_link_1": "",
+              "mega_heading_2": "",
+              "mega_heading_link_2": "",
+              "mega_heading_3": "",
+              "mega_heading_link_3": "",
+              "mega_heading_4": "",
+              "mega_heading_link_4": "",
+              "submenu_label_1": "",
+              "submenu_link_1": "",
+              "submenu_label_2": "",
+              "submenu_link_2": "",
+              "submenu_label_3": "",
+              "submenu_link_3": "",
+              "submenu_label_4": "",
+              "submenu_link_4": "",
+              "manual_product_1": "",
+              "manual_product_2": ""
+            }
+          },
+          "menu_item_q7V7JT": {
+            "type": "menu_item",
+            "name": "Seasons",
+            "settings": {
+              "label": "Seasons",
+              "link": "shopify://pages/seasons",
+              "has_dropdown": true,
+              "show_dropdown_icon": true,
+              "mega_heading_1": "",
+              "mega_heading_link_1": "",
+              "mega_heading_2": "",
+              "mega_heading_link_2": "",
+              "mega_heading_3": "",
+              "mega_heading_link_3": "",
+              "mega_heading_4": "",
+              "mega_heading_link_4": "",
+              "submenu_label_1": "",
+              "submenu_link_1": "",
+              "submenu_label_2": "",
+              "submenu_link_2": "",
+              "submenu_label_3": "",
+              "submenu_link_3": "",
+              "submenu_label_4": "",
+              "submenu_link_4": "",
+              "manual_product_1": "",
+              "manual_product_2": ""
+            }
+          },
+          "menu_item_KXzUYB": {
+            "type": "menu_item",
+            "name": "Blogs",
+            "settings": {
+              "label": "Blogs",
+              "link": "shopify://pages/blogs",
+              "has_dropdown": false,
+              "show_dropdown_icon": true,
+              "mega_heading_1": "",
+              "mega_heading_link_1": "",
+              "mega_heading_2": "",
+              "mega_heading_link_2": "",
+              "mega_heading_3": "",
+              "mega_heading_link_3": "",
+              "mega_heading_4": "",
+              "mega_heading_link_4": "",
+              "submenu_label_1": "",
+              "submenu_link_1": "",
+              "submenu_label_2": "",
+              "submenu_link_2": "",
+              "submenu_label_3": "",
+              "submenu_link_3": "",
+              "submenu_label_4": "",
+              "submenu_link_4": "",
+              "manual_product_1": "",
+              "manual_product_2": ""
+            }
+          },
+          "menu_item_VJRkDG": {
+            "type": "menu_item",
+            "name": "Contact",
+            "settings": {
+              "label": "Contact",
+              "link": "shopify://pages/contact",
+              "has_dropdown": false,
+              "show_dropdown_icon": true,
+              "mega_heading_1": "",
+              "mega_heading_link_1": "",
+              "mega_heading_2": "",
+              "mega_heading_link_2": "",
+              "mega_heading_3": "",
+              "mega_heading_link_3": "",
+              "mega_heading_4": "",
+              "mega_heading_link_4": "",
+              "submenu_label_1": "",
+              "submenu_link_1": "",
+              "submenu_label_2": "",
+              "submenu_link_2": "",
+              "submenu_label_3": "",
+              "submenu_link_3": "",
+              "submenu_label_4": "",
+              "submenu_link_4": "",
+              "manual_product_1": "",
+              "manual_product_2": ""
+            }
+          }
+        },
+        "block_order": [
+          "menu_item_8cKHMD",
+          "menu_item_pqfDDn",
+          "menu_item_9YM6Xi",
+          "menu_item_q7V7JT",
+          "menu_item_KXzUYB",
+          "menu_item_VJRkDG"
+        ],
+        "settings": {
+          "logo_image": "shopify://shop_images/logo.svg",
+          "logo_text": "SORA",
+          "show_search": true,
+          "show_cart": true,
+          "show_account": true
+        }
+      },
+      "home-promotional-slider": {
+        "type": "home-promotional-slider",
+        "blocks": {
+          "slide_GPJweL": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/ae35ac9a6d01f74e5d5ae59fb646ea44fab5b0b7.jpg",
+              "heading": "Buy One Get Two Free",
+              "description": "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us",
+              "button_link": ""
+            }
+          },
+          "slide_ezqPnA": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/849e4abde919aff23b0e234b38e39ca5f560fef3.jpg",
+              "heading": "Buy One Get Two Free",
+              "description": "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us",
+              "button_link": ""
+            }
+          },
+          "slide_3JHeYH": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/9eb52673521d393d1247f08972b1946950b063ec.jpg",
+              "heading": "Buy One Get Two Free",
+              "description": "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us",
+              "button_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "slide_GPJweL",
+          "slide_ezqPnA",
+          "slide_3JHeYH"
+        ],
+        "settings": {}
+      },
+      "home-new-arrivals-slide": {
+        "type": "home-new-arrivals-slide",
+        "blocks": {
+          "category_y3DqVX": {
+            "type": "category",
+            "settings": {
+              "title": "Man",
+              "link": ""
+            }
+          },
+          "category_T3NXQF": {
+            "type": "category",
+            "name": "Woman",
+            "settings": {
+              "title": "Woman",
+              "link": ""
+            }
+          },
+          "category_E3z7VL": {
+            "type": "category",
+            "name": "Child",
+            "settings": {
+              "title": "Child",
+              "link": ""
+            }
+          },
+          "category_J4c6Ei": {
+            "type": "category",
+            "name": "Accessories",
+            "settings": {
+              "title": "Accessories",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "category_y3DqVX",
+          "category_T3NXQF",
+          "category_E3z7VL",
+          "category_J4c6Ei"
+        ],
+        "settings": {
+          "heading": "New Arrivals",
+          "featured_image": "shopify://shop_images/cba072fdc8c41ce798dce9d74e04d7a39fa8fc96_1.webp",
+          "product_list": [
+            "new-kurta-s-for-boys",
+            "browne-winter-sweater-1",
+            "browne-winter-sweater"
+          ]
+        }
+      },
+      "home-offer-products": {
+        "type": "home-offer-products",
+        "blocks": {
+          "category_link_KwEyae": {
+            "type": "category_link",
+            "name": "Man",
+            "settings": {
+              "label": "Man",
+              "link": ""
+            }
+          },
+          "category_link_9GWhAD": {
+            "type": "category_link",
+            "name": "Woman",
+            "settings": {
+              "label": "Woman",
+              "link": ""
+            }
+          },
+          "category_link_d3pxpX": {
+            "type": "category_link",
+            "name": "Child",
+            "settings": {
+              "label": "Child",
+              "link": ""
+            }
+          },
+          "category_link_n4BNFJ": {
+            "type": "category_link",
+            "name": "Accessories",
+            "settings": {
+              "label": "Accessories",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "category_link_KwEyae",
+          "category_link_9GWhAD",
+          "category_link_d3pxpX",
+          "category_link_n4BNFJ"
+        ],
+        "settings": {
+          "heading": "30% Off Now",
+          "collection": "new-arrivals",
+          "product_list": []
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "menu_item_i47z4m": {
+            "type": "menu_item",
+            "settings": {
+              "title": "Man",
+              "link": ""
+            }
+          },
+          "menu_item_jNTViA": {
+            "type": "menu_item",
+            "settings": {
+              "title": "Woman",
+              "link": ""
+            }
+          },
+          "menu_item_z36cEa": {
+            "type": "menu_item",
+            "settings": {
+              "title": "New Arrivals",
+              "link": ""
+            }
+          },
+          "menu_item_VLQVip": {
+            "type": "menu_item",
+            "settings": {
+              "title": "Seasons",
+              "link": ""
+            }
+          },
+          "menu_item_7PCdh4": {
+            "type": "menu_item",
+            "name": "Blogs",
+            "settings": {
+              "title": "Blogs",
+              "link": ""
+            }
+          },
+          "menu_item_hHAiqz": {
+            "type": "menu_item",
+            "name": "Contact",
+            "settings": {
+              "title": "Contact",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "menu_item_i47z4m",
+          "menu_item_jNTViA",
+          "menu_item_z36cEa",
+          "menu_item_VLQVip",
+          "menu_item_7PCdh4",
+          "menu_item_hHAiqz"
+        ],
+        "settings": {
+          "logo_svg": "",
+          "logo_image": "shopify://shop_images/Button.svg",
+          "description": "Bringing AI-powered solutions to life through custom software development, game creation, marketing, and ecommerce.",
+          "newsletter_title": "Sign up to our newsletter",
+          "newsletter_subtitle": "Get weekly access to our best deals, tips and tricks!",
+          "newsletter_button": "Subscribe",
+          "menu_title": "Company",
+          "contact_title": "Get in touch",
+          "address": "Green House City, Malborne, UK",
+          "email": "info@sora.fashion",
+          "phone": "+4510 451500015",
+          "copyright": "Copyright © 2025 Sora | Powered by Sora"
+        }
+      },
+      "bar-slider": {
+        "type": "bar-slider",
+        "blocks": {
+          "message_BdFae6": {
+            "type": "message",
+            "name": "ETHICAL ALSO FASHIONABLE",
+            "settings": {
+              "message": "ETHICAL ALSO FASHIONABLE"
+            }
+          },
+          "message_jAtbaC": {
+            "type": "message",
+            "name": "Get 20% Bonus on refer us",
+            "settings": {
+              "message": "Get 20% Bonus on refer us"
+            }
+          },
+          "message_TK3d6F": {
+            "type": "message",
+            "name": "10% Discount on first purchase",
+            "settings": {
+              "message": "10% Discount on first purchase"
+            }
+          },
+          "message_WUTDnL": {
+            "type": "message",
+            "name": "Get best product in best price",
+            "settings": {
+              "message": "Get best product in best price"
+            }
+          },
+          "message_EFdi6H": {
+            "type": "message",
+            "name": "best fabrics guaranty",
+            "settings": {
+              "message": "best fabrics guaranty"
+            }
+          },
+          "message_y4RFnU": {
+            "type": "message",
+            "name": "Best In Town",
+            "settings": {
+              "message": "Best In Town"
+            }
+          }
+        },
+        "block_order": [
+          "message_BdFae6",
+          "message_jAtbaC",
+          "message_TK3d6F",
+          "message_WUTDnL",
+          "message_EFdi6H",
+          "message_y4RFnU"
+        ],
+        "settings": {}
+      },
+      "featured-brands": {
+        "type": "featured-brands",
+        "blocks": {
+          "brand_aAnpQW": {
+            "type": "brand",
+            "settings": {
+              "brand_image": "shopify://shop_images/3e85b45226d4a8363b33affd8a0a000d7f89a63a.png",
+              "brand_alt": "",
+              "logo_width": 200
+            }
+          },
+          "brand_Hf4thJ": {
+            "type": "brand",
+            "settings": {
+              "brand_image": "shopify://shop_images/6daa2b30b887b5805a04b9c1d8f7b3739cbc7534.png",
+              "brand_alt": "",
+              "logo_width": 200
+            }
+          },
+          "brand_JHERcb": {
+            "type": "brand",
+            "settings": {
+              "brand_image": "shopify://shop_images/f8b4dbce96fe8845f8d9d6af1c002d9deac778d6.png",
+              "brand_alt": "",
+              "logo_width": 200
+            }
+          },
+          "brand_JfmEEw": {
+            "type": "brand",
+            "settings": {
+              "brand_image": "shopify://shop_images/d10330a56a180223dc9e5f81ea399a0f2158abbf.png",
+              "brand_alt": "",
+              "logo_width": 200
+            }
+          },
+          "brand_RHdyLJ": {
+            "type": "brand",
+            "settings": {
+              "brand_image": "shopify://shop_images/d7dfa743cfb2f14e9e96880a8ea6e8e2ba251521.png",
+              "brand_alt": "",
+              "logo_width": 200
+            }
+          },
+          "brand_mfezwW": {
+            "type": "brand",
+            "settings": {
+              "brand_image": "shopify://shop_images/d75b0fc61172b919f30e629aad033653d4b68ff4.png",
+              "brand_alt": "",
+              "logo_width": 200
+            }
+          },
+          "brand_bwJVWh": {
+            "type": "brand",
+            "settings": {
+              "brand_image": "shopify://shop_images/a46343ce67e0fefe8a0da5b7fd2bdd6d0964b3b3.png",
+              "brand_alt": "",
+              "logo_width": 200
+            }
+          }
+        },
+        "block_order": [
+          "brand_aAnpQW",
+          "brand_Hf4thJ",
+          "brand_JHERcb",
+          "brand_JfmEEw",
+          "brand_RHdyLJ",
+          "brand_mfezwW",
+          "brand_bwJVWh"
+        ],
+        "settings": {
+          "heading": "Brand that we featured"
+        }
+      },
+      "offer-countdown": {
+        "type": "offer-countdown",
+        "settings": {
+          "heading": "GET IT BEFORE IT'S GONE",
+          "subheading": "Get 30% off on our seasonal sale!",
+          "button_text": "Explore More",
+          "button_link": "",
+          "end_date": "2025-07-20"
+        }
+      },
+      "reels": {
+        "type": "reels",
+        "settings": {
+          "heading": "We bring freedom to your every day movements",
+          "subheading": "@sora_fashion",
+          "image_1": "shopify://shop_images/e9c6778b855d2816957dbe4b6b5de8ce785b8aae.png",
+          "image_2": "shopify://shop_images/324379bd2702e33763122d0c0a07e71309f5ffa1.png",
+          "image_3": "shopify://shop_images/3af243e3d51fff3917c16ff96268612a7e7b30fc.png",
+          "image_4": "shopify://shop_images/6bcedec335f157afc020ec6ce8a720a512ed728a.png",
+          "image_5": "shopify://shop_images/eb00ad2d877814ff28cc840fc7029485490eac13.png",
+          "image_6": "shopify://shop_images/368d568686c04c3e6599d11ed0aae27ce793e74d.png"
+        }
+      },
+      "information-bar": {
+        "type": "information-bar",
+        "blocks": {
+          "item_DUNddX": {
+            "type": "item",
+            "name": "Easy Returns",
+            "settings": {
+              "text": "Easy Returns"
+            }
+          },
+          "item_HEqwEV": {
+            "type": "item",
+            "name": "Worldwide Shipping",
+            "settings": {
+              "text": "Worldwide Shipping"
+            }
+          },
+          "item_BcFLfP": {
+            "type": "item",
+            "name": "Buy Now, Pay Later",
+            "settings": {
+              "text": "Buy Now, Pay Later"
+            }
+          },
+          "item_gfHdFc": {
+            "type": "item",
+            "name": "Online 7/12 supports",
+            "settings": {
+              "text": "Online 7/12 supports"
+            }
+          }
+        },
+        "block_order": [
+          "item_DUNddX",
+          "item_HEqwEV",
+          "item_BcFLfP",
+          "item_gfHdFc"
+        ],
+        "settings": {}
+      },
+      "review": {
+        "type": "review",
+        "blocks": {
+          "review_itaBXY": {
+            "type": "review",
+            "settings": {
+              "avatar": "shopify://shop_images/e67967bb6a750c992bcd26b62337452fa920bd99.jpg",
+              "name": "Monika Yunus",
+              "designation": "Customer",
+              "review": "What i love about this shop is the fact that they have great assistance after buying. They offer free recipes and a lot of freebies on each purchase."
+            }
+          },
+          "review_AzGryV": {
+            "type": "review",
+            "settings": {
+              "avatar": "shopify://shop_images/43be30f2ee9fdfd2252220dcb87ba3692201d036_1.png",
+              "name": "Customer Name",
+              "designation": "Customer",
+              "review": "This is a sample customer review."
+            }
+          }
+        },
+        "block_order": [
+          "review_itaBXY",
+          "review_AzGryV"
+        ],
+        "settings": {}
+      },
+      "home-banner": {
+        "type": "home-banner",
+        "settings": {
+          "background_image": "shopify://shop_images/hero.webp",
+          "badge_text": "Just Arrived",
+          "badge_text_color": "#2f2f2f",
+          "badge_border_color": "#2f2f2f",
+          "heading": "Elevate Your Wardrobe With Our New Arrivals",
+          "heading_color": "#2f2f2f",
+          "subheading": "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us",
+          "subheading_color": "#8b8b8b",
+          "primary_button_text": "Shop Now New Arrivals",
+          "primary_button_link": "",
+          "primary_button_bg_color": "#6b749e",
+          "primary_button_text_color": "#ffffff",
+          "secondary_button_text": "Show By Catalogs",
+          "secondary_button_link": "",
+          "secondary_button_border_color": "#6b749e",
+          "secondary_button_text_color": "#6b749e"
+        }
+      },
+      "man-banner": {
+        "type": "man-banner",
+        "settings": {
+          "background_image": "shopify://shop_images/55543ac2888fd3fc0a1592d9247219082ad514e3_1_1.webp",
+          "badge_text": "Just Arrived",
+          "badge_text_color": "#ffffff",
+          "badge_border_color": "#ffffff",
+          "heading": "Elevate Your Wardrobe With Our New Arrivals",
+          "heading_color": "#ffffff",
+          "subheading": "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us",
+          "subheading_color": "#ffffff",
+          "primary_button_text": "Shop Now New Arrivals",
+          "primary_button_link": "",
+          "primary_button_bg_color": "#6b749e",
+          "primary_button_text_color": "#ffffff",
+          "secondary_button_text": "Show By Catalogs",
+          "secondary_button_link": "",
+          "secondary_button_border_color": "#6b749e",
+          "secondary_button_text_color": "#6b749e"
+        }
+      },
+      "man-new-arrivals-products": {
+        "type": "man-new-arrivals-products",
+        "blocks": {
+          "category_link_nrp6Vi": {
+            "type": "category_link",
+            "settings": {
+              "label": "All Items",
+              "link": ""
+            }
+          },
+          "category_link_e3jRqt": {
+            "type": "category_link",
+            "settings": {
+              "label": "T-Shirt",
+              "link": ""
+            }
+          },
+          "category_link_6x7WRn": {
+            "type": "category_link",
+            "settings": {
+              "label": "Pants",
+              "link": ""
+            }
+          },
+          "category_link_FB9mi3": {
+            "type": "category_link",
+            "settings": {
+              "label": "Accessories",
+              "link": ""
+            }
+          },
+          "category_link_9MYedk": {
+            "type": "category_link",
+            "settings": {
+              "label": "New Arrivals",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "category_link_nrp6Vi",
+          "category_link_e3jRqt",
+          "category_link_6x7WRn",
+          "category_link_FB9mi3",
+          "category_link_9MYedk"
+        ],
+        "settings": {
+          "heading": "Latest Products",
+          "per_page": 12,
+          "collection": "",
+          "product_list": [
+            "browne-winter-sweater",
+            "browne-winter-sweater-1",
+            "full-shirt",
+            "gift-card",
+            "mash-winter-sweater",
+            "new-kurta-s-for-boys",
+            "print-sweater-for-winter",
+            "selling-plans-ski-wax",
+            "slim-gray-t-shirt-for-boys",
+            "the-3p-fulfilled-snowboard",
+            "the-collection-snowboard-hydrogen",
+            "the-collection-snowboard-liquid",
+            "the-collection-snowboard-oxygen",
+            "the-compare-at-price-snowboard",
+            "the-complete-snowboard"
+          ]
+        }
+      },
+      "man-categories": {
+        "type": "man-categories",
+        "settings": {
+          "section_heading": "Spring styles to wear together or apart, whatever the weather.",
+          "main_image": "shopify://shop_images/f949da56cc6b75484eae3fcd735c40df24a5fbaa_1.webp",
+          "main_title": "New Arrivals",
+          "main_description": "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us",
+          "main_link": "",
+          "main_button": "",
+          "card_1_image": "shopify://shop_images/a80e2fde95519d987ad00babd6da1f6daef92b25_3.webp",
+          "card_1_title": "Denim Jackets",
+          "card_1_description": "",
+          "card_1_link": "",
+          "card_1_button": "",
+          "card_2_image": "shopify://shop_images/46057b6861b9ec9991f1c75a8e7df88bcf5d9d3f_1_3.webp",
+          "card_2_title": "Adult’s Fashion",
+          "card_2_description": "",
+          "card_2_link": "",
+          "card_2_button": ""
+        }
+      },
+      "woman-banner": {
+        "type": "woman-banner",
+        "settings": {
+          "background_image": "shopify://shop_images/ff0183e1e85b04fc274fa23fb9b1e40c8ca4ab8f_1_1.webp",
+          "badge_text": "Just Arrived",
+          "badge_text_color": "#2f2f2f",
+          "badge_border_color": "#2f2f2f",
+          "heading": "Elevate Your Wardrobe With Our New Arrivals",
+          "heading_color": "#2f2f2f",
+          "subheading": "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us",
+          "subheading_color": "#8b8b8b",
+          "primary_button_text": "Shop Now New Arrivals",
+          "primary_button_link": "",
+          "primary_button_bg_color": "#6b749e",
+          "primary_button_text_color": "#ffffff",
+          "secondary_button_text": "Show By Catalogs",
+          "secondary_button_link": "",
+          "secondary_button_border_color": "#6b749e",
+          "secondary_button_text_color": "#6b749e"
+        }
+      },
+      "woman-new-arrivals-products": {
+        "type": "woman-new-arrivals-products",
+        "blocks": {
+          "category_link_7JMMzg": {
+            "type": "category_link",
+            "settings": {
+              "label": "All Items",
+              "link": ""
+            }
+          },
+          "category_link_6YAtnN": {
+            "type": "category_link",
+            "settings": {
+              "label": "Man",
+              "link": ""
+            }
+          },
+          "category_link_nTMaHK": {
+            "type": "category_link",
+            "settings": {
+              "label": "Man",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "category_link_7JMMzg",
+          "category_link_6YAtnN",
+          "category_link_nTMaHK"
+        ],
+        "settings": {
+          "heading": "Our New Arrivals",
+          "per_page": 12,
+          "collection": "",
+          "product_list": [
+            "browne-winter-sweater",
+            "browne-winter-sweater-1",
+            "full-shirt",
+            "gift-card",
+            "the-complete-snowboard",
+            "the-compare-at-price-snowboard",
+            "the-collection-snowboard-oxygen",
+            "the-collection-snowboard-liquid",
+            "the-collection-snowboard-hydrogen",
+            "the-3p-fulfilled-snowboard",
+            "slim-gray-t-shirt-for-boys",
+            "selling-plans-ski-wax",
+            "print-sweater-for-winter",
+            "new-kurta-s-for-boys",
+            "mash-winter-sweater"
+          ]
+        }
+      },
+      "woman-categories": {
+        "type": "woman-categories",
+        "settings": {
+          "section_heading": "Spring styles to wear together or apart, whatever the weather.",
+          "main_image": "shopify://shop_images/38b114a93c7a93cb0b3a8086d1972fc2ac3cd915_1.webp",
+          "main_title": "",
+          "main_description": "",
+          "main_link": "",
+          "main_button": "",
+          "card_1_image": "shopify://shop_images/41751ce9497bd117316f1023ce3c7805467c8513_1.webp",
+          "card_1_title": "",
+          "card_1_description": "",
+          "card_1_link": "",
+          "card_1_button": "",
+          "card_2_image": "shopify://shop_images/e49356c279dddd7039ccdbc943f56ec3f2aaf8b4_2.webp",
+          "card_2_title": "",
+          "card_2_description": "",
+          "card_2_link": "",
+          "card_2_button": ""
+        }
+      },
+      "home-categories": {
+        "type": "home-categories",
+        "settings": {
+          "section_heading": "Spring styles to wear together or apart, whatever the weather.",
+          "main_image": "shopify://shop_images/category-women1.webp",
+          "main_title": "",
+          "main_description": "",
+          "main_link": "",
+          "main_button": "",
+          "card_1_image": "shopify://shop_images/a80e2fde95519d987ad00babd6da1f6daef92b25_3.webp",
+          "card_1_title": "",
+          "card_1_description": "",
+          "card_1_link": "",
+          "card_1_button": "",
+          "card_2_image": "shopify://shop_images/90b9599ede9a59fe1c58bdd0b364b3ff574b2a41_1_1.webp",
+          "card_2_title": "",
+          "card_2_description": "",
+          "card_2_link": "",
+          "card_2_button": ""
+        }
+      },
+      "season-categories": {
+        "type": "season-categories",
+        "settings": {
+          "section_heading": "Spring styles to wear together or apart, whatever the weather.",
+          "img1": "shopify://shop_images/605cd461267839d5fe34da414bd461ab7841b749.jpg",
+          "title1": "Winter Fashion",
+          "desc1": "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us",
+          "link1": "",
+          "btn1": "",
+          "img2": "shopify://shop_images/5af2c472c3a995ef0b7bcb10dfb627222196cbfa.jpg",
+          "title2": "Winter Fashion",
+          "desc2": "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us",
+          "link2": "",
+          "btn2": "Explore More"
+        }
+      },
+      "season-categories2": {
+        "type": "season-categories2",
+        "settings": {
+          "img3": "shopify://shop_images/4bab9f8790185a3b7bf3ee1169cc7614ad0ee34c.jpg",
+          "title3": "Party & Wedding Fashion",
+          "desc3": "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us",
+          "link3": "",
+          "btn3": "Explore More"
+        }
+      },
+      "new-apparels-categories": {
+        "type": "new-apparels-categories",
+        "settings": {
+          "section_heading": "Spring styles to wear together or apart, whatever the weather.",
+          "main_image": "shopify://shop_images/category-women1.webp",
+          "main_title": "",
+          "main_description": "",
+          "main_link": "",
+          "main_button": "",
+          "card_1_image": "shopify://shop_images/category-women2.webp",
+          "card_1_title": "",
+          "card_1_description": "",
+          "card_1_link": "",
+          "card_1_button": "",
+          "card_2_image": "shopify://shop_images/category-women3.webp",
+          "card_2_title": "",
+          "card_2_description": "",
+          "card_2_link": "",
+          "card_2_button": ""
+        }
+      },
+      "blogs-pagination": {
+        "type": "blogs-pagination",
+        "settings": {
+          "heading": "Our More Blogs",
+          "subheading": "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us",
+          "per_page": 8,
+          "blog": "news"
+        }
+      },
+      "man-pants": {
+        "type": "man-pants",
+        "settings": {
+          "heading": "Our pants  Collection",
+          "per_page": 12,
+          "collection": "new-arrivals",
+          "product_list": []
+        }
+      },
+      "man-shirts": {
+        "type": "man-shirts",
+        "settings": {
+          "heading": "Our Shirt Collections",
+          "per_page": 12,
+          "collection": "",
+          "product_list": [
+            "full-shirt",
+            "browne-winter-sweater-1",
+            "browne-winter-sweater",
+            "gift-card",
+            "new-kurta-s-for-boys",
+            "mash-winter-sweater",
+            "print-sweater-for-winter",
+            "selling-plans-ski-wax",
+            "slim-gray-t-shirt-for-boys",
+            "the-3p-fulfilled-snowboard"
+          ]
+        }
+      },
+      "man-tshirts": {
+        "type": "man-tshirts",
+        "settings": {
+          "heading": "T-shirts Collection",
+          "per_page": 12,
+          "collection": "new-arrivals",
+          "product_list": []
+        }
+      },
+      "woman-western": {
+        "type": "woman-western",
+        "settings": {
+          "heading": "Our Western Collections",
+          "per_page": 12,
+          "collection": "new-arrivals",
+          "product_list": []
+        }
+      },
+      "woman-trendy": {
+        "type": "woman-trendy",
+        "settings": {
+          "heading": "Our Trendy Collections",
+          "per_page": 12,
+          "collection": "new-arrivals",
+          "product_list": []
+        }
+      },
+      "woman-cosmetics": {
+        "type": "woman-cosmetics",
+        "settings": {
+          "heading": "Our Cosmetics Collections",
+          "per_page": 12,
+          "collection": "",
+          "product_list": [
+            "full-shirt",
+            "browne-winter-sweater-1",
+            "browne-winter-sweater",
+            "gift-card",
+            "mash-winter-sweater",
+            "new-kurta-s-for-boys",
+            "print-sweater-for-winter",
+            "the-3p-fulfilled-snowboard",
+            "slim-gray-t-shirt-for-boys",
+            "selling-plans-ski-wax",
+            "the-collection-snowboard-hydrogen",
+            "the-collection-snowboard-liquid",
+            "the-collection-snowboard-oxygen",
+            "the-compare-at-price-snowboard",
+            "the-complete-snowboard"
+          ]
+        }
+      },
+      "home-new-arrivals-products": {
+        "type": "home-new-arrivals-products",
+        "settings": {
+          "heading": "Our New Arrivals",
+          "collection": "new-arrivals",
+          "product_list": []
+        }
+      },
+      "blog-article": {
+        "type": "blog-article",
+        "settings": {
+          "banner_image": "shopify://shop_images/0fe9803339edc134f30548b6531dbd81cba075d2_2.png"
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}

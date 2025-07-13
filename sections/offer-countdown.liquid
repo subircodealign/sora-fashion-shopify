@@ -1,0 +1,104 @@
+
+
+<div class="max-w-[1080px] mx-auto p-6 mb-24 bg-secondary flex flex-col md:flex-row justify-between items-center gap-6">
+  <div class="flex flex-col justify-center items-start gap-1">
+    <h2 class="text-white text-2xl font-normal font-castoro leading-9">
+      {{ section.settings.heading | default: "GET IT BEFORE IT'S GONE" }}
+    </h2>
+    <p class="text-white text-base font-normal font-figtree leading-relaxed">
+      {{ section.settings.subheading | default: "Get 30% off on our seasonal sale!" }}
+    </p>
+  </div>
+
+  <div class="relative flex items-start gap-8">
+
+    <div class="flex flex-col justify-start items-center">
+      <div class="countdown-days text-white text-5xl font-normal font-catalina leading-[64px]">0</div>
+      <div class="text-white text-base font-normal font-figtree leading-relaxed">DAYS</div>
+    </div>
+
+ 
+    <div class="w-8 h-0 absolute left-[56px] top-[11px] rotate-90 border-t border-white"></div>
+
+ 
+    <div class="flex flex-col justify-start items-center">
+      <div class="countdown-hours text-white text-5xl font-normal font-catalina leading-[64px]">0</div>
+      <div class="text-white text-base font-normal font-figtree leading-relaxed">HOURS</div>
+    </div>
+
+    
+    <div class="w-8 h-0 absolute left-[146px] top-[11px] rotate-90 border-t border-white"></div>
+
+
+    <div class="flex flex-col justify-start items-center">
+      <div class="countdown-minutes text-white text-5xl font-normal font-catalina leading-[64px]">0</div>
+      <div class="text-white text-base font-normal font-figtree leading-relaxed">MINUTES</div>
+    </div>
+
+
+    <div class="w-8 h-0 absolute left-[247px] top-[11px] rotate-90 border-t border-white"></div>
+
+
+    <div class="flex flex-col justify-start items-center">
+      <div class="countdown-seconds text-white text-5xl font-normal font-catalina leading-[64px]">0</div>
+      <div class="text-white text-base font-normal font-figtree leading-relaxed">SECONDS</div>
+    </div>
+  </div>
+
+  <a href="{{ section.settings.button_link | default: '#' }}" class="px-6 py-3 bg-white border border-secondary flex justify-center items-center gap-1 transition-colors">
+    <span class="text-secondary font-normal font-figtree leading-relaxed">
+      {{ section.settings.button_text | default: "Explore More" }}
+    </span>
+    <span class="w-6 h-6 flex items-center justify-center">
+      {% render 'icon-arrow' %}
+    </span>
+  </a>
+</div>
+
+<div id="countdown-container" data-end-date="{{ section.settings.end_date }}"></div>
+
+<script src="{{ 'countdown.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Home Offer Countdown",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "GET IT BEFORE IT'S GONE"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Get 30% off on our seasonal sale!"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Explore More"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "end_date",
+      "label": "Countdown End Date",
+      "info": "Format: YYYY-MM-DD (example: 2025-07-20)",
+      "default": "2025-07-20"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Offer Countdown",
+      "category": "Promotional"
+    }
+  ]
+}
+{% endschema %}

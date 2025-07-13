@@ -1,0 +1,348 @@
+<nav class="relative bg-white py-4 px-6 md:px-24 shadow-sm z-50">
+  <div class="container mx-auto flex items-center justify-between">
+
+    <!-- Logo -->
+    <div class="flex-shrink-0">
+      <a href="/" class="no-underline">
+        {% if section.settings.logo_image != blank %}
+          <img src="{{ section.settings.logo_image | image_url: width: 101, height: 28 }}"
+            width="101" height="28" alt="Logo" class="h-10 object-contain" />
+        {% else %}
+          <span class="font-figtree text-4xl tracking-tight text-gray-900" style="letter-spacing: -0.05em;">
+            {{ section.settings.logo_text | default: "SORA" }}
+          </span>
+        {% endif %}
+      </a>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex flex-grow justify-center">
+      <ul class="flex space-x-5 lg:space-x-6">
+        {% for block in section.blocks %}
+          {% if block.type == 'menu_item' %}
+            {% assign is_active = false %}
+            {% if request.path == block.settings.link %}
+              {% assign is_active = true %}
+            {% endif %}
+
+            <li class=" group">
+          <a href="{{ block.settings.link | default: '#' }}"
+   class="flex items-center text-[16px] leading-[26px] no-underline font-normal text-gray-700 hover:text-gray-900 group">
+  
+  <span class="relative">
+    <span class="{% if is_active %} text-black {% endif %}">{{ block.settings.label }}</span>
+    
+    {% if is_active %}
+      <span class="absolute -bottom-0.5 left-0 w-full h-[2px] bg-primary"></span>
+    {% endif %}
+  </span>
+
+  {% if block.settings.has_dropdown and block.settings.show_dropdown_icon %}
+    <span class="ml-1">
+      {% render 'icon-menu-dropdown' %}
+    </span>
+  {% endif %}
+</a>
+
+
+              {% if block.settings.has_dropdown %}
+<div
+  class="absolute top-full mx-auto left-0 w-full bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
+>
+ <div class="px-[96px] pt-[48px] pb-[32px] grid grid-cols-[242px_1px_120px_1px_1fr] gap-[60px] items-start overflow-hidden">
+
+
+
+    <!-- Bold Headings -->
+    <div class="flex flex-col gap-6">
+      {% for i in (1..4) %}
+        {% assign heading_key = 'mega_heading_' | append: i %}
+        {% assign heading_link_key = 'mega_heading_link_' | append: i %}
+        {% assign heading = block.settings[heading_key] %}
+        {% assign heading_link = block.settings[heading_link_key] %}
+        {% if heading != blank %}
+          <a href="{{ heading_link }}" class="text-base font-semibold text-gray-800 hover:underline whitespace-nowrap">
+            {{ heading }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- Divider: Headings ↔ Submenus -->
+   <div class="w-full h-full bg-gray-200"></div> <!-- full height, full width inside 1px col -->
+
+
+    <!-- Submenus -->
+    <div class="flex flex-col gap-6">
+      {% for i in (1..4) %}
+        {% assign submenu_key = 'submenu_label_' | append: i %}
+        {% assign submenu_link_key = 'submenu_link_' | append: i %}
+        {% assign sub_label = block.settings[submenu_key] %}
+        {% assign sub_link = block.settings[submenu_link_key] %}
+        {% if sub_label != blank %}
+          <a href="{{ sub_link }}" class="text-base text-gray-700 hover:underline whitespace-nowrap">
+            {{ sub_label }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- Divider: Submenus ↔ Products -->
+   <div class="w-full h-full bg-gray-200"></div> <!-- full height, full width inside 1px col -->
+
+
+    <!-- Product Cards -->
+    <div class="flex justify-center gap-[60px]">
+      {% for index in (1..2) %}
+        {% assign product_key = 'manual_product_' | append: index %}
+        {% assign product = all_products[block.settings[product_key]] %}
+        {% if product %}
+          <div class="bg-gray-100 p-4 flex flex-col gap-2">
+            <a href="{{ product.url }}">
+              <img src="{{ product.featured_image | image_url: width: 262,height: 279 }}" width="262px" height="279px" alt="{{ product.title }}" class="h-[279px] w-[262px] object-cover" />
+            </a>
+            <a href="{{ product.url }}" class="text-lg font-semibold text-gray-800 hover:underline">{{ product.title }}</a>
+            <div class="text-xl font-bold text-gray-800">{{ product.price | money }}</div>
+           <div class="flex space-x-2">
+  {% assign color_options = product.options_with_values | where: "name", "Color" %}
+  {% if color_options.size > 0 %}
+    {% for option in color_options %}
+      {% for value in option.values limit:3 %}
+        {% assign color_class = '' %}
+        {% assign color_value = value | downcase | strip %}
+
+        {% case color_value %}
+          {% when 'steel blue' %}{% assign color_class = 'bg-[#6B749E]' %}
+          {% when 'brownish red' %}{% assign color_class = 'bg-[#9E5A4F]' %}
+          {% when 'light brown' %}{% assign color_class = 'bg-[#AD8A77]' %}
+          {% when 'black' %}{% assign color_class = 'bg-[#2F2F2F]' %}
+          {% when 'soft ivory' %}{% assign color_class = 'bg-[#EBE1DC]' %}
+          {% when 'soft sand' %}{% assign color_class = 'bg-[#E5C3A1]' %}
+          {% when 'purple' %}{% assign color_class = 'bg-[#886B9E]' %}
+          {% when 'light cool gray' %}{% assign color_class = 'bg-[#C0C6C6]' %}
+          {% else %}{% assign color_class = '' %}
+        {% endcase %}
+
+        {% if color_class != '' %}
+          <span class="w-3 h-3 rounded-full {{ color_class }}" title="{{ value }}"></span>
+        {% elsif value != blank %}
+          <span class="w-3 h-3 rounded-full" style="background-color: {{ value }};" title="{{ value }}"></span>
+        {% else %}
+          <span class="w-3 h-3 rounded-full bg-gray-300"></span>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  {% else %}
+    <span class="w-3 h-3 rounded-full bg-gray-300"></span>
+  {% endif %}
+</div>
+
+            <a href="{{ product.url }}" class="mt-2 px-4 py-2 text-sm text-slate-500 border border-slate-500 hover:bg-slate-100 flex items-center justify-center gap-1">
+              Add To Cart
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+
+
+              {% endif %}
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Icons -->
+    <div class="flex items-center space-x-3 ml-auto">
+      {% if section.settings.show_search %}
+        <a href="#" class="flex items-center justify-center w-6 h-6 hover:bg-gray-50">
+          {% render 'icon-search' %}
+        </a>
+      {% endif %}
+      {% if section.settings.show_cart %}
+        <a href="/cart" class="flex items-center justify-center w-6 h-6 hover:bg-gray-50">
+          {% render 'icon-shop-cart' %}
+        </a>
+      {% endif %}
+      {% if section.settings.show_account %}
+        <a href="/account" class="flex items-center justify-center w-6 h-6 hover:bg-gray-50">
+          {% render 'icon-user' %}
+        </a>
+      {% endif %}
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <div class="md:hidden flex items-center">
+      <button id="mobile-menu-button" aria-label="Toggle Mobile Menu" class="text-gray-700 hover:text-gray-900 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white py-4 shadow-md">
+    <ul class="flex flex-col space-y-2 px-6">
+      {% for block in section.blocks %}
+        {% if block.type == 'menu_item' %}
+          <li>
+            <div class="flex justify-between items-center py-2">
+              <a href="{{ block.settings.link | default: '#' }}" class="text-gray-700 no-underline hover:bg-gray-100 block flex-grow">
+                {{ block.settings.label }}
+              </a>
+
+              {% if block.settings.has_dropdown %}
+                <button aria-label="Toggle submenu" class="ml-2 mobile-submenu-toggle focus:outline-none">
+                  <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+              {% endif %}
+            </div>
+
+            {% if block.settings.has_dropdown %}
+              <ul class="mobile-submenu hidden flex flex-col pl-4 border-l border-gray-200">
+                {% for i in (1..4) %}
+                  {% assign submenu_label_key = "submenu_label_" | append: i %}
+                  {% assign sub_label = block.settings[submenu_label_key] %}
+                  {% assign submenu_link_key = "submenu_link_" | append: i %}
+                  {% assign sub_link = block.settings[submenu_link_key] %}
+                  {% if sub_label != blank %}
+                    <li>
+                      <a href="{{ sub_link }}" class="block py-2 text-gray-700 hover:bg-gray-100 no-underline">
+                        {{ sub_label }}
+                      </a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</nav>
+
+<script src="{{ 'header.js' | asset_url }}" defer></script>
+
+
+
+{% schema %}
+{
+  "name": "Main Navbar",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Logo Image"
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo Text (used if no image)",
+      "default": "SORA"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "Show Search Icon",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cart",
+      "label": "Show Cart Icon",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_account",
+      "label": "Show Account Icon",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu_item",
+      "name": "Menu Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Menu Label",
+          "default": "Man"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Menu Link"
+        },
+        {
+          "type": "checkbox",
+          "id": "has_dropdown",
+          "label": "Has Dropdown?",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_dropdown_icon",
+          "label": "Show Dropdown Icon?",
+          "default": true
+        },
+
+        { "type": "text", "id": "mega_heading_1", "label": "Bold Heading 1" },
+        { "type": "url", "id": "mega_heading_link_1", "label": "Bold Heading 1 Link" },
+        { "type": "text", "id": "mega_heading_2", "label": "Bold Heading 2" },
+        { "type": "url", "id": "mega_heading_link_2", "label": "Bold Heading 2 Link" },
+        { "type": "text", "id": "mega_heading_3", "label": "Bold Heading 3" },
+        { "type": "url", "id": "mega_heading_link_3", "label": "Bold Heading 3 Link" },
+        { "type": "text", "id": "mega_heading_4", "label": "Bold Heading 4" },
+        { "type": "url", "id": "mega_heading_link_4", "label": "Bold Heading 4 Link" },
+
+        { "type": "text", "id": "submenu_label_1", "label": "Submenu Item 1 Label" },
+        { "type": "url", "id": "submenu_link_1", "label": "Submenu Item 1 Link" },
+        { "type": "text", "id": "submenu_label_2", "label": "Submenu Item 2 Label" },
+        { "type": "url", "id": "submenu_link_2", "label": "Submenu Item 2 Link" },
+        { "type": "text", "id": "submenu_label_3", "label": "Submenu Item 3 Label" },
+        { "type": "url", "id": "submenu_link_3", "label": "Submenu Item 3 Link" },
+        { "type": "text", "id": "submenu_label_4", "label": "Submenu Item 4 Label" },
+        { "type": "url", "id": "submenu_link_4", "label": "Submenu Item 4 Link" },
+
+        {
+          "type": "product",
+          "id": "manual_product_1",
+          "label": "Product Card 1"
+        },
+        {
+          "type": "product",
+          "id": "manual_product_2",
+          "label": "Product Card 2"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default Navigation",
+      "blocks": [
+        { "type": "menu_item", "settings": { "label": "Man" } },
+        { "type": "menu_item", "settings": { "label": "Woman" } },
+        { "type": "menu_item", "settings": { "label": "New Apparels" } },
+        { "type": "menu_item", "settings": { "label": "Seasons" } },
+        { "type": "menu_item", "settings": { "label": "Blogs" } },
+        { "type": "menu_item", "settings": { "label": "Contact" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+

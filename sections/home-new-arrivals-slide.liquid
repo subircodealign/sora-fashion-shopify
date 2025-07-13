@@ -1,0 +1,170 @@
+<div class="max-w-screen-xl bg-slate-200 mx-auto p-12 mb-24 flex flex-col gap-12">
+
+
+  <div class="w-full flex justify-between items-center">
+    <h2 class="text-primary text-[48px] font-normal font-catalina leading-[64px]">
+      {{ section.settings.heading }}
+    </h2>
+    <div class="flex gap-6">
+      {% for block in section.blocks %}
+        {% if block.type == 'category' %}
+          <div class="flex items-center gap-0.5">
+            {% if block.settings.link != blank %}
+              <a href="{{ block.settings.link }}" class="text-primary text-xl font-normal font-figtree hover:underline">
+                {{ block.settings.title }}
+              </a>
+            {% else %}
+              <div class="text-primary text-xl font-normal font-figtree">
+                {{ block.settings.title }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="flex">
+
+
+    {% if section.settings.featured_image != blank %}
+      <img class="w-[686px] h-[863px] object-cover mr-[104px]" src="{{ section.settings.featured_image | image_url: width: 686, height: 863 }}" alt="{{ section.settings.featured_image.alt }}" width="686" height="863" />
+    {% endif %}
+
+
+    <div class="flex flex-col items-center justify-center gap-4">
+
+      <div class="new-arrival-slider-section relative flex items-center">
+
+
+        <button class="slider-prev absolute -left-12 top-1/2 -translate-y-1/2 p-2.5 w-[44px] h-[44px] flex justify-center items-center outline outline-1 outline-zinc-500 hover:bg-zinc-300 transition z-10">
+          {% render 'icon-prev-button' %}
+        </button>
+
+        <!-- Slider Area -->
+        <div class="slider-container overflow-hidden rounded-md shadow-md bg-neutral-100 mx-[24px]" style="width: 288px;">
+          <div class="product-slider flex gap-6 transition-transform ease-in-out duration-300">
+            {% for product in section.settings.product_list %}
+              <div class="w-72 p-4 flex flex-col gap-4 flex-shrink-0">
+
+                <a href="{{ product.url }}" class="block rounded-md overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+                  <img class="w-full h-72 object-cover" src="{{ product.featured_image | image_url: width: 262, height: 279 }}" alt="{{ product.title }}" width="262" height="279" />
+                </a>
+
+                <div class="flex flex-col gap-2">
+                  <div class="text-primary text-lg font-semibold">{{ product.title }}</div>
+                  <div class="text-primary text-2xl font-bold">{{ product.price | money_without_currency }}$</div>
+
+                  <!-- Color Swatches -->
+            <div class="flex space-x-2 mb-4">
+  {% assign color_options = product.options_with_values | where: "name", "Color" %}
+  {% if color_options.size > 0 %}
+    {% for option in color_options %}
+      {% for value in option.values limit:3 %}
+        {% assign color_class = '' %}
+        {% assign color_value = value | downcase | strip %}
+
+        {% case color_value %}
+          {% when 'steel blue' %}{% assign color_class = 'bg-[#6B749E]' %}
+          {% when 'brownish red' %}{% assign color_class = 'bg-[#9E5A4F]' %}
+          {% when 'light brown' %}{% assign color_class = 'bg-[#AD8A77]' %}
+          {% when 'black' %}{% assign color_class = 'bg-black' %}
+          {% when 'soft ivory' %}{% assign color_class = 'bg-[#EBE1DC]' %}
+          {% when 'soft sand' %}{% assign color_class = 'bg-[#E5C3A1]' %}
+          {% when 'purple' %}{% assign color_class = 'bg-[#886B9E]' %}
+          {% when 'light cool gray' %}{% assign color_class = 'bg-[#C0C6C6]' %}
+          {% else %}
+            {% assign color_class = '' %}
+        {% endcase %}
+
+        {% if color_class != '' %}
+          <span class="w-3 h-3 rounded-full {{ color_class }}" title="{{ value }}"></span>
+        {% elsif value != blank %}
+          <span class="w-3 h-3 rounded-full" style="background-color: {{ value }};" title="{{ value }}"></span>
+        {% else %}
+
+          <span class="w-3 h-3 rounded-full bg-gray-300"></span>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  {% else %}
+
+    <span class="w-3 h-3 rounded-full bg-gray-300"></span>
+  {% endif %}
+</div>
+
+                </div>
+
+                <button type="button" class="mt-auto border border-secondary text-secondary text-[16px] leading-[26px] px-6 py-3 flex items-center justify-center hover:bg-gray-100 transition duration-150" data-product-id="{{ product.id }}">
+                  Add To Cart
+                  {% render 'icon-add-cart' %}
+                </button>
+
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Right Arrow -->
+        <button class="slider-next absolute -right-12 top-1/2 -translate-y-1/2 p-2.5 w-[44px] h-[44px] flex justify-center items-center outline outline-1 outline-zinc-500 hover:bg-zinc-300 transition z-10">
+          {% render 'icon-next-button' %}
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="{{ 'one-card-slider.js' | asset_url }}" defer></script>
+
+
+{% schema %}
+{
+  "name": "Home New Arrivals Slide",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "New Arrivals"
+    },
+    {
+      "type": "image_picker",
+      "id": "featured_image",
+      "label": "Featured Image"
+    },
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "label": "Products",
+      "limit": 10
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Category"
+        },
+         {
+        "type": "url",
+        "id": "link",
+        "label": "Category Link"
+      }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home New Arrivals Slide",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

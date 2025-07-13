@@ -1,0 +1,44 @@
+<div class="announcement-bar bg-secondary py-4 overflow-hidden">
+  <div class="announcement-slider flex flex-nowrap items-center font-castoro text-white text-[16px] tracking-wide whitespace-nowrap">
+    {% for block in section.blocks %}
+      <span class="px-8 flex-shrink-0">{{ block.settings.message }}</span>
+    {% endfor %}
+  </div>
+</div>
+
+<script src="{{ 'slider.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Home Bar Slider",
+  "tag": "section",
+  "class": "section-announcement-bar-slider",
+  "max_blocks": 10,
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Message",
+      "settings": [
+        {
+          "type": "text",
+          "id": "message",
+          "label": "Announcement Message",
+          "default": "ETHICAL ALSO FASHIONABLE"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Bar Slider",
+      "blocks": [
+        { "type": "message", "settings": { "message": "ETHICAL ALSO FASHIONABLE" } },
+        { "type": "message", "settings": { "message": "GET 20% BONUS ON REFER US" } },
+        { "type": "message", "settings": { "message": "10% DISCOUNT ON FIRST PURCHASE" } },
+        { "type": "message", "settings": { "message": "GET BEST PRODUCT IN BEST PRICE" } },
+        { "type": "message", "settings": { "message": "BEST FABRICS GUARANTY" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

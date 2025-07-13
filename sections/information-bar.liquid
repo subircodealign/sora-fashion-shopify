@@ -1,0 +1,68 @@
+<div class="py-4 px-2 mb-24 bg-secondary flex justify-between items-center md:gap-x-8">
+  {% for block in section.blocks %}
+    <div class="flex items-center" {{ block.shopify_attributes }}>
+      <span class="text-white text-xl md:text-[32px] font-normal font-catalina leading-[1.2] md:leading-[48px] whitespace-nowrap">
+        {{ block.settings.text }}
+      </span>
+    </div>
+
+    {% if forloop.index != section.blocks.size %}
+      <div class="flex items-center">
+        <span class="w-20 border border-white hidden md:block"></span>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Home Information Bar",
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Information Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Easy Returns"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Information Bar",
+      "category": "Promotional",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "text": "Easy Returns"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": "Worldwide Shipping"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": "Buy Now, Pay Later"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": "Online 7/12 supports"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

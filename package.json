@@ -1,0 +1,41 @@
+{
+  "name": "fashion-shopify-theme",
+  "version": "1.0.0",
+  "main": "index.js",
+"scripts": {
+  "dev":"shopify theme dev",
+  "dev:css": "tailwindcss -i ./assets/tailwind.css -o ./assets/theme.css --watch",
+  "backup:temp-dev": "shopify theme pull --store=sora-fashion-dev.myshopify.com && npm run push:dev && open https://sora-fashion-dev.myshopify.com/?preview_theme_id=134983778352",
+
+  "deploy:live": "npm run backup:all && npm run merge:settings && npm run build:css && npm run push:live",
+
+  "copy:fixed-dev":"cp ./backup/dev/config/settings_data.json ./config/settings_data.json",
+  "copy:live":"cp ./backup/live/config/settings_data.json ./config/settings_data.json",
+
+  "backup:fixed-dev": "shopify theme pull --store=sora-fashion-dev.myshopify.com --theme=134983778352 --path=./backup/dev",
+  "backup:live": "shopify theme pull --store=sora-fashion-dev.myshopify.com --theme=134982959152 --path=./backup/live",
+  "backup:all": "npm run backup:live && npm run backup:fixed-dev",
+
+  "list":"shopify theme list --store=sora-fashion-dev.myshopify.com",
+
+  "merge:settings": "node scripts/merge-settings.js",
+  "diff:settings": "node scripts/diff-settings.js",
+
+  "push:dev": "shopify theme push --store=sora-fashion-dev.myshopify.com --theme=134983778352",
+  "push:live": "shopify theme push --store=sora-fashion-dev.myshopify.com --theme=134982959152",
+
+  "build:css": "tailwindcss -i ./assets/tailwind.css -o ./assets/theme.css --minify",
+  
+  "test": "echo \"Error: no test specified\" && exit 1"
+}
+,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
+  }
+}

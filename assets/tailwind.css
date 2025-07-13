@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Castoro Titling';
+  src: url('{{ "CastoroTitling-Regular.woff2" | asset_url }}') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

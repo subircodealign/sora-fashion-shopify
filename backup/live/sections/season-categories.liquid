@@ -1,0 +1,145 @@
+{% if section.settings.section_heading != blank %}
+  <div class="w-[1012px] mt-24 pb-[48px] mx-auto">
+    <h2 class="text-[48px] font-catalina text-center text-primary leading-[64px]">
+      {{ section.settings.section_heading }}
+    </h2>
+  </div>
+{% endif %}
+
+<div class="w-full flex flex-col gap-6 px-24 pb-24">
+
+  <!-- Card 1 -->
+  <div class="relative group overflow-hidden">
+    {% if section.settings.img1 != blank %}
+      <img src="{{ section.settings.img1 | image_url: width: 1248 }}" alt="{{ section.settings.title1 | escape }}" width="1248" height="707"
+        class="w-full h-[707px] object-cover object-left transition-transform duration-500 group-hover:scale-105" loading="lazy">
+    {% else %}
+      <img src="https://placehold.co/1248x707" alt="Image 1 Placeholder" width="1248" height="707"
+        class="w-full h-[707px] object-cover object-left">
+    {% endif %}
+
+    <div class="absolute top-0 left-0 p-8 flex flex-col justify-between h-[calc(100%-5px)] bg-opacity-90 max-w-[310px]">
+      <div class="space-y-6">
+        <h3 class="text-primary text-[32px] font-normal font-catalina leading-[48px]">
+          {{ section.settings.title1 | default: "Woman's Fashion" }}
+        </h3>
+        <p class="text-accent text-lg font-normal font-catalina leading-7">
+          {{ section.settings.desc1 | default: "Default description for image 1." }}
+        </p>
+      </div>
+
+      <a href="{{ section.settings.link1 }}" class="mt-6 px-6 py-3 border border-secondary inline-flex items-center gap-1 justify-center transition-colors">
+        <span class="text-secondary text-[16px] font-normal font-figtree leading-relaxed">
+          {{ section.settings.btn1 | default: "Explore More" }}
+        </span>
+        <span class="w-6 h-6 flex items-center justify-center">
+          {% render 'icon-arrow' %}
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="relative group overflow-hidden">
+    {% if section.settings.img2 != blank %}
+      <img src="{{ section.settings.img2 | image_url: width: 1248 }}" alt="{{ section.settings.title2 | escape }}" width="1248" height="707"
+        class="w-full h-[707px] object-cover object-left transition-transform duration-500 group-hover:scale-105" loading="lazy">
+    {% else %}
+      <img src="https://placehold.co/1248x707" alt="Image 2 Placeholder" width="1248" height="707"
+        class="w-full h-[707px] object-cover object-left">
+    {% endif %}
+
+    <div class="absolute top-0 left-0 p-8 flex flex-col justify-between h-[calc(100%-5px)] bg-opacity-90 max-w-[310px]">
+      <div class="space-y-6">
+        <h3 class="text-primary text-[32px] font-normal font-catalina leading-[48px]">
+          {{ section.settings.title2 | default: "Men's Fashion" }}
+        </h3>
+        <p class="text-accent text-lg font-normal font-catalina leading-7">
+          {{ section.settings.desc2 | default: "Default description for image 2." }}
+        </p>
+      </div>
+
+      <a href="{{ section.settings.link2 }}" class="mt-6 px-6 py-3 border border-secondary inline-flex items-center gap-1 justify-center transition-colors">
+        <span class="text-secondary text-[16px] font-normal font-figtree leading-relaxed">
+          {{ section.settings.btn2 | default: "Shop Now" }}
+        </span>
+        <span class="w-6 h-6 flex items-center justify-center">
+          {% render 'icon-arrow' %}
+        </span>
+      </a>
+    </div>
+  </div>
+
+
+
+</div>
+
+{% schema %}
+{
+  "name": "Season Categories Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading",
+      "default": "Spring styles to wear together or apart, whatever the weather."
+    },
+    {
+      "type": "image_picker",
+      "id": "img1",
+      "label": "Image 1"
+    },
+    {
+      "type": "text",
+      "id": "title1",
+      "label": "Image 1 Title"
+    },
+    {
+      "type": "textarea",
+      "id": "desc1",
+      "label": "Image 1 Description"
+    },
+    {
+      "type": "url",
+      "id": "link1",
+      "label": "Image 1 Link"
+    },
+    {
+      "type": "text",
+      "id": "btn1",
+      "label": "Image 1 Button Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "img2",
+      "label": "Image 2"
+    },
+    {
+      "type": "text",
+      "id": "title2",
+      "label": "Image 2 Title"
+    },
+    {
+      "type": "textarea",
+      "id": "desc2",
+      "label": "Image 2 Description"
+    },
+    {
+      "type": "url",
+      "id": "link2",
+      "label": "Image 2 Link"
+    },
+    {
+      "type": "text",
+      "id": "btn2",
+      "label": "Image 2 Button Text"
+    },
+    
+  ],
+  "presets": [
+    {
+      "name": "Season Categories Section"
+    }
+  ]
+}
+{% endschema %}

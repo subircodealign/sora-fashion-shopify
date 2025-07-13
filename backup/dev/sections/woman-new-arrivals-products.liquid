@@ -1,0 +1,156 @@
+<section class="py-24 bg-white px-6 md:px-24">
+  <div class="container mx-auto">
+
+    <div class="flex justify-between items-center mb-12">
+      <h2 class="text-[48px] leading-[64px] font-catalina text-primary">
+        {{ section.settings.heading }}
+      </h2>
+       <nav class="space-x-6 text-primary text-[20px] leading-[32px]">
+        {% for block in section.blocks %}
+          {% if block.type == 'category_link' %}
+            <a href="{{ block.settings.link }}" class="hover:text-gray-900">{{ block.settings.label }}</a>
+          {% endif %}
+        {% endfor %}
+      </nav>
+    </div>
+
+
+    <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-10"></div>
+
+
+    <div class="flex justify-center">
+
+      <div class="w-[334px] h-[40px] bg-[#F5F5F5] flex items-center justify-center rounded-md">
+
+        <div id="pagination-controls" class="flex items-center gap-2"></div>
+      </div>
+    </div>
+
+
+<div id="product-pagination"
+     data-per-page="{{ section.settings.per_page }}"
+     data-products='[
+       {% assign manual_products = section.settings.product_list %}
+       {% if manual_products != blank %}
+         {% for product in manual_products %}
+           {
+             "title": {{ product.title | json }},
+             "price": {{ product.price | money_without_currency | json }},
+             "url": {{ product.url | json }},
+             "image": {{ product.featured_image | image_url: width: 279, height: 262 | json }},
+             "colors": [
+               {% assign color_options = product.options_with_values | where: "name", "Color" %}
+               {% if color_options.size > 0 %}
+                 {% for value in color_options[0].values %}
+                   "{{ value | handleize }}"{% unless forloop.last %},{% endunless %}
+                 {% endfor %}
+               {% endif %}
+             ]
+           }{% unless forloop.last %},{% endunless %}
+         {% endfor %}
+       {% elsif section.settings.collection != blank %}
+         {% for product in section.settings.collection.products %}
+           {
+             "title": {{ product.title | json }},
+             "price": {{ product.price | money_without_currency | json }},
+             "url": {{ product.url | json }},
+             "image": {{ product.featured_image | image_url: width: 279, height: 262 | json }},
+             "colors": [
+               {% assign color_options = product.options_with_values | where: "name", "Color" %}
+               {% if color_options.size > 0 %}
+                 {% for value in color_options[0].values %}
+                   "{{ value | handleize }}"{% unless forloop.last %},{% endunless %}
+                 {% endfor %}
+               {% endif %}
+             ]
+           }{% unless forloop.last %},{% endunless %}
+         {% endfor %}
+       {% endif %}
+     ]'>
+</div>
+
+
+
+<div style="display: none;">
+  <div id="icon-prev">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#6B749E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+    </svg>
+  </div>
+  <div id="icon-next">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#6B749E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>
+  </div>
+
+
+  <div id="icon-add-cart">
+    {% render 'icon-add-cart' %}
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+<script src="{{ 'pagination.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Woman Paginated Product",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Latest Products"
+    },
+    {
+      "type": "range",
+      "id": "per_page",
+      "label": "Products per Page",
+      "min": 3,
+      "max": 50,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Product Collection (optional)"
+    },
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "label": "Manual Products (optional)",
+      "limit": 50
+    }
+  ],
+    "blocks": [
+    {
+      "type": "category_link",
+      "name": "Category Link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Link Label",
+          "default": "Man"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link URL"
+        }
+      ]
+    },
+  
+  ],
+  "presets": [
+    {
+      "name": "Woman Paginated Products",
+      "category": "Products"
+    }
+  ]
+}
+{% endschema %}

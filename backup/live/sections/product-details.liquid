@@ -1,0 +1,162 @@
+<div class="min-h-screen flex flex-col bg-white text-gray-900 font-sans">
+  <main class="flex-grow">
+    <div class=" px-24 mt-12">
+
+      <!-- Product Detail Section -->
+      <div class="w-full flex flex-col lg:flex-row justify-start items-start gap-6 relative">
+        
+        <!-- Left Side: Images -->
+        <div class="w-full lg:w-[608.3px] p-3 outline outline-1 outline-neutral-100 flex flex-col gap-3">
+          <img 
+            id="main-product-image" 
+            class="w-full h-[687px] object-cover rounded" 
+            src="{{ product.featured_image | image_url: width:585, height:687 }}" 
+            alt="{{ product.title }}" 
+            width="585" 
+            height="687" 
+          />
+
+          <div class="w-full flex justify-between items-center gap-3">
+            {% for image in product.images limit:3 %}
+              <img 
+                class="w-1/3 h-48 object-cover outline outline-[5.84px] outline-white cursor-pointer thumbnail-image" 
+                src="{{ image | image_url: height:194 }}" 
+                alt="{{ product.title }}" 
+                data-large="{{ image | image_url: width:585, height:687 }}"
+                width="195" 
+                height="194" 
+              />
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Right Side: Info -->
+        <div class="flex-1 flex flex-col justify-between items-start">
+
+          <!-- Title + Rating -->
+          <div class="flex flex-col gap-4">
+            <div class="flex items-center justify-between">
+              <p class="text-zinc-800 text-3xl font-semibold leading-9">{{ product.title }}</p>
+              <div>
+                {% render 'icon-send' %}
+                </div>
+            </div>
+
+            <div class="flex items-center gap-[5px]">
+              <div class="w-28 flex justify-between items-center">
+                {% for i in (1..5) %}
+                  <div class="w-6 h-6 flex justify-center items-center">
+                    {% render 'icon-star' %}
+                  </div>
+                {% endfor %}
+              </div>
+              <div class="text-zinc-500 text-2xl leading-9">94</div>
+            </div>
+
+            <div class="text-zinc-800 text-base leading-relaxed">
+              {{ product.metafields.custom.short_intro }}
+            </div>
+          </div>
+
+          <!-- Dynamic Price -->
+  
+           <div class="flex items-center my-[88px] gap-[33px]">
+            {% if product.compare_at_price > product.price %}
+              <div class="text-accent text-2xl font-medium line-through">
+                {{ product.compare_at_price | money_without_currency }}$
+              </div>
+            {% endif %}
+            <div class="text-secondary text-3xl font-semibold">
+              {{ product.price | money_without_currency }}$ ONLY
+            </div>
+          </div>
+      
+
+{% if product.metafields.custom.purpose %}
+  <div class="mt-6">
+    <h2 class="font-medium text-[24px] text-primary mb-[15px]">Purpose:</h2>
+    {% assign points = product.metafields.custom.purpose.value | split: '.' %}
+    <ul class="list-disc list-outside pl-6 text-gray-800 text-base leading-relaxed m-0" 
+        style="list-style-type: disc !important; list-style-position: outside !important; padding-left: 1.5rem;">
+      {% for point in points %}
+        {% assign trimmed = point | strip %}
+        {% if trimmed != blank %}
+          <li style="margin-bottom: 0.5rem;">{{ trimmed }}.</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+
+{% if product.metafields.custom.benefits %}
+  <div class="my-[88px]">
+    <h2 class="font-medium text-[24px] text-primary mb-[15px]">Benefits:</h2>
+    {% assign points = product.metafields.custom.benefits.value | split: '.' %}
+    <ul class="list-disc list-outside pl-6 text-gray-800 text-base leading-relaxed m-0" 
+        style="list-style-type: disc !important; list-style-position: outside !important; padding-left: 1.5rem;">
+      {% for point in points %}
+        {% assign trimmed = point | strip %}
+        {% if trimmed != blank %}
+          <li style="margin-bottom: 0.5rem;">{{ trimmed }}.</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+
+
+
+
+          <!-- Buttons -->
+          <div class="flex gap-6 mt-4">
+            <button class="w-[367px] h-[50px] outline outline-1 outline-secondary text-secondary text-base flex justify-center items-center">
+              Buy Now
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-secondary ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+            <button class="w-[214px] h-[50px] flex-1 px-6 py-3 outline outline-1 outline-secondary text-secondary text-base flex justify-center items-center">
+              Add To Cart
+              {% render 'icon-add-cart' %}
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tabs Section (exactly 50px below product) -->
+      <div class="mt-[50px]">
+        <div class="flex gap-[30px] mb-[33px]">
+          <button class="tab-button w-[199px] h-[49px] text-accent font-semibold bg-[#F5F5F5]" data-tab="description">DESCRIPTIONS</button>
+          <button class="tab-button w-[199px] h-[49px] text-accent bg-[#F5F5F5]" data-tab="information">INFORMATION</button>
+          <button class="tab-button w-[199px] h-[49px] text-accent bg-[#F5F5F5]" data-tab="reviews">REVIEWS</button>
+        </div>
+        <div class="mb-24 bg-white">
+          <div id="tab-description" class="tab-content text-gray-700 leading-7">
+            {% if product.description != blank %}
+              {{ product.description }}
+            {% else %}
+              This is the product description. You can update this via Shopify admin.
+            {% endif %}
+          </div>
+          <div id="tab-information" class="tab-content hidden text-gray-700 leading-7">
+            {% if product.metafields.custom.information != blank %}
+              {{ product.metafields.custom.information }}
+            {% else %}
+              Shipping takes 3-5 days. Made with premium materials.
+            {% endif %}
+          </div>
+          <div id="tab-reviews" class="tab-content hidden text-gray-700 leading-7">
+            Customer reviews will show here dynamically via app or metafield.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+{% render 'product-related' %}
+
+<script src="{{ 'product-tabs.js' | asset_url }}" defer></script>
+

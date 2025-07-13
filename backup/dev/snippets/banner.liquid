@@ -1,0 +1,48 @@
+<section class="relative w-full"
+  style="background-image: url({{ background_image | image_url }}); background-size: cover; background-position: center; height: 658px;">
+
+  <div class="relative w-full h-full flex items-center">
+    <div class="pl-16 md:pl-24 z-10">
+
+      {% if badge_text != blank %}
+        <button class="w-[167px] h-[50px] py-3 px-6 text-[16px] leading-[26px] mb-8"
+          style="color: {{ badge_text_color }}; border: 1px solid {{ badge_border_color }}">
+          {{ badge_text }}
+        </button>
+      {% endif %}
+
+      {% if heading != blank %}
+        <h1 class="text-4xl md:text-5xl font-catalina font-normal leading-[64px] mb-4 max-w-[650px]"
+          style="color: {{ heading_color }}">
+          {{ heading }}
+        </h1>
+      {% endif %}
+
+      {% if subheading != blank %}
+        <p class="leading-9 text-2xl mb-8 max-w-[650px]"
+          style="color: {{ subheading_color }}">
+          {{ subheading }}
+        </p>
+      {% endif %}
+
+      <div class="flex flex-col sm:flex-row items-start gap-4">
+        {% if primary_button_text != blank %}
+          <a href="{{ primary_button_link }}"
+             style="background-color: {{ primary_button_bg_color }}; color: {{ primary_button_text_color }};"
+             class="text-[16px] flex justify-center items-center leading-[26px] py-3 px-6 w-[313px] h-[50px] hover:opacity-90 transition">
+            {{ primary_button_text }}
+          </a>
+        {% endif %}
+
+        {% if secondary_button_text != blank %}
+          <a href="{{ secondary_button_link }}"
+             style="border-color: {{ secondary_button_border_color }}; color: {{ secondary_button_text_color }};"
+             class="border text-[16px] flex justify-center items-center leading-[26px] w-[313px] h-[50px] px-6 py-3 hover:bg-gray-100 transition">
+            {{ secondary_button_text }}
+          </a>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</section>
