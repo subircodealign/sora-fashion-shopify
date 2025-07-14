@@ -1,4 +1,4 @@
-<div class="border p-4 flex flex-col w-full max-w-[294px]">
+<div class="border p-4 flex flex-col ">
 
 
     <a href="{{ product.url }}" class="block mb-4">
@@ -7,7 +7,7 @@
         width="262"
         height="279"
         alt="{{ product.title }}"
-        class="w-[262px] h-[279px] object-cover mx-auto"
+        class="w-full h-[279px] object-cover mx-auto"
       />
     </a>
 
@@ -60,8 +60,10 @@
   </div>
 
 
-  <button type="button" class="mt-auto border border-secondary text-secondary text-[16px] leading-[26px] px-6 py-3 flex items-center justify-center hover:bg-gray-100 transition duration-150">
-    Add To Cart {% render 'icon-add-cart' %}
-  </button>
+  <button type="button" onclick="addToCart({{ product.variants.first.id }})" 
+class="mt-auto border border-secondary text-secondary text-[16px] leading-[26px] px-6 py-3 flex items-center justify-center hover:bg-gray-100 transition duration-150">
+  Add To Cart {% render 'icon-add-cart' %}
+</button>
+
 
 </div>

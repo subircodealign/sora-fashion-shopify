@@ -1,4 +1,4 @@
-<nav class="relative bg-white py-4 px-6 md:px-24 shadow-sm z-50">
+<nav class="relative bg-white py-4 px-24 shadow-sm z-50">
   <div class="container mx-auto flex items-center justify-between">
 
     <!-- Logo -->
@@ -164,11 +164,17 @@
           {% render 'icon-search' %}
         </a>
       {% endif %}
-      {% if section.settings.show_cart %}
-        <a href="/cart" class="flex items-center justify-center w-6 h-6 hover:bg-gray-50">
-          {% render 'icon-shop-cart' %}
-        </a>
-      {% endif %}
+   <button id="cart-toggle" type="button" class="relative">
+  {% render 'icon-shop-cart' %}
+  <span id="cart-count"
+    class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center text-[10px] leading-none transition-transform duration-200 scale-100 {% unless cart.item_count > 0 %}hidden{% endunless %}">
+    {{ cart.item_count }}
+  </span>
+</button>
+
+
+
+
       {% if section.settings.show_account %}
         <a href="/account" class="flex items-center justify-center w-6 h-6 hover:bg-gray-50">
           {% render 'icon-user' %}

@@ -28,7 +28,7 @@
 
 
     {% if section.settings.featured_image != blank %}
-      <img class="w-[686px] h-[863px] object-cover mr-[104px]" src="{{ section.settings.featured_image | image_url: width: 686, height: 863 }}" alt="{{ section.settings.featured_image.alt }}" width="686" height="863" />
+      <img class="w-[525px] lg:w-[686px] h-[863px] object-cover mr-[104px]" src="{{ section.settings.featured_image | image_url: width: 686, height: 863 }}" alt="{{ section.settings.featured_image.alt }}" width="686" height="863" />
     {% endif %}
 
 
