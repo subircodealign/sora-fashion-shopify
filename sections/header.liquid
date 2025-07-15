@@ -1,12 +1,11 @@
-<nav class="relative bg-white py-4 px-24 shadow-sm z-50">
-  <div class="container mx-auto flex items-center justify-between">
+<nav class="relative bg-white  shadow-sm z-50 py-[1.25rem] px-16 lg:px-32 xl:px-24">
+  <div class="container mx-auto flex items-center justify-between space-x-3 lg:space-x-4">
 
     <!-- Logo -->
     <div class="flex-shrink-0">
       <a href="/" class="no-underline">
         {% if section.settings.logo_image != blank %}
-          <img src="{{ section.settings.logo_image | image_url: width: 101, height: 28 }}"
-            width="101" height="28" alt="Logo" class="h-10 object-contain" />
+          <img src="{{ section.settings.logo_image | image_url: width: 101, height: 28 }}" width="101" height="28" alt="Logo" class="h-10 object-contain" />
         {% else %}
           <span class="font-figtree text-4xl tracking-tight text-gray-900" style="letter-spacing: -0.05em;">
             {{ section.settings.logo_text | default: "SORA" }}
@@ -17,7 +16,7 @@
 
     <!-- Desktop Menu -->
     <div class="hidden md:flex flex-grow justify-center">
-      <ul class="flex space-x-5 lg:space-x-6">
+      <ul class="flex space-x-3 lg:space-x-[1.5rem]">
         {% for block in section.blocks %}
           {% if block.type == 'menu_item' %}
             {% assign is_active = false %}
@@ -25,131 +24,114 @@
               {% assign is_active = true %}
             {% endif %}
 
-            <li class=" group">
-          <a href="{{ block.settings.link | default: '#' }}"
-   class="flex items-center text-[16px] leading-[26px] no-underline font-normal text-gray-700 hover:text-gray-900 group">
-  
-  <span class="relative">
-    <span class="{% if is_active %} text-black {% endif %}">{{ block.settings.label }}</span>
-    
-    {% if is_active %}
-      <span class="absolute -bottom-0.5 left-0 w-full h-[2px] bg-primary"></span>
-    {% endif %}
-  </span>
-
-  {% if block.settings.has_dropdown and block.settings.show_dropdown_icon %}
-    <span class="ml-1">
-      {% render 'icon-menu-dropdown' %}
-    </span>
-  {% endif %}
-</a>
-
+            <li class="group">
+              <a href="{{ block.settings.link | default: '#' }}" class="flex items-center md:text-[0.85rem] lg:text-[1rem] leading-[1.625rem] no-underline font-normal text-gray-700 hover:text-gray-900 group">
+                <span class="relative">
+                  <span class="{% if is_active %} text-black {% endif %}">{{ block.settings.label }}</span>
+                  {% if is_active %}
+                    <span class="absolute -bottom-0.5 left-0 w-full h-[2px] bg-primary"></span>
+                  {% endif %}
+                </span>
+                {% if block.settings.has_dropdown and block.settings.show_dropdown_icon %}
+                  <span class="ml-1">
+                    {% render 'icon-menu-dropdown' %}
+                  </span>
+                {% endif %}
+              </a>
 
               {% if block.settings.has_dropdown %}
-<div
-  class="absolute top-full mx-auto left-0 w-full bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
->
- <div class="px-[96px] pt-[48px] pb-[32px] grid grid-cols-[242px_1px_120px_1px_1fr] gap-[60px] items-start overflow-hidden">
+                <div class="absolute top-full mx-auto left-0 w-full bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+
+                 <div class="px-4 md:px-8 lg:px-12 xl:px-[6rem] pt-8 pb-6 grid grid-cols-1 md:grid-cols-[10rem_1px_6rem_1px_1fr]  lg:grid-cols-[15.125rem_1px_7.5rem_1px_1fr] gap-4 md:gap-6 xl:gap-[3.75rem] items-start overflow-x-auto">
 
 
+                    <!-- Bold Headings -->
+                    <div class="flex flex-col gap-6">
+                      {% for i in (1..4) %}
+                        {% assign heading_key = 'mega_heading_' | append: i %}
+                        {% assign heading_link_key = 'mega_heading_link_' | append: i %}
+                        {% assign heading = block.settings[heading_key] %}
+                        {% assign heading_link = block.settings[heading_link_key] %}
+                        {% if heading != blank %}
+                          <a href="{{ heading_link }}" class="text-base font-semibold text-gray-800 hover:underline whitespace-nowrap">
+                            {{ heading }}
+                          </a>
+                        {% endif %}
+                      {% endfor %}
+                    </div>
 
-    <!-- Bold Headings -->
-    <div class="flex flex-col gap-6">
-      {% for i in (1..4) %}
-        {% assign heading_key = 'mega_heading_' | append: i %}
-        {% assign heading_link_key = 'mega_heading_link_' | append: i %}
-        {% assign heading = block.settings[heading_key] %}
-        {% assign heading_link = block.settings[heading_link_key] %}
-        {% if heading != blank %}
-          <a href="{{ heading_link }}" class="text-base font-semibold text-gray-800 hover:underline whitespace-nowrap">
-            {{ heading }}
-          </a>
-        {% endif %}
-      {% endfor %}
-    </div>
+                    <div class="w-full h-full bg-gray-200"></div>
 
-    <!-- Divider: Headings ↔ Submenus -->
-   <div class="w-full h-full bg-gray-200"></div> <!-- full height, full width inside 1px col -->
+                    <!-- Submenus -->
+                    <div class="flex flex-col gap-6">
+                      {% for i in (1..4) %}
+                        {% assign submenu_key = 'submenu_label_' | append: i %}
+                        {% assign submenu_link_key = 'submenu_link_' | append: i %}
+                        {% assign sub_label = block.settings[submenu_key] %}
+                        {% assign sub_link = block.settings[submenu_link_key] %}
+                        {% if sub_label != blank %}
+                          <a href="{{ sub_link }}" class="text-base text-gray-700 hover:underline whitespace-nowrap">
+                            {{ sub_label }}
+                          </a>
+                        {% endif %}
+                      {% endfor %}
+                    </div>
 
+                    <div class="w-full h-full bg-gray-200"></div>
 
-    <!-- Submenus -->
-    <div class="flex flex-col gap-6">
-      {% for i in (1..4) %}
-        {% assign submenu_key = 'submenu_label_' | append: i %}
-        {% assign submenu_link_key = 'submenu_link_' | append: i %}
-        {% assign sub_label = block.settings[submenu_key] %}
-        {% assign sub_link = block.settings[submenu_link_key] %}
-        {% if sub_label != blank %}
-          <a href="{{ sub_link }}" class="text-base text-gray-700 hover:underline whitespace-nowrap">
-            {{ sub_label }}
-          </a>
-        {% endif %}
-      {% endfor %}
-    </div>
+                    <!-- Product Cards -->
+                    <div class="flex justify-center gap-4 md:gap-6 lg:gap-[3.75rem]">
+                      {% for index in (1..2) %}
+                        {% assign product_key = 'manual_product_' | append: index %}
+                        {% assign product = all_products[block.settings[product_key]] %}
+                        {% if product %}
+                          <div class="bg-gray-100 p-4 flex flex-col gap-2">
+                            <a href="{{ product.url }}">
+                              <img src="{{ product.featured_image | image_url: width: 262,height: 279 }}" width="262" height="279" alt="{{ product.title }}" class="w-40 h-40 md:w-[12rem] md:h-[12rem] lg:w-[16.375rem] lg:h-[17.4375rem] object-cover" />
+                            </a>
+                            <a href="{{ product.url }}" class="text-lg font-semibold text-gray-800 hover:underline">{{ product.title }}</a>
+                            <div class="text-xl font-bold text-gray-800">{{ product.price | money }}</div>
+                            <div class="flex space-x-2">
+                              {% assign color_options = product.options_with_values | where: "name", "Color" %}
+                              {% if color_options.size > 0 %}
+                                {% for option in color_options %}
+                                  {% for value in option.values limit:3 %}
+                                    {% assign color_class = '' %}
+                                    {% assign color_value = value | downcase | strip %}
+                                    {% case color_value %}
+                                      {% when 'steel blue' %}{% assign color_class = 'bg-[#6B749E]' %}
+                                      {% when 'brownish red' %}{% assign color_class = 'bg-[#9E5A4F]' %}
+                                      {% when 'light brown' %}{% assign color_class = 'bg-[#AD8A77]' %}
+                                      {% when 'black' %}{% assign color_class = 'bg-[#2F2F2F]' %}
+                                      {% when 'soft ivory' %}{% assign color_class = 'bg-[#EBE1DC]' %}
+                                      {% when 'soft sand' %}{% assign color_class = 'bg-[#E5C3A1]' %}
+                                      {% when 'purple' %}{% assign color_class = 'bg-[#886B9E]' %}
+                                      {% when 'light cool gray' %}{% assign color_class = 'bg-[#C0C6C6]' %}
+                                      {% else %}{% assign color_class = '' %}
+                                    {% endcase %}
+                                    {% if color_class != '' %}
+                                      <span class="w-3 h-3 rounded-full {{ color_class }}" title="{{ value }}"></span>
+                                    {% elsif value != blank %}
+                                      <span class="w-3 h-3 rounded-full" style="background-color: {{ value }};" title="{{ value }}"></span>
+                                    {% else %}
+                                      <span class="w-3 h-3 rounded-full bg-gray-300"></span>
+                                    {% endif %}
+                                  {% endfor %}
+                                {% endfor %}
+                              {% else %}
+                                <span class="w-3 h-3 rounded-full bg-gray-300"></span>
+                              {% endif %}
+                            </div>
+                            <a href="{{ product.url }}" class="mt-2 px-4 py-2 text-sm text-slate-500 border border-slate-500 hover:bg-slate-100 flex items-center justify-center gap-1">
+                              Add To Cart
+                            </a>
+                          </div>
+                        {% endif %}
+                      {% endfor %}
+                    </div>
 
-    <!-- Divider: Submenus ↔ Products -->
-   <div class="w-full h-full bg-gray-200"></div> <!-- full height, full width inside 1px col -->
-
-
-    <!-- Product Cards -->
-    <div class="flex justify-center gap-[60px]">
-      {% for index in (1..2) %}
-        {% assign product_key = 'manual_product_' | append: index %}
-        {% assign product = all_products[block.settings[product_key]] %}
-        {% if product %}
-          <div class="bg-gray-100 p-4 flex flex-col gap-2">
-            <a href="{{ product.url }}">
-              <img src="{{ product.featured_image | image_url: width: 262,height: 279 }}" width="262px" height="279px" alt="{{ product.title }}" class="h-[279px] w-[262px] object-cover" />
-            </a>
-            <a href="{{ product.url }}" class="text-lg font-semibold text-gray-800 hover:underline">{{ product.title }}</a>
-            <div class="text-xl font-bold text-gray-800">{{ product.price | money }}</div>
-           <div class="flex space-x-2">
-  {% assign color_options = product.options_with_values | where: "name", "Color" %}
-  {% if color_options.size > 0 %}
-    {% for option in color_options %}
-      {% for value in option.values limit:3 %}
-        {% assign color_class = '' %}
-        {% assign color_value = value | downcase | strip %}
-
-        {% case color_value %}
-          {% when 'steel blue' %}{% assign color_class = 'bg-[#6B749E]' %}
-          {% when 'brownish red' %}{% assign color_class = 'bg-[#9E5A4F]' %}
-          {% when 'light brown' %}{% assign color_class = 'bg-[#AD8A77]' %}
-          {% when 'black' %}{% assign color_class = 'bg-[#2F2F2F]' %}
-          {% when 'soft ivory' %}{% assign color_class = 'bg-[#EBE1DC]' %}
-          {% when 'soft sand' %}{% assign color_class = 'bg-[#E5C3A1]' %}
-          {% when 'purple' %}{% assign color_class = 'bg-[#886B9E]' %}
-          {% when 'light cool gray' %}{% assign color_class = 'bg-[#C0C6C6]' %}
-          {% else %}{% assign color_class = '' %}
-        {% endcase %}
-
-        {% if color_class != '' %}
-          <span class="w-3 h-3 rounded-full {{ color_class }}" title="{{ value }}"></span>
-        {% elsif value != blank %}
-          <span class="w-3 h-3 rounded-full" style="background-color: {{ value }};" title="{{ value }}"></span>
-        {% else %}
-          <span class="w-3 h-3 rounded-full bg-gray-300"></span>
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
-  {% else %}
-    <span class="w-3 h-3 rounded-full bg-gray-300"></span>
-  {% endif %}
-</div>
-
-            <a href="{{ product.url }}" class="mt-2 px-4 py-2 text-sm text-slate-500 border border-slate-500 hover:bg-slate-100 flex items-center justify-center gap-1">
-              Add To Cart
-            </a>
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
-
-  </div>
-</div>
-
-
-
+                  </div>
+                </div>
               {% endif %}
             </li>
           {% endif %}
@@ -158,23 +140,18 @@
     </div>
 
     <!-- Icons -->
-    <div class="flex items-center space-x-3 ml-auto">
+    <div class="flex items-center space-x-2 lg:space-x-3 ml-auto">
       {% if section.settings.show_search %}
         <a href="#" class="flex items-center justify-center w-6 h-6 hover:bg-gray-50">
           {% render 'icon-search' %}
         </a>
       {% endif %}
-   <button id="cart-toggle" type="button" class="relative">
-  {% render 'icon-shop-cart' %}
-  <span id="cart-count"
-    class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center text-[10px] leading-none transition-transform duration-200 scale-100 {% unless cart.item_count > 0 %}hidden{% endunless %}">
-    {{ cart.item_count }}
-  </span>
-</button>
-
-
-
-
+      <button id="cart-toggle" type="button" class="relative">
+        {% render 'icon-shop-cart' %}
+        <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center text-[10px] leading-none transition-transform duration-200 scale-100 {% unless cart.item_count > 0 %}hidden{% endunless %}">
+          {{ cart.item_count }}
+        </span>
+      </button>
       {% if section.settings.show_account %}
         <a href="/account" class="flex items-center justify-center w-6 h-6 hover:bg-gray-50">
           {% render 'icon-user' %}
@@ -186,8 +163,7 @@
     <div class="md:hidden flex items-center">
       <button id="mobile-menu-button" aria-label="Toggle Mobile Menu" class="text-gray-700 hover:text-gray-900 focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
     </div>
@@ -203,7 +179,6 @@
               <a href="{{ block.settings.link | default: '#' }}" class="text-gray-700 no-underline hover:bg-gray-100 block flex-grow">
                 {{ block.settings.label }}
               </a>
-
               {% if block.settings.has_dropdown %}
                 <button aria-label="Toggle submenu" class="ml-2 mobile-submenu-toggle focus:outline-none">
                   <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -212,7 +187,6 @@
                 </button>
               {% endif %}
             </div>
-
             {% if block.settings.has_dropdown %}
               <ul class="mobile-submenu hidden flex flex-col pl-4 border-l border-gray-200">
                 {% for i in (1..4) %}
@@ -236,7 +210,6 @@
     </ul>
   </div>
 </nav>
-
 <script src="{{ 'header.js' | asset_url }}" defer></script>
 
 
