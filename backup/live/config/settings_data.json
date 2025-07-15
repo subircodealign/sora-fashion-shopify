@@ -66,7 +66,7 @@
             "settings": {
               "label": "New Apparels",
               "link": "shopify://pages/new-apparels",
-              "has_dropdown": true,
+              "has_dropdown": false,
               "show_dropdown_icon": true,
               "mega_heading_1": "",
               "mega_heading_link_1": "",
@@ -94,7 +94,7 @@
             "settings": {
               "label": "Seasons",
               "link": "shopify://pages/seasons",
-              "has_dropdown": true,
+              "has_dropdown": false,
               "show_dropdown_icon": true,
               "mega_heading_1": "",
               "mega_heading_link_1": "",
@@ -848,7 +848,7 @@
         "type": "home-categories",
         "settings": {
           "section_heading": "Spring styles to wear together or apart, whatever the weather.",
-          "main_image": "shopify://shop_images/category-women1.webp",
+          "main_image": "shopify://shop_images/Image.png",
           "main_title": "",
           "main_description": "",
           "main_link": "",
@@ -1004,6 +1004,42 @@
       },
       "home-new-arrivals-products": {
         "type": "home-new-arrivals-products",
+        "blocks": {
+          "category_link_6wGMJU": {
+            "type": "category_link",
+            "settings": {
+              "label": "Man",
+              "link": ""
+            }
+          },
+          "category_link_P4bCND": {
+            "type": "category_link",
+            "settings": {
+              "label": "Woman",
+              "link": ""
+            }
+          },
+          "category_link_P3NBmq": {
+            "type": "category_link",
+            "settings": {
+              "label": "Child",
+              "link": ""
+            }
+          },
+          "category_link_QjPmze": {
+            "type": "category_link",
+            "settings": {
+              "label": "Accessories",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "category_link_6wGMJU",
+          "category_link_P4bCND",
+          "category_link_P3NBmq",
+          "category_link_QjPmze"
+        ],
         "settings": {
           "heading": "Our New Arrivals",
           "collection": "new-arrivals",

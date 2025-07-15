@@ -146,11 +146,12 @@
           {% render 'icon-search' %}
         </a>
       {% endif %}
-      <button id="cart-toggle" type="button" class="relative">
+      <button id="cart-toggle" type="button"  class="relative">
         {% render 'icon-shop-cart' %}
-        <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center text-[10px] leading-none transition-transform duration-200 scale-100 {% unless cart.item_count > 0 %}hidden{% endunless %}">
-          {{ cart.item_count }}
-        </span>
+        <span id="cart-count" class="hidden absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center text-[10px] leading-none transition-transform duration-200 scale-100">
+  0
+</span>
+
       </button>
       {% if section.settings.show_account %}
         <a href="/account" class="flex items-center justify-center w-6 h-6 hover:bg-gray-50">

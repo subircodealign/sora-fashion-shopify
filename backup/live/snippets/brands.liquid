@@ -1,4 +1,12 @@
-<div class="mx-auto px-4 overflow-hidden relative">
+{% assign page_type = request.page_type %}
+
+<div class="mx-auto px-4 overflow-hidden relative
+  {% if page_type == 'index' %}
+    mb-24
+  {% else %}
+    mb-0
+  {% endif %}
+  ">
   <div class="flex flex-col items-center gap-8">
     <h2 class="text-center text-primary text-5xl font-normal font-catalina leading-[64px] w-full">
       {{ heading | default: "Brand that we featured" }}

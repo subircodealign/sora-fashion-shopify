@@ -1,0 +1,34 @@
+<!-- Add to Cart Button somewhere -->
+<button class="add-to-cart bg-black text-white px-4 py-2" data-variant="{{ product.variants.first.id }}">
+  Add to Cart
+</button>
+
+<!-- Cart Count Icon -->
+<div id="cart-icon" class="relative cursor-pointer">
+  <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center hidden">0</span>
+  <svg id="cart-toggle" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4"></path>
+    <circle cx="7" cy="21" r="1"></circle>
+    <circle cx="17" cy="21" r="1"></circle>
+  </svg>
+</div>
+
+<!-- Cart Overlay -->
+<div id="cart-overlay" class="fixed inset-0 bg-black bg-opacity-40 hidden z-40"></div>
+
+<!-- Cart Drawer -->
+<div id="cart-drawer" class="fixed top-0 right-0 w-full max-w-md h-full bg-white shadow-xl transform translate-x-full transition-transform z-50 p-6 flex flex-col">
+  <div class="flex justify-between items-center mb-4">
+    <h2 class="text-xl font-semibold">Your Cart</h2>
+    <button id="close-cart" class="text-gray-600 hover:text-red-600 text-xl">&times;</button>
+  </div>
+
+  <div id="cart-items" class="flex-1 overflow-y-auto space-y-4"></div>
+
+  <p id="cart-empty" class="text-gray-500 text-center mt-10 hidden">Your cart is empty.</p>
+
+  <div class="mt-6 border-t pt-4">
+    <p class="text-right font-semibold text-lg">Total: <span id="cart-total">0$ USD</span></p>
+    <a href="/checkout" class="mt-4 block text-center bg-black text-white py-2 rounded">Checkout</a>
+  </div>
+</div>

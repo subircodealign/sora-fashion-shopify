@@ -1,29 +1,29 @@
 {% assign page_type = request.page_type %}
 
 {% if section_heading != blank %}
-  <div class="pb-[48px] 
+  <div class="pb-12
      {% if page_type == 'index' %}
        mt-0
      {% else %}
        mt-24
      {% endif %}
     ">
-    <h2 class="text-[48px] mx-[134px] lg:mx-[214px] font-catalina text-center text-primary leading-[64px]">
+    <h2 class="text-[3rem] mx-16 lg:mx-[5.85rem] xl:mx-52 font-catalina text-center text-primary leading-[4rem]">
       {{ section_heading }}
     </h2>
   </div>
 {% endif %}
 
-<div class="w-full flex flex-col md:flex-row gap-6 px-6 md:px-24 pb-24">
+<div class="w-full flex flex-col lg:flex-row gap-6 px-16 lg:px-24 pb-24">
 
   <!-- Main Image Part -->
-  <div class="relative group overflow-hidden md:w-2/3">
+  <div class="relative group overflow-hidden w-full lg:w-2/3">
     {% if main_image != blank %}
       <img
         src="{{ main_image | image_url: width: 771, height: 707 }}"
         alt="{{ main_title | escape }}"
         width="771" height="707"
-        class="w-full object-cover object-left transition-transform duration-500 group-hover:scale-105 md:h-[611px] lg:h-full"
+        class="w-full object-cover object-left transition-transform duration-500 group-hover:scale-105 h-[30rem] lg:h-[38.1875rem] xl:h-full"
         loading="lazy"
       >
     {% else %}
@@ -31,13 +31,13 @@
         src="https://placehold.co/771x707"
         alt="Main Image Placeholder"
         width="771" height="707"
-        class="w-full object-cover object-left md:h-[611px] h-full"
+        class="w-full object-cover object-left md:h-[44rem] h-full"
       >
     {% endif %}
 
-    <div class="absolute top-0 left-0 p-8 flex flex-col justify-between h-[calc(100%-5px)] bg-opacity-90 max-w-[310px]">
+    <div class="absolute top-0 left-0 p-6 flex flex-col justify-between h-[calc(100%-5px)] bg-opacity-90 max-w-[19.375rem]">
       <div class="space-y-6">
-        <h3 class="text-primary text-[32px] font-normal font-catalina leading-[48px]">
+        <h3 class="text-primary text-2xl font-normal font-catalina leading-12">
           {{ main_title | default: "Woman's Fashion" }}
         </h3>
         <p class="text-accent text-lg font-normal font-catalina leading-7">
@@ -46,7 +46,7 @@
       </div>
 
       <a href="{{ main_link }}" class="mt-6 px-6 py-3 border border-secondary inline-flex items-center gap-1 justify-center transition-colors">
-        <span class="text-secondary text-[16px] font-normal font-figtree leading-relaxed">
+        <span class="text-secondary text-base font-normal font-figtree leading-relaxed">
           {{ main_button | default: "Explore More" }}
         </span>
         <span class="w-6 h-6 flex items-center justify-center">
@@ -57,10 +57,10 @@
   </div>
 
   <!-- Right Side Cards Part -->
-  <div class="flex flex-col gap-6 md:w-1/3">
+  <div class="flex flex-col gap-6 w-full lg:w-1/3">
 
     <!-- Card 1 -->
-    <div class="relative group overflow-hidden flex-1 h-[341px]">
+    <div class="relative group overflow-hidden flex-1 h-[21rem]">
       {% if card_1_image != blank %}
         <img
           src="{{ card_1_image | image_url: width: 453, height:341 }}"
@@ -79,18 +79,18 @@
         >
       {% endif %}
 
-      <div class="absolute top-0 left-0 p-4 max-w-[256px]">
+      <div class="absolute top-0 left-0 p-4 max-w-[16rem]">
         <div class="space-y-4">
           <h3 class="text-primary text-2xl font-medium font-figtree leading-9">
             {{ card_1_title | default: "Woman's Fashion" }}
           </h3>
-          <p class="text-accent text-sm font-normal font-figtree leading-[20px]">
+          <p class="text-accent text-sm font-normal font-figtree leading-5">
             {{ card_1_description | default: "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us" }}
           </p>
         </div>
 
         <a href="{{ card_1_link }}" class="mt-4 px-6 py-3 border border-secondary inline-flex items-center gap-1 justify-center transition-colors">
-          <span class="text-secondary font-normal text-[16px] font-figtree leading-relaxed">
+          <span class="text-secondary font-normal text-base font-figtree leading-relaxed">
             {{ card_1_button | default: "Explore More" }}
           </span>
           <span class="w-6 h-6 flex items-center justify-center">
@@ -101,7 +101,7 @@
     </div>
 
     <!-- Card 2 -->
-    <div class="relative group overflow-hidden flex-1 h-[341px]">
+    <div class="relative group overflow-hidden flex-1 h-[21rem]">
       {% if card_2_image != blank %}
         <img
           src="{{ card_2_image | image_url: width: 453, height:341 }}"
@@ -120,18 +120,18 @@
         >
       {% endif %}
 
-      <div class="absolute top-0 left-0 p-4 max-w-[256px]">
+      <div class="absolute top-0 left-0 p-4 max-w-[16rem]">
         <div class="space-y-4">
           <h3 class="text-primary text-2xl font-medium font-figtree leading-9">
             {{ card_2_title | default: "Woman's Fashion" }}
           </h3>
-          <p class="text-accent text-sm font-normal font-figtree leading-[20px]">
+          <p class="text-accent text-sm font-normal font-figtree leading-5">
             {{ card_2_description | default: "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us" }}
           </p>
         </div>
 
         <a href="{{ card_2_link }}" class="mt-4 px-6 py-3 border border-secondary inline-flex items-center gap-1 justify-center transition-colors">
-          <span class="text-secondary font-normal text-[16px] font-figtree leading-relaxed">
+          <span class="text-secondary font-normal text-base font-figtree leading-relaxed">
             {{ card_2_button | default: "Explore More" }}
           </span>
           <span class="w-6 h-6 flex items-center justify-center">

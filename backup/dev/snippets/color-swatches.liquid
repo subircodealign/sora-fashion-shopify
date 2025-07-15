@@ -1,0 +1,20 @@
+{% assign color_value = value | downcase | strip %}
+{% case color_value %}
+  {% when 'steel blue' %}{% assign color_class = 'bg-[#6B749E]' %}
+  {% when 'brownish red' %}{% assign color_class = 'bg-[#9E5A4F]' %}
+  {% when 'light brown' %}{% assign color_class = 'bg-[#AD8A77]' %}
+  {% when 'black' %}{% assign color_class = 'bg-[#2F2F2F]' %}
+  {% when 'soft ivory' %}{% assign color_class = 'bg-[#EBE1DC]' %}
+  {% when 'soft sand' %}{% assign color_class = 'bg-[#E5C3A1]' %}
+  {% when 'purple' %}{% assign color_class = 'bg-[#886B9E]' %}
+  {% when 'light cool gray' %}{% assign color_class = 'bg-[#C0C6C6]' %}
+  {% else %}{% assign color_class = '' %}
+{% endcase %}
+
+{% if color_class != '' %}
+  <span class="w-[0.75rem] h-[0.75rem] rounded-full {{ color_class }}" title="{{ value }}"></span>
+{% elsif value != blank %}
+  <span class="w-[0.75rem] h-[0.75rem] rounded-full" style="background-color: {{ value }};" title="{{ value }}"></span>
+{% else %}
+  <span class="w-[0.75rem] h-[0.75rem] rounded-full bg-gray-300"></span>
+{% endif %}

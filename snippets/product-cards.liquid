@@ -1,69 +1,47 @@
-<div class="border p-4 flex flex-col ">
+<div class="border p-[1rem] flex flex-col h-[30.3125rem]">
+  <a href="{{ product.url }}" class="block mb-[1rem]">
+    <img
+      src="{{ product.featured_image | image_url: width: 262, height: 279 }}"
+      width="262"
+      height="279"
+      alt="{{ product.title }}"
+      class="w-full h-[16rem] lg:h-[17.4375rem] object-cover mx-auto"
+    />
+  </a>
 
+  <div class="flex flex-col flex-grow justify-between">
+    <div>
+      <a href="{{ product.url }}">
+        <button class="text-primary font-semibold text-[1.125rem] leading-[1.75rem] mb-[0.25rem] hover:underline text-left">
+          {{ product.title }}
+        </button>
+      </a>
 
-    <a href="{{ product.url }}" class="block mb-4">
-      <img
-        src="{{ product.featured_image | image_url: width: 262, height: 279 }}"
-        width="262"
-        height="279"
-        alt="{{ product.title }}"
-        class="w-full h-[279px] object-cover mx-auto"
-      />
-    </a>
+      <p class="text-[1.40rem] lg:text-[1.5rem] leading-[2.25rem] font-bold mb-[0.75rem]">
+        {{ product.price | money_without_currency }}$
+      </p>
+    </div>
 
-  <div class="flex-grow">
-
-    <a href="{{ product.url }}">
-      <button class="text-primary font-semibold text-[18px] leading-[28px] mb-1 hover:underline text-left ">
-        {{ product.title }}
-      </button>
-    </a>
-
-    <p class="text-[24px] leading-[36px] font-bold mb-3">
-      {{ product.price | money_without_currency }}$
-    </p>
-
-
-    <div class="flex space-x-2 mb-4">
+    <div class="flex space-x-2 mb-[1rem]">
       {% assign color_options = product.options_with_values | where: "name", "Color" %}
       {% if color_options.size > 0 %}
         {% for option in color_options %}
-          {% for value in option.values limit:3 %}
-            {% assign color_class = '' %}
-            {% assign color_value = value | downcase | strip %}
-
-            {% case color_value %}
-              {% when 'steel blue' %}{% assign color_class = 'bg-[#6B749E]' %}
-              {% when 'brownish red' %}{% assign color_class = 'bg-[#9E5A4F]' %}
-              {% when 'light brown' %}{% assign color_class = 'bg-[#AD8A77]' %}
-              {% when 'black' %}{% assign color_class = 'bg-[#2F2F2F]' %}
-              {% when 'soft ivory' %}{% assign color_class = 'bg-[#EBE1DC]' %}
-              {% when 'soft sand' %}{% assign color_class = 'bg-[#E5C3A1]' %}
-              {% when 'purple' %}{% assign color_class = 'bg-[#886B9E]' %}
-              {% when 'light cool gray' %}{% assign color_class = 'bg-[#C0C6C6]' %}
-              {% else %}{% assign color_class = '' %}
-            {% endcase %}
-
-            {% if color_class != '' %}
-              <span class="w-3 h-3 rounded-full {{ color_class }}" title="{{ value }}"></span>
-            {% elsif value != blank %}
-              <span class="w-3 h-3 rounded-full" style="background-color: {{ value }};" title="{{ value }}"></span>
-            {% else %}
-              <span class="w-3 h-3 rounded-full bg-gray-300"></span>
-            {% endif %}
+          {% for value in option.values limit: 3 %}
+            {% render 'color-swatches', value: value %}
           {% endfor %}
         {% endfor %}
       {% else %}
-        <span class="w-3 h-3 rounded-full bg-gray-300"></span>
+        <span class="w-[0.75rem] h-[0.75rem] rounded-full bg-gray-300"></span>
       {% endif %}
     </div>
   </div>
 
-
-  <button type="button" onclick="addToCart({{ product.variants.first.id }})" 
-class="mt-auto border border-secondary text-secondary text-[16px] leading-[26px] px-6 py-3 flex items-center justify-center hover:bg-gray-100 transition duration-150">
+ <button
+  type="button"
+  data-variant="{{ product.variants.first.id }}"
+  class="add-to-cart mt-auto border border-secondary text-secondary text-[1rem] leading-[1.625rem] px-[1.5rem] py-[0.75rem] flex items-center justify-center hover:bg-gray-100 transition duration-150"
+>
   Add To Cart {% render 'icon-add-cart' %}
 </button>
-
 
 </div>
