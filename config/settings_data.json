@@ -812,24 +812,8 @@
         "settings": {
           "heading": "Our New Arrivals",
           "per_page": 12,
-          "collection": "",
-          "product_list": [
-            "browne-winter-sweater",
-            "browne-winter-sweater-1",
-            "full-shirt",
-            "gift-card",
-            "the-complete-snowboard",
-            "the-compare-at-price-snowboard",
-            "the-collection-snowboard-oxygen",
-            "the-collection-snowboard-liquid",
-            "the-collection-snowboard-hydrogen",
-            "the-3p-fulfilled-snowboard",
-            "slim-gray-t-shirt-for-boys",
-            "selling-plans-ski-wax",
-            "print-sweater-for-winter",
-            "new-kurta-s-for-boys",
-            "mash-winter-sweater"
-          ]
+          "collection": "new-arrivals",
+          "product_list": []
         }
       },
       "woman-categories": {
