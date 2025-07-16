@@ -57,32 +57,36 @@ document.addEventListener("DOMContentLoaded", function () {
     if (validItems.length === 0) {
       cartItemsContainer.innerHTML = "";
       cartEmptyText.classList.remove("hidden");
-      cartTotalEl.textContent = "0.00 $";
+      cartTotalEl.textContent = "0.00$ USD";
       return;
     }
 
     cartEmptyText.classList.add("hidden");
 
     const html = validItems.map(item => `
-      <div class="cart-item flex gap-4 border p-4 rounded relative items-start" data-variant-id="${item.variant_id}">
-        <img src="${item.image}" alt="${item.product_title}" class="w-20 h-20 object-cover rounded" />
+      <div class="cart-item flex gap-4 bg-[#F5F5F5] p-4 rounded relative items-start" data-variant-id="${item.variant_id}">
+        <img src="${item.image}" alt="${item.product_title}" class="w-28 h-32 object-cover rounded" />
+
         <div class="flex-1 pr-6">
           <div class="flex justify-between items-start">
             <div>
               <p class="font-medium">${item.product_title}</p>
-              <p class="text-gray-500 text-sm">${item.variant_title || ""}</p>
+             
             </div>
-            <button class="remove-item text-gray-400 hover:text-red-600 w-5 h-5 mt-1" title="Remove item" aria-label="Remove item">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
+          <button class="remove-item text-gray-400 hover:text-red-600 w-6 h-6 mt-1" title="Remove item" aria-label="Remove item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 40 40" fill="none">
+    <path d="M19.9997 36.6673C29.1663 36.6673 36.6663 29.1673 36.6663 20.0007C36.6663 10.834 29.1663 3.33398 19.9997 3.33398C10.833 3.33398 3.33301 10.834 3.33301 20.0007C3.33301 29.1673 10.833 36.6673 19.9997 36.6673Z" stroke="#8B8B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M15.2832 24.7165L24.7165 15.2832" stroke="#8B8B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M24.7165 24.7165L15.2832 15.2832" stroke="#8B8B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
           </div>
-          <p class="text-black font-semibold mt-1">${(item.price / 100).toFixed(2)} $</p>
+          <p class="text-primary font-bold text-2xl mt-1">${(item.price / 100).toFixed(2)} $ <span class=" font-normal text-sm text-accent"> 30% Off</span></p>
+
           <div class="mt-3 flex items-center border rounded w-max">
             <button class="decrease-qty px-3 text-xl" aria-label="Decrease quantity">−</button>
-            <span class="px-2 min-w-[20px] text-center">${item.quantity}</span>
+            <span class="px-2 min-w-5 text-center">${item.quantity}</span>
             <button class="increase-qty px-3 text-xl" aria-label="Increase quantity">+</button>
           </div>
         </div>
@@ -90,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
     `).join("");
 
     cartItemsContainer.innerHTML = html;
+    console.log(cart)
     cartTotalEl.textContent = (cart.total_price / 100).toFixed(2) + " $";
   }
 

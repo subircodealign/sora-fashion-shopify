@@ -1,0 +1,148 @@
+<section class="w-full min-h-screen p-[6rem] flex flex-col lg:flex-row justify-between items-start gap-20 bg-white">
+  <!-- Left Image -->
+  <div class="w-[28.375rem] h-[36.3125rem] lg:w-[35vw] lg:h-auto overflow-hidden">
+    <img src="{{ section.settings.contact_image | image_url: width: 900 }}" alt="Contact Image" class="w-full h-full object-cover" />
+  </div>
+
+  <!-- Contact Form and Info -->
+  <div class="w-full lg:w-[55vw] flex flex-col gap-16">
+    <!-- Heading -->
+    <h2 class="text-[2.75rem] leading-[4rem] font-catalina text-zinc-800">
+      {{ section.settings.contact_heading }}
+    </h2>
+
+    <!-- Form and Contact Info -->
+    <div class="flex flex-col md:flex-row justify-between gap-24">
+      <!-- Contact Form -->
+      <form method="post" action="/contact#contact_form" accept-charset="UTF-8" class="w-full md:w-[60%] flex flex-col gap-[5.125rem]" id="contact_form">
+        <input type="hidden" name="form_type" value="contact" />
+        <input type="hidden" name="utf8" value="✓" />
+
+        <div>
+          <label for="ContactFormName" class="text-xl text-zinc-800 font-figtree">Full Name</label>
+          <input type="text" id="ContactFormName" name="contact[name]" required class="w-full bg-transparent border-b-[0.1875rem] border-zinc-800 py-2" />
+        </div>
+
+        <div>
+          <label for="ContactFormEmail" class="text-xl text-zinc-800 font-figtree">E-mail</label>
+          <input type="email" id="ContactFormEmail" name="contact[email]" required class="w-full bg-transparent border-b-[0.1875rem] border-zinc-800 py-2" />
+        </div>
+
+        <div>
+          <label for="ContactFormMessage" class="text-xl text-zinc-800 font-figtree">Message</label>
+          <textarea id="ContactFormMessage" name="contact[body]" rows="1" required class="w-full bg-transparent border-b-[0.1875rem] border-zinc-800 py-2 resize-y"></textarea>
+        </div>
+      </form>
+
+      <!-- Contact Info -->
+      <div class="w-full md:w-[35%] flex flex-col gap-10 text-zinc-800 font-figtree text-lg">
+        <div>
+          <div class="font-bold">Contact</div>
+          <div>{{ section.settings.contact_email }}</div>
+        </div>
+        <div>
+          <div class="font-bold">Based in</div>
+          <div>{{ section.settings.contact_location }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit Button and Socials -->
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <button type="submit" form="contact_form" class="px-6 py-3 bg-secondary text-white font-figtree text-base w-[16.25rem] lg:w-[18vw]">
+        Contact Us
+      </button>
+
+      <div class="flex items-center gap-5">
+        <!-- Debug: Show block count and data -->
+        <div class="hidden">
+          <p>Block count: {{ section.blocks.size }}</p>
+          {% for block in section.blocks %}
+            <p>Block type: {{ block.type }} | Platform: {{ block.settings.platform }} | URL: {{ block.settings.url }}</p>
+          {% endfor %}
+        </div>
+
+        <!-- Actual social icons -->
+        {% for block in section.blocks %}
+          {% if block.type == "social" %}
+            {% assign social = block.settings %}
+            <a href="{{ social.url }}" target="_blank" aria-label="{{ social.platform }}" class="w-8 h-8 flex items-center justify-center  rounded-full text-white">
+              {% case social.platform %}
+                {% when "facebook" %}
+                {% render 'icon-facebook' %}
+                
+                {% when "instagram" %}
+                {% render 'icon-instagram' %}
+           
+                {% when "twitter" %}
+                {% render 'icon-twitter' %}
+                
+                {% else %}
+              {% endcase %}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact Us",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "contact_image",
+      "label": "Contact Image"
+    },
+    {
+      "type": "text",
+      "id": "contact_heading",
+      "label": "Heading",
+      "default": "Contact Us"
+    },
+    {
+      "type": "text",
+      "id": "contact_email",
+      "label": "Email Address",
+      "default": "hi@green.com"
+    },
+    {
+      "type": "text",
+      "id": "contact_location",
+      "label": "Location",
+      "default": "Los Angeles, California"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "social",
+      "name": "Social Link",
+      "settings": [
+        {
+          "type": "select",
+          "id": "platform",
+          "label": "Platform",
+          "options": [
+            { "value": "facebook", "label": "Facebook" },
+            { "value": "instagram", "label": "Instagram" },
+            { "value": "twitter", "label": "Twitter" }
+          ]
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact Us Section",
+      "category": "Contact"
+    }
+  ]
+}
+{% endschema %}

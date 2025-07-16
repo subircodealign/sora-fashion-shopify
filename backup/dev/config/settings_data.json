@@ -103,26 +103,26 @@
             "settings": {
               "label": "Seasons",
               "link": "shopify://pages/seasons",
-              "has_dropdown": false,
+              "has_dropdown": true,
               "show_dropdown_icon": true,
-              "mega_heading_1": "",
+              "mega_heading_1": "Best Sellers",
               "mega_heading_link_1": "",
-              "mega_heading_2": "",
+              "mega_heading_2": "New Arrivals",
               "mega_heading_link_2": "",
-              "mega_heading_3": "",
+              "mega_heading_3": "Bundles & Combo",
               "mega_heading_link_3": "",
-              "mega_heading_4": "",
+              "mega_heading_4": "Trending Sales",
               "mega_heading_link_4": "",
-              "submenu_label_1": "",
+              "submenu_label_1": "Fashion",
               "submenu_link_1": "",
-              "submenu_label_2": "",
-              "submenu_link_2": "",
-              "submenu_label_3": "",
-              "submenu_link_3": "",
-              "submenu_label_4": "",
-              "submenu_link_4": "",
-              "manual_product_1": "",
-              "manual_product_2": ""
+              "submenu_label_2": "Winter",
+              "submenu_link_2": "shopify://pages/season-winter",
+              "submenu_label_3": "Summer",
+              "submenu_link_3": "shopify://pages/season-summer",
+              "submenu_label_4": "Accessories",
+              "submenu_link_4": "shopify://pages/season-accessories",
+              "manual_product_1": "browne-winter-sweater-1",
+              "manual_product_2": "browne-winter-sweater"
             }
           },
           "menu_item_KXzUYB": {
@@ -812,24 +812,8 @@
         "settings": {
           "heading": "Our New Arrivals",
           "per_page": 12,
-          "collection": "",
-          "product_list": [
-            "browne-winter-sweater",
-            "browne-winter-sweater-1",
-            "full-shirt",
-            "gift-card",
-            "the-complete-snowboard",
-            "the-compare-at-price-snowboard",
-            "the-collection-snowboard-oxygen",
-            "the-collection-snowboard-liquid",
-            "the-collection-snowboard-hydrogen",
-            "the-3p-fulfilled-snowboard",
-            "slim-gray-t-shirt-for-boys",
-            "selling-plans-ski-wax",
-            "print-sweater-for-winter",
-            "new-kurta-s-for-boys",
-            "mash-winter-sweater"
-          ]
+          "collection": "new-arrivals",
+          "product_list": []
         }
       },
       "woman-categories": {
@@ -1059,6 +1043,73 @@
         "type": "blog-article",
         "settings": {
           "banner_image": "shopify://shop_images/0fe9803339edc134f30548b6531dbd81cba075d2_2.png"
+        }
+      },
+      "season-winter": {
+        "type": "season-winter",
+        "settings": {
+          "heading": "Our Winter Collections",
+          "per_page": 12,
+          "collection": "new-arrivals",
+          "product_list": []
+        }
+      },
+      "season-summer": {
+        "type": "season-summer",
+        "settings": {
+          "heading": "Our Summer Collections",
+          "per_page": 12,
+          "collection": "new-arrivals",
+          "product_list": []
+        }
+      },
+      "season-accessories": {
+        "type": "season-accessories",
+        "settings": {
+          "heading": "Our Accessories Collections",
+          "per_page": 12,
+          "collection": "new-arrivals",
+          "product_list": []
+        }
+      },
+      "contact-us": {
+        "type": "contact-us",
+        "blocks": {
+          "social_cTpfV7": {
+            "type": "social",
+            "name": "Facebook",
+            "settings": {
+              "platform": "facebook",
+              "url": "https://sora-fashion-dev.myshopify.com/"
+            }
+          },
+          "social_YNMBTz": {
+            "type": "social",
+            "name": "Instagram",
+            "settings": {
+              "platform": "instagram",
+              "url": "https://sora-fashion-dev.myshopify.com/"
+            }
+          },
+          "social_xet6Bn": {
+            "type": "social",
+            "name": "Twitter",
+            "settings": {
+              "platform": "twitter",
+              "url": "https://sora-fashion-dev.myshopify.com/"
+            }
+          }
+        },
+        "block_order": [
+          "social_cTpfV7",
+          "social_YNMBTz",
+          "social_xet6Bn"
+        ],
+        "settings": {
+          "contact_image": "shopify://shop_images/image_1.png",
+          "contact_heading": "Contact Us",
+          "contact_email": "hello@green.com",
+          "contact_location": "Los Angeles, California"
         }
       }
     },
