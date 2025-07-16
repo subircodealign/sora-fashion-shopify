@@ -1,0 +1,70 @@
+{% if customer %}
+  <div class="relative bg-white rounded-[0.625rem] max-w-[78rem] mx-auto p-10" style="min-height: 53.5rem;">
+    <!-- Header Background -->
+    <div class="absolute top-0 left-0 w-full h-24 bg-gray-200 rounded-t-[0.625rem]"></div>
+
+    <!-- Profile Picture -->
+    <div class="absolute left-8 top-[8.25rem] w-24 h-24 rounded-full bg-gray-300 overflow-hidden">
+      <img src="https://placehold.co/100x100" alt="Profile" width="100" height="100" class="w-full h-full object-cover" />
+    </div>
+
+    <!-- Profile Name and Email -->
+    <div class="absolute left-[9.75rem] top-[9.5rem] text-zinc-800 text-xl font-medium" id="profile-name">
+      {{ customer.first_name }} {{ customer.last_name }}
+    </div>
+    <div class="absolute left-[9.75rem] top-[11.75rem] text-zinc-800 text-base opacity-50" id="profile-email">
+      {{ customer.email }}
+    </div>
+
+    <!-- Edit / Save Button -->
+    <button id="edit-btn" class="absolute right-[7.645rem] top-10 w-24 h-11 bg-slate-500 rounded-lg flex items-center justify-center text-white">
+      Edit
+    </button>
+
+    <form id="profile-form">
+      <!-- Labels -->
+      <div class="absolute left-8 top-[16.5rem] text-zinc-800 text-base opacity-80">Full Name</div>
+      <div class="absolute left-8 top-[23.5rem] text-zinc-800 text-base opacity-80">Gender</div>
+      <div class="absolute left-8 top-[30.5rem] text-zinc-800 text-base opacity-80">Language</div>
+
+      <div class="absolute left-[41.0625rem] top-[16.5rem] text-zinc-800 text-base opacity-80">Nick Name</div>
+      <div class="absolute left-[41.0625rem] top-[23.5rem] text-zinc-800 text-base opacity-80">Country</div>
+      <div class="absolute left-[41.0625rem] top-[30.5rem] text-zinc-800 text-base opacity-80">Time Zone</div>
+
+      <!-- Inputs -->
+      <input type="text" id="full_name" name="full_name" value="{{ customer.metafields.custom.full_name }}" class="absolute left-8 top-[18.75rem] w-[36rem] h-12 bg-stone-50 rounded-lg px-4 text-zinc-800 opacity-40" disabled />
+
+      <select id="gender" name="gender" class="absolute left-8 top-[25.75rem] w-[36rem] h-12 bg-stone-50 rounded-lg px-4 text-zinc-800 opacity-40" disabled>
+        <option value="Male" {% if customer.metafields.custom.gender == "Male" %}selected{% endif %}>Male</option>
+        <option value="Female" {% if customer.metafields.custom.gender == "Female" %}selected{% endif %}>Female</option>
+        <option value="Other" {% if customer.metafields.custom.gender == "Other" %}selected{% endif %}>Other</option>
+      </select>
+
+      <select id="language" name="language" class="absolute left-8 top-[32.75rem] w-[36rem] h-12 bg-stone-50 rounded-lg px-4 text-zinc-800 opacity-40" disabled>
+        <option value="English" {% if customer.metafields.custom.language == "English" %}selected{% endif %}>English</option>
+        <option value="Bengali" {% if customer.metafields.custom.language == "Bengali" %}selected{% endif %}>Bengali</option>
+        <option value="Spanish" {% if customer.metafields.custom.language == "Spanish" %}selected{% endif %}>Spanish</option>
+      </select>
+
+      <input type="text" id="nick_name" name="nick_name" value="{{ customer.metafields.custom.nick_name }}" class="absolute left-[40rem] top-[18.75rem] w-[36rem] h-12 bg-stone-50 rounded-lg px-4 text-zinc-800 opacity-40" disabled />
+
+      <select id="country" name="country" class="absolute left-[40rem] top-[25.75rem] w-[36rem] h-12 bg-stone-50 rounded-lg px-4 text-zinc-800 opacity-40" disabled>
+        <option value="Bangladesh" {% if customer.metafields.custom.country == "Bangladesh" %}selected{% endif %}>Bangladesh</option>
+        <option value="USA" {% if customer.metafields.custom.country == "USA" %}selected{% endif %}>USA</option>
+        <option value="UK" {% if customer.metafields.custom.country == "UK" %}selected{% endif %}>UK</option>
+      </select>
+
+      <select id="timezone" name="timezone" class="absolute left-[40rem] top-[32.75rem] w-[36rem] h-12 bg-stone-50 rounded-lg px-4 text-zinc-800 opacity-40" disabled>
+        <option value="GMT +6" {% if customer.metafields.custom.timezone == "GMT +6" %}selected{% endif %}>GMT +6</option>
+        <option value="GMT +5" {% if customer.metafields.custom.timezone == "GMT +5" %}selected{% endif %}>GMT +5</option>
+        <option value="GMT +7" {% if customer.metafields.custom.timezone == "GMT +7" %}selected{% endif %}>GMT +7</option>
+      </select>
+    </form>
+  </div>
+
+  <script src="{{ 'customer-account.js' | asset_url }}" defer></script>
+{% else %}
+  <div class="text-center py-20">
+    Please <a href="/account/login" class="text-blue-600 underline">login</a> to view your profile.
+  </div>
+{% endif %}

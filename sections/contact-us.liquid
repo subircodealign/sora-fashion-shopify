@@ -24,7 +24,13 @@
     <!-- Form and Contact Info -->
     <div class="flex flex-col md:flex-row justify-between gap-24">
       <!-- Contact Form -->
-      <form method="post" action="/contact#contact_form" accept-charset="UTF-8" class="w-full md:w-[60%] flex flex-col " id="contact_form">
+      <form
+        method="post"
+        action="/contact?contact_posted=true#contact_form"
+        accept-charset="UTF-8"
+        class="w-full md:w-[60%] flex flex-col"
+        id="contact_form"
+      >
         <input type="hidden" name="form_type" value="contact" />
         <input type="hidden" name="utf8" value="✓" />
 
@@ -35,28 +41,30 @@
             id="ContactFormName" 
             name="contact[name]" 
             required
-            class="w-full bg-transparent border-b-[0.1875rem] border-primary py-2" />
+            class="w-full bg-transparent border-b-[0.1875rem] border-primary py-2 focus:outline-none focus:border-secondary transition"
+          />
         </div>
 
         <div class="my-[5.125rem]">
           <label for="ContactFormEmail" class="text-xl text-primary font-figtree ">E-mail</label>
-           <input 
+          <input 
             type="email" 
             id="ContactFormEmail" 
             name="contact[email]" 
             required 
-            class="w-full bg-transparent border-b-[0.1875rem] border-primary py-2" />
+            class="w-full bg-transparent border-b-[0.1875rem] border-primary py-2 focus:outline-none focus:border-secondary transition"
+          />
         </div>
 
         <div>
           <label for="ContactFormMessage" class="text-xl text-primary font-figtree ">Message</label>
-         <textarea 
+          <textarea 
             id="ContactFormMessage" 
             name="contact[body]" 
             rows="1" 
             required 
-            class="w-full bg-transparent border-b-[0.1875rem] border-primary py-2 resize-y">
-        </textarea>
+            class="w-full bg-transparent border-b-[0.1875rem] border-primary py-2 resize-y focus:outline-none focus:border-secondary transition"
+          ></textarea>
         </div>
       </form>
 
