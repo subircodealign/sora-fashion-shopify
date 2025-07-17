@@ -1,8 +1,20 @@
-<nav class="relative bg-white  shadow-sm z-50 py-[1.25rem] px-16 lg:px-32 xl:px-24">
+<nav class="relative bg-white  shadow-sm z-50 py-[1.5rem] md:py-[1.25rem] px-4 md:px-12 lg:px-32 xl:px-24">
+  <!-- Logo mobile-->
+    <div class="block md:hidden pb-4">
+      <a href="/" class="no-underline">
+        {% if section.settings.logo_image != blank %}
+          <img src="{{ section.settings.logo_image | image_url: width: 101, height: 28 }}" width="101" height="28" alt="Logo" class="h-10 object-contain mx-auto " />
+        {% else %}
+          <span class="font-figtree text-4xl tracking-tight text-gray-900 mx-auto " style="letter-spacing: -0.05em;">
+            {{ section.settings.logo_text | default: "SORA" }}
+          </span>
+        {% endif %}
+      </a>
+    </div>
   <div class="container mx-auto flex items-center justify-between space-x-3 lg:space-x-4">
 
-    <!-- Logo -->
-    <div class="flex-shrink-0">
+    <!-- Logo tab & desktop-->
+    <div class="hidden md:block flex-shrink-0">
       <a href="/" class="no-underline">
         {% if section.settings.logo_image != blank %}
           <img src="{{ section.settings.logo_image | image_url: width: 101, height: 28 }}" width="101" height="28" alt="Logo" class="h-10 object-contain" />
@@ -139,8 +151,18 @@
       </ul>
     </div>
 
+
+     <!-- Mobile Menu Toggle -->
+    <div class="md:hidden flex items-center">
+      <button id="mobile-menu-button" aria-label="Toggle Mobile Menu" class="text-gray-700 hover:text-gray-900 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    
     <!-- Icons -->
-    <div class="flex items-center space-x-2 lg:space-x-3 ml-auto">
+    <div class="flex items-center space-x-3 ml-auto">
       {% if section.settings.show_search %}
         <a href="#" class="flex items-center justify-center w-6 h-6 hover:bg-gray-50">
           {% render 'icon-search' %}
@@ -160,14 +182,7 @@
       {% endif %}
     </div>
 
-    <!-- Mobile Menu Toggle -->
-    <div class="md:hidden flex items-center">
-      <button id="mobile-menu-button" aria-label="Toggle Mobile Menu" class="text-gray-700 hover:text-gray-900 focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
+   
   </div>
 
   <!-- Mobile Menu -->
