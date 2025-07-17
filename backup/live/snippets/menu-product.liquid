@@ -22,7 +22,9 @@
 
 
 <div id="product-pagination"
-     data-per-page="{{ section.settings.per_page }}"
+       data-per-page-mobile="{{ section.settings.per_page_mobile }}"
+     data-per-page-tablet="{{ section.settings.per_page_tablet }}"
+     data-per-page-desktop="{{ section.settings.per_page_desktop }}"
      data-products='[
        {% assign manual_products = section.settings.product_list %}
        {% if manual_products != blank %}

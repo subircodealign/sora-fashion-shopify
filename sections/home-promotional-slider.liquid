@@ -1,5 +1,4 @@
 <style>
-
   #promo-carousel::-webkit-scrollbar {
     display: none;
   }
@@ -10,43 +9,46 @@
   }
 </style>
 
-
-
-<section class="w-full bg-white pb-24">
+<section class="w-full bg-white pb-12 md:pb-24">
   <div class="relative overflow-hidden">
 
-    <!-- Slider wrapper with overflow-hidden and relative -->
+    <!-- Slider wrapper -->
     <div id="promo-carousel" class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar"
       style="scroll-padding-left: 33.33vw; scroll-padding-right: 33.33vw;">
 
       {% for block in section.blocks %}
-       <div
-  class="slide snap-center flex-shrink-0 w-[930px] object-cover h-[434px] relative {% unless forloop.last %}mr-6{% endunless %} overflow-hidden"
-  style="scroll-snap-align: center;">
+        <div
+          class="slide snap-center flex-shrink-0 object-cover w-[22.375rem] h-[11rem] md:w-[64.58vw] md:h-[27.125rem] relative {% unless forloop.last %}mr-6{% endunless %} overflow-hidden"
+          style="scroll-snap-align: center;">
 
-          <img src="{{ block.settings.image | image_url: width: 930, height:434 }}" width=930px height=434px alt="Promo Image" class="w-full h-full object-cover" />
+          <img src="{{ block.settings.image | image_url: width: 930, height: 434 }}"
+            width="58.125rem" height="27.125rem"
+            alt="Promo Image"
+            class="w-full h-full object-cover" />
 
           {% if forloop.index == 2 %}
-            <div
-              class="absolute bottom-8 left-8 w-96 flex flex-col gap-4 z-10 text-white drop-shadow-lg">
-              <h2 class="text-5xl font-medium leading-[64px]">{{ block.settings.heading }}</h2>
-              <p class="text-lg leading-7">{{ block.settings.description }}</p>
+            <div class="absolute top-[1rem] left-[1rem]  md:bottom-[2rem] md:left-[2rem] md:top-[2rem] w-[7.92rem] md:w-[24rem] flex flex-col gap-4 z-10 text-white drop-shadow-lg">
+              <h2 class="text-[1.16rem] leading-[1.54rem] md:text-5xl font-medium md:leading-[4rem]">{{ block.settings.heading }}</h2>
+              <p class="text-[0.43rem] leading-[0.7rem] md:text-lg md:leading-7">{{ block.settings.description }}</p>
               <a href="{{ block.settings.button_link }}"
-                class="mt-4 px-6 py-3 outline outline-1 outline-offset-[-1px] outline-secondary flex items-center gap-1 w-fit text-secondary">
+                class=" text-[0.5rem] md:text-[1rem] mt-2 py-2 px-4 md:px-6 md:py-3 outline outline-1 outline-offset-[-1px] outline-secondary flex items-center justify-center gap-1 w-fit text-secondary">
                 Explore More
-               {% render 'icon-arrow' %}
+                <span class="inline-block w-2.5 h-2.5 md:w-6 md:h-6">
+  {% render 'icon-arrow' %}
+</span>
               </a>
             </div>
           {% else %}
-            <div
-              class="absolute top-8 left-8 right-8 flex justify-between items-start gap-6 z-10 text-white drop-shadow-lg">
-              <h2 class="text-5xl font-medium leading-[64px] w-[380px]">{{ block.settings.heading }}</h2>
-              <div class="flex flex-col items-end w-[280px] gap-4">
-                <p class="text-zinc-300 text-lg leading-7 text-right">{{ block.settings.description }}</p>
+            <div class="absolute top-[1rem] left-[1rem] right-[1rem] md:top-[2rem] md:left-[2rem] md:right-[2rem] flex justify-between items-start gap-4 md:gap-6 z-10 text-white drop-shadow-lg">
+              <h2 class="text-[1.16rem] leading-[1.54rem] md:text-5xl font-medium md:leading-[4rem] ">{{ block.settings.heading }}</h2>
+              <div class="flex flex-col gap-4">
+                <p class="text-zinc-300 leading-[0.675rem] text-[0.5rem]  md:text-lg md:leading-7 text-right">{{ block.settings.description }}</p>
                 <a href="{{ block.settings.button_link }}"
-                  class="mt-2 px-6 py-3 outline outline-1 outline-offset-[-1px] outline-secondary flex items-center gap-1 w-fit text-secondary">
+                  class="text-[0.5rem] md:text-[1rem] mt-2 py-2 px-4 md:px-6 md:py-3 outline outline-1 outline-offset-[-1px] outline-secondary flex items-center gap-1 w-fit text-secondary">
                   Explore More
-             {% render 'icon-arrow' %}
+                      <span class="inline-block w-2.5 h-2.5 md:w-6 md:h-6">
+  {% render 'icon-arrow' %}
+</span>
                 </a>
               </div>
             </div>
@@ -54,7 +56,6 @@
         </div>
       {% endfor %}
     </div>
-
 
     <div class="flex justify-center items-center gap-3 mt-6">
       {% for block in section.blocks %}
@@ -65,10 +66,7 @@
   </div>
 </section>
 
-
-
 <script src="{{ 'promotional-slider.js' | asset_url }}" defer></script>
-
 
 {% schema %}
 {

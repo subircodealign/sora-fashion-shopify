@@ -2,29 +2,29 @@
 
 <div class="mx-auto px-4 overflow-hidden relative
   {% if page_type == 'index' %}
-    mb-24
+    mb-12 md:mb-24
   {% else %}
     mb-0
   {% endif %}
   ">
-  <div class="flex flex-col items-center gap-8">
-    <h2 class="text-center text-primary text-5xl font-normal font-catalina leading-[64px] w-full">
+  <div class="flex flex-col items-center gap-4 md:gap-8">
+    <h2 class="text-center text-primary text-2xl md:text-5xl font-normal font-catalina leading-[4rem] w-full">
       {{ heading | default: "Brand that we featured" }}
     </h2>
 
     <div class="brand-slider overflow-hidden">
-      <div class="inner-brand-slider flex flex-nowrap items-center gap-10 will-change-transform">
+      <div class="inner-brand-slider flex flex-nowrap items-center gap-0 md:gap-[1.5rem] will-change-transform">
         {% for block in blocks %}
-          <div class="flex items-center justify-center min-w-[150px] max-w-[300px]" {{ block.shopify_attributes }}>
+          <div class="flex items-center justify-center min-w-[9.375rem] max-w-[18.75rem]" {{ block.shopify_attributes }}>
             
             {% if block.settings.brand_image != blank %}
               {{ block.settings.brand_image | image_url: width: 182 | image_tag:
                   loading: 'lazy',
-                  class: 'h-[150px] object-contain',
+                  class: 'h-[3.875rem] md:h-[9.375rem] w-[8rem] md:w-[11.375rem] object-contain',
                   alt: block.settings.brand_alt | default: 'Brand Logo'
               }}
             {% else %}
-              <div class="w-[{{ block.settings.logo_width | default: 200 }}px] h-[100px] bg-gray-100 flex items-center justify-center">
+              <div class="w-[{{ block.settings.logo_width | default: 12.5 }}rem] h-[6.25rem] bg-gray-100 flex items-center justify-center">
                 <span class="text-gray-400">Brand {{ forloop.index }}</span>
               </div>
             {% endif %}

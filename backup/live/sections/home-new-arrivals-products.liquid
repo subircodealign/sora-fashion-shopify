@@ -14,20 +14,18 @@
       </nav>
     </div>
 
-    {%- assign count = 0 -%}
-    <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
+    <!-- ✅ Desktop & Tablet View (md and up) -->
+    <div class="hidden md:grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
+      {%- assign count = 0 -%}
+
       {%- if section.settings.collection != blank -%}
         {%- assign products = collections[section.settings.collection].products -%}
         {%- for product in products -%}
           {%- assign count = count | plus: 1 -%}
           {%- if count <= 6 -%}
-            <div>
-              {% render 'product-cards', product: product %}
-            </div>
+            <div>{% render 'product-cards', product: product %}</div>
           {%- elsif count <= 8 -%}
-            <div class="hidden xl:block">
-              {% render 'product-cards', product: product %}
-            </div>
+            <div class="hidden xl:block">{% render 'product-cards', product: product %}</div>
           {%- endif -%}
         {%- endfor -%}
       {%- endif -%}
@@ -36,13 +34,9 @@
         {%- for product in section.settings.product_list -%}
           {%- assign count = count | plus: 1 -%}
           {%- if count <= 6 -%}
-            <div>
-              {% render 'product-cards', product: product %}
-            </div>
+            <div>{% render 'product-cards', product: product %}</div>
           {%- elsif count <= 8 -%}
-            <div class="hidden xl:block">
-              {% render 'product-cards', product: product %}
-            </div>
+            <div class="hidden xl:block">{% render 'product-cards', product: product %}</div>
           {%- endif -%}
         {%- endfor -%}
       {%- endif -%}
@@ -53,21 +47,45 @@
           {%- if manual_product != blank -%}
             {%- assign count = count | plus: 1 -%}
             {%- if count <= 6 -%}
-              <div>
-                {% render 'product-cards', product: manual_product %}
-              </div>
+              <div>{% render 'product-cards', product: manual_product %}</div>
             {%- elsif count <= 8 -%}
-              <div class="hidden xl:block">
-                {% render 'product-cards', product: manual_product %}
-              </div>
+              <div class="hidden xl:block">{% render 'product-cards', product: manual_product %}</div>
             {%- endif -%}
           {%- endif -%}
         {%- endif -%}
       {%- endfor -%}
     </div>
+
+    <!-- ✅ Mobile View (below md): Pagination Enabled -->
+  <!-- ✅ Mobile View (below md): Pagination Enabled -->
+<div class="block md:hidden mt-8">
+  {%- assign mobile_products_array = '' -%}
+  {%- assign product_count = 0 -%}
+
+  {%- if section.settings.collection != blank -%}
+    {%- assign products = collections[section.settings.collection].products -%}
+    {%- for product in products limit: 12 -%}
+      {%- assign product_data = product | json -%}
+      {%- assign mobile_products_array = mobile_products_array | append: product_data -%}
+      {%- assign product_count = product_count | plus: 1 -%}
+      {%- if forloop.last == false -%}{%- assign mobile_products_array = mobile_products_array | append: ',' -%}{%- endif -%}
+    {%- endfor -%}
+  {%- elsif section.settings.product_list != blank -%}
+    {%- for product in section.settings.product_list -%}
+      {%- assign product_data = product | json -%}
+      {%- assign mobile_products_array = mobile_products_array | append: product_data -%}
+      {%- assign product_count = product_count | plus: 1 -%}
+      {%- if forloop.last == false -%}{%- assign mobile_products_array = mobile_products_array | append: ',' -%}{%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+
+  <div id="product-pagination" data-products='[{{ mobile_products_array }}]' data-per-page="4"></div>
+  <div id="product-container" class="grid grid-cols-2 gap-4 mt-6"></div>
+  <div id="pagination-controls" class="flex flex-wrap justify-center gap-2 mt-6"></div>
+</div>
+
   </div>
 </section>
-
 
 {% schema %}
 {

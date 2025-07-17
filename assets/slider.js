@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
     { selector: '.inner-brand-slider', speed: 0.8 },
     { selector: '.announcement-slider', speed: 0.5 },
     { selector: '.reels-slider', speed: 0.5 },
+    { selector: '.information-bar', speed: 0.5 },
   
   ];
 
