@@ -1,5 +1,6 @@
 {% render 'banner',
   background_image: section.settings.background_image,
+  background_image_mobile: section.settings.background_image_mobile,
   badge_text: section.settings.badge_text,
   heading: section.settings.heading,
   subheading: section.settings.subheading,
@@ -28,6 +29,11 @@
       "id": "background_image",
       "label": "Background Image"
     },
+     {
+  "type": "image_picker",
+  "id": "background_image_mobile",
+  "label": "Mobile Background Image"
+},
 
     {
       "type": "text",

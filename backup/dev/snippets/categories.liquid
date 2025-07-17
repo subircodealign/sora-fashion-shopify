@@ -1,8 +1,8 @@
-{% assign page_type = request.page_type %}
+
 
 {% if section_heading != blank %}
   <div class="pb-12
-     {% if page_type == 'index' %}
+       {% if template == 'index' %}
        mt-0
      {% else %}
        mt-24
