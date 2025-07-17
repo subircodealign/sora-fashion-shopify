@@ -1,11 +1,65 @@
-<section class="relative w-full h-[70vh] lg:h-[91.39vh]" style="background-image: url({{ background_image | image_url }}); background-size: cover; background-position: center;">
+<section class="relative w-full h-auto md:h-[70vh] lg:h-[91.39vh]">
 
-  <div class="relative w-full h-full flex items-center">
+  <!-- Mobile layout: Text & Buttons -->
+  <div class="block md:hidden p-4">
+    {% if badge_text != blank %}
+      <button class="w-[10rem] h-[3rem] py-[0.75rem] px-[1.5rem] text-[1rem] leading-[1.625rem]"
+        style="color: {{ badge_text_color }}; border: 1px solid {{ badge_border_color }}">
+        {{ badge_text }}
+      </button>
+    {% endif %}
+
+    {% if heading != blank %}
+      <h1 class="text-[3rem] font-catalina font-normal leading-[4rem] mt-[2rem] mb-[1rem]"
+        style="color: {{ heading_color }}">
+        {{ heading }}
+      </h1>
+    {% endif %}
+
+    {% if subheading != blank %}
+      <p class="text-[1.5rem] leading-[2.25rem] "
+        style="color: {{ subheading_color }}">
+        {{ subheading }}
+      </p>
+    {% endif %}
+
+    <div class="flex flex-col sm:flex-row items-start gap-6">
+      {% if primary_button_text != blank %}
+        <a href="{{ primary_button_link }}"
+          style="background-color: {{ primary_button_bg_color }}; color: {{ primary_button_text_color }};"
+          class="text-[1rem] flex justify-center items-center leading-[1.625rem] mt-8 py-[0.75rem] px-[1.5rem] w-full h-[3.125rem] hover:opacity-90 transition">
+          {{ primary_button_text }}
+        </a>
+      {% endif %}
+
+      {% if secondary_button_text != blank %}
+        <a href="{{ secondary_button_link }}"
+          style="border-color: {{ secondary_button_border_color }}; color: {{ secondary_button_text_color }};"
+          class="border text-[1rem] flex justify-center items-center leading-[1.625rem] w-full h-[3.125rem] px-[1.5rem] py-[0.75rem] hover:bg-gray-100 transition">
+          {{ secondary_button_text }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Mobile layout: Background Image -->
+  <!-- Mobile layout: Background Image -->
+<div class="block md:hidden w-full h-[55.56vh]">
+  <img 
+    src="{{ section.settings.background_image_mobile | image_url: width: 390 }}"
+    width="390"
+    height="500"
+    alt="Mobile Background" 
+    class="w-full h-full object-cover" />
+</div>
+
+
+  <!-- Desktop/Tablet Layout -->
+  <div class="hidden md:flex w-full h-full items-center" style="background-image: url({{ background_image | image_url }}); background-size: cover; background-position: center;">
     <div class="pl-16 lg:pl-32 xl:pl-24 z-10">
-
       {% if badge_text != blank %}
         <button class="w-[10rem] h-[3rem] lg:w-[10.4375rem] lg:h-[3.125rem] py-[0.75rem] px-[1.5rem] text-[1rem] leading-[1.625rem] mb-[2rem]"
-          style="color: {{ badge_text_color }}; border: 1px solid {{ badge_border_color }}">
+          style="color: {{ badge_text_color }}; border: 1px solid {{ badge_border_color }};">
           {{ badge_text }}
         </button>
       {% endif %}
@@ -27,21 +81,21 @@
       <div class="flex flex-col sm:flex-row items-start gap-[1rem]">
         {% if primary_button_text != blank %}
           <a href="{{ primary_button_link }}"
-             style="background-color: {{ primary_button_bg_color }}; color: {{ primary_button_text_color }};"
-             class="text-[1rem] flex justify-center items-center leading-[1.625rem] py-[0.75rem] px-[1.5rem] w-[19.5625rem] h-[3.125rem] hover:opacity-90 transition">
+            style="background-color: {{ primary_button_bg_color }}; color: {{ primary_button_text_color }};"
+            class="text-[1rem] flex justify-center items-center leading-[1.625rem] py-[0.75rem] px-[1.5rem] w-[19.5625rem] h-[3.125rem] hover:opacity-90 transition">
             {{ primary_button_text }}
           </a>
         {% endif %}
 
         {% if secondary_button_text != blank %}
           <a href="{{ secondary_button_link }}"
-             style="border-color: {{ secondary_button_border_color }}; color: {{ secondary_button_text_color }};"
-             class="border text-[1rem] flex justify-center items-center leading-[1.625rem] w-[19.5625rem] h-[3.125rem] px-[1.5rem] py-[0.75rem] hover:bg-gray-100 transition">
+            style="border-color: {{ secondary_button_border_color }}; color: {{ secondary_button_text_color }};"
+            class="border text-[1rem] flex justify-center items-center leading-[1.625rem] w-[19.5625rem] h-[3.125rem] px-[1.5rem] py-[0.75rem] hover:bg-gray-100 transition">
             {{ secondary_button_text }}
           </a>
         {% endif %}
       </div>
-
     </div>
   </div>
+
 </section>

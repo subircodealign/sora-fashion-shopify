@@ -1,11 +1,11 @@
-<div class="max-w-screen-xl bg-slate-200 mx-auto p-12 mb-24 flex flex-col gap-12">
-
+<div class="md:mx-16 lg:mx-24 max-w-full bg-slate-200 px-4 py-12 md:p-12 mb-24 flex flex-col gap-12">
 
   <div class="w-full flex justify-between items-center">
-    <h2 class="text-primary text-[48px] font-normal font-catalina leading-[64px]">
+    <h2 class="text-primary text-[1.5rem]  lg:text-[3rem] font-normal font-catalina leading-[4rem]">
       {{ section.settings.heading }}
     </h2>
-    <div class="flex gap-6">
+    {% comment %} desktop category{% endcomment %}
+    <div class="lg:flex gap-6 hidden ">
       {% for block in section.blocks %}
         {% if block.type == 'category' %}
           <div class="flex items-center gap-0.5">
@@ -22,33 +22,47 @@
         {% endif %}
       {% endfor %}
     </div>
+    {% comment %} mbl and tab category{% endcomment %}
+       <div class="lg:hidden flex items-center gap-6">
+       {% render 'icon-filter' %}
+       </div>
   </div>
 
-  <div class="flex">
-
-
+  <div class="flex flex-col lg:flex-row justify-between gap-6 md:gap-8 lg:gap-6 w-full">
     {% if section.settings.featured_image != blank %}
-      <img class="w-[525px] lg:w-[686px] h-[863px] object-cover mr-[104px]" src="{{ section.settings.featured_image | image_url: width: 686, height: 863 }}" alt="{{ section.settings.featured_image.alt }}" width="686" height="863" />
-    {% endif %}
 
 
-    <div class="flex flex-col items-center justify-center gap-4">
+    <img
+  src="{{ section.settings.featured_image | image_url: width: 800 }}"
+       width="686"
+    height="863"
+  alt="{{ section.settings.featured_image.alt }}"
+  class="lg:w-1/2 h-auto object-cover"
+/>
 
-      <div class="new-arrival-slider-section relative flex items-center">
+
+{% endif %}
 
 
-        <button class="slider-prev absolute -left-12 top-1/2 -translate-y-1/2 p-2.5 w-[44px] h-[44px] flex justify-center items-center outline outline-1 outline-zinc-500 hover:bg-zinc-300 transition z-10">
+
+
+    <div class="flex flex-col items-center justify-center gap-4  lg:w-1/2 xl:w-full">
+
+      <div class="new-arrival-slider-section  flex items-center lg:w-full">
+
+        <button class=" slider-prev p-[0.625rem] w-[2.75rem] h-[2.75rem] hidden md:flex justify-center items-center outline outline-1 outline-zinc-500 hover:bg-zinc-300 transition z-10">
           {% render 'icon-prev-button' %}
         </button>
 
         <!-- Slider Area -->
-        <div class="slider-container overflow-hidden rounded-md shadow-md bg-neutral-100 mx-[24px]" style="width: 288px;">
-          <div class="product-slider flex gap-6 transition-transform ease-in-out duration-300">
+        <div class="slider-container overflow-hidden rounded-md shadow-md bg-neutral-100 mx-[1.5rem] max-w-60 xl:max-w-72">
+          <div class="product-slider flex gap-4 transition-transform ease-in-out duration-300">
             {% for product in section.settings.product_list %}
-              <div class="w-72 p-4 flex flex-col gap-4 flex-shrink-0">
+              <div class="max-w-60 xl:max-w-72 p-4 flex flex-col gap-4 flex-shrink-0">
+
 
                 <a href="{{ product.url }}" class="block rounded-md overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
-                  <img class="w-full h-72 object-cover" src="{{ product.featured_image | image_url: width: 262, height: 279 }}" alt="{{ product.title }}" width="262" height="279" />
+                  <img class="lg:w-full h-auto object-cover" src="{{ product.featured_image | image_url: width: 262, height: 279 }}" alt="{{ product.title }}" width="262" height="279" />
                 </a>
 
                 <div class="flex flex-col gap-2">
@@ -56,42 +70,40 @@
                   <div class="text-primary text-2xl font-bold">{{ product.price | money_without_currency }}$</div>
 
                   <!-- Color Swatches -->
-            <div class="flex space-x-2 mb-4">
-  {% assign color_options = product.options_with_values | where: "name", "Color" %}
-  {% if color_options.size > 0 %}
-    {% for option in color_options %}
-      {% for value in option.values limit:3 %}
-        {% assign color_class = '' %}
-        {% assign color_value = value | downcase | strip %}
+                  <div class="flex space-x-2 mb-4">
+                    {% assign color_options = product.options_with_values | where: "name", "Color" %}
+                    {% if color_options.size > 0 %}
+                      {% for option in color_options %}
+                        {% for value in option.values limit:3 %}
+                          {% assign color_class = '' %}
+                          {% assign color_value = value | downcase | strip %}
 
-        {% case color_value %}
-          {% when 'steel blue' %}{% assign color_class = 'bg-[#6B749E]' %}
-          {% when 'brownish red' %}{% assign color_class = 'bg-[#9E5A4F]' %}
-          {% when 'light brown' %}{% assign color_class = 'bg-[#AD8A77]' %}
-          {% when 'black' %}{% assign color_class = 'bg-black' %}
-          {% when 'soft ivory' %}{% assign color_class = 'bg-[#EBE1DC]' %}
-          {% when 'soft sand' %}{% assign color_class = 'bg-[#E5C3A1]' %}
-          {% when 'purple' %}{% assign color_class = 'bg-[#886B9E]' %}
-          {% when 'light cool gray' %}{% assign color_class = 'bg-[#C0C6C6]' %}
-          {% else %}
-            {% assign color_class = '' %}
-        {% endcase %}
+                          {% case color_value %}
+                            {% when 'steel blue' %}{% assign color_class = 'bg-[#6B749E]' %}
+                            {% when 'brownish red' %}{% assign color_class = 'bg-[#9E5A4F]' %}
+                            {% when 'light brown' %}{% assign color_class = 'bg-[#AD8A77]' %}
+                            {% when 'black' %}{% assign color_class = 'bg-black' %}
+                            {% when 'soft ivory' %}{% assign color_class = 'bg-[#EBE1DC]' %}
+                            {% when 'soft sand' %}{% assign color_class = 'bg-[#E5C3A1]' %}
+                            {% when 'purple' %}{% assign color_class = 'bg-[#886B9E]' %}
+                            {% when 'light cool gray' %}{% assign color_class = 'bg-[#C0C6C6]' %}
+                            {% else %}
+                              {% assign color_class = '' %}
+                          {% endcase %}
 
-        {% if color_class != '' %}
-          <span class="w-3 h-3 rounded-full {{ color_class }}" title="{{ value }}"></span>
-        {% elsif value != blank %}
-          <span class="w-3 h-3 rounded-full" style="background-color: {{ value }};" title="{{ value }}"></span>
-        {% else %}
-
-          <span class="w-3 h-3 rounded-full bg-gray-300"></span>
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
-  {% else %}
-
-    <span class="w-3 h-3 rounded-full bg-gray-300"></span>
-  {% endif %}
-</div>
+                          {% if color_class != '' %}
+                            <span class="w-3 h-3 rounded-full {{ color_class }}" title="{{ value }}"></span>
+                          {% elsif value != blank %}
+                            <span class="w-3 h-3 rounded-full" style="background-color: {{ value }};" title="{{ value }}"></span>
+                          {% else %}
+                            <span class="w-3 h-3 rounded-full bg-gray-300"></span>
+                          {% endif %}
+                        {% endfor %}
+                      {% endfor %}
+                    {% else %}
+                      <span class="w-3 h-3 rounded-full bg-gray-300"></span>
+                    {% endif %}
+                  </div>
 
                 </div>
 
@@ -106,7 +118,7 @@
         </div>
 
         <!-- Right Arrow -->
-        <button class="slider-next absolute -right-12 top-1/2 -translate-y-1/2 p-2.5 w-[44px] h-[44px] flex justify-center items-center outline outline-1 outline-zinc-500 hover:bg-zinc-300 transition z-10">
+        <button class="hidden md:flex slider-next  p-[0.625rem] w-[2.75rem] h-[2.75rem]  justify-center items-center outline outline-1 outline-zinc-500 hover:bg-zinc-300 transition z-10">
           {% render 'icon-next-button' %}
         </button>
 
