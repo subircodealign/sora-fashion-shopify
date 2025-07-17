@@ -1,9 +1,9 @@
 
-<div class="w-full flex flex-col justify-start items-center gap-12 overflow-hidden mx-auto py-24">
+<div class="w-full flex flex-col justify-start items-center gap-12 overflow-hidden mx-auto py-12 md:py-24">
   
   <!-- Heading Section -->
-  <div class="flex flex-col justify-start items-center gap-2">
-    <h2 class="w-full max-w-[1012px] text-center text-primary text-5xl font-normal leading-[64px] font-catalina">
+  <div class="flex flex-col justify-start items-center gap-2 mx-4">
+    <h2 class="w-full max-w-[1012px] text-center text-primary text-2xl md:text-5xl font-normal md:leading-[64px] font-catalina">
       {{ section.settings.heading }}
     </h2>
     <p class="text-center text-primary text-2xl font-medium leading-9 font-[Figtree]">
@@ -15,7 +15,7 @@
   <div class="reels-slider flex justify-center items-center gap-6">
 
     {% if section.settings.image_1 != blank %}
-      <img class="w-64 h-96 object-cover" 
+      <img class="w-[9.9375rem] h-[13.6875rem] md:w-64 md:h-96 object-cover" 
            src="{{ section.settings.image_1 | image_url: width: 255, height: 353 }}" 
            alt="Image 1" 
            width="255" 
@@ -23,7 +23,7 @@
     {% endif %}
 
     {% if section.settings.image_2 != blank %}
-      <img class="w-64 h-64 object-cover" 
+      <img class="w-[9.9375rem] h-[9.9375rem] md:w-64 md:h-64 object-cover" 
            src="{{ section.settings.image_2 | image_url: width: 255, height: 255 }}" 
            alt="Image 2" 
            width="255" 
@@ -31,7 +31,7 @@
     {% endif %}
 
     {% if section.settings.image_3 != blank %}
-      <img class="w-64 h-96 object-cover" 
+      <img class="w-[9.9375rem] h-[13.6875rem] md:w-64 md:h-96 object-cover" 
            src="{{ section.settings.image_3 | image_url: width: 255, height: 353 }}" 
            alt="Image 3" 
            width="255" 
@@ -39,7 +39,7 @@
     {% endif %}
 
     {% if section.settings.image_4 != blank %}
-      <img class="w-64 h-64 object-cover" 
+      <img class="w-[9.9375rem] h-[9.9375rem] md:w-64 md:h-64 object-cover" 
            src="{{ section.settings.image_4 | image_url: width: 255, height: 255 }}" 
            alt="Image 4" 
            width="255" 
@@ -47,7 +47,7 @@
     {% endif %}
 
     {% if section.settings.image_5 != blank %}
-      <img class="w-64 h-96 object-cover" 
+      <img class="w-[9.9375rem] h-[13.6875rem] md:w-64 md:h-96 object-cover" 
            src="{{ section.settings.image_5 | image_url: width: 255, height: 353 }}" 
            alt="Image 5" 
            width="255" 
@@ -55,7 +55,7 @@
     {% endif %}
 
     {% if section.settings.image_6 != blank %}
-      <img class="w-64 h-64 object-cover" 
+      <img class="w-[9.9375rem] h-[9.9375rem] md:w-64 md:h-64 object-cover" 
            src="{{ section.settings.image_6 | image_url: width: 255, height: 255 }}" 
            alt="Image 6" 
            width="255" 

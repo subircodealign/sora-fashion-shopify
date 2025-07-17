@@ -1,18 +1,23 @@
-<div class="py-4 px-2 mb-24 bg-secondary flex justify-between items-center md:gap-x-8">
+<div class=" py-4 px-2 mb-12 md:mb-24 bg-secondary">
+<div class="information-bar flex overflow-hidden justify-center md:justify-between items-center gap-x-6 gap-y-4 md:gap-x-8">
+
   {% for block in section.blocks %}
-    <div class="flex items-center" {{ block.shopify_attributes }}>
-      <span class="text-white text-xl md:text-[32px] font-normal font-catalina leading-[1.2] md:leading-[48px] whitespace-nowrap">
+    <div class="flex items-center " {{ block.shopify_attributes }}>
+      <span class="text-white text-sm md:text-[2rem] font-normal font-catalina leading-[1.2] md:leading-[3rem] whitespace-nowrap">
         {{ block.settings.text }}
       </span>
     </div>
 
     {% if forloop.index != section.blocks.size %}
       <div class="flex items-center">
-        <span class="w-20 border border-white hidden md:block"></span>
+        <span class="w-10 md:w-20 border border-white "></span>
       </div>
     {% endif %}
   {% endfor %}
 </div>
+</div>
+
+<script src="{{ 'slider.js' | asset_url }}" defer></script>
 
 {% schema %}
 {

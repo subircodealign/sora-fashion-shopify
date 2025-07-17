@@ -5,16 +5,16 @@
        {% if template == 'index' %}
        mt-0
      {% else %}
-       mt-24
+       mt-12 md:mt-24
      {% endif %}
     ">
-    <h2 class="text-[3rem] mx-16 lg:mx-[5.85rem] xl:mx-52 font-catalina text-center text-primary leading-[4rem]">
+    <h2 class="mx-4 md:mx-16 text-[1.5rem] md:text-[3rem] lg:mx-[5.85rem] xl:mx-52 font-catalina text-center text-primary md:leading-[4rem]">
       {{ section_heading }}
     </h2>
   </div>
 {% endif %}
 
-<div class="w-full flex flex-col lg:flex-row gap-6 px-16 lg:px-24 pb-24">
+<div class="w-full flex flex-col lg:flex-row gap-6 px-4 md:px-16 lg:px-24 pb-12 md:pb-24">
 
   <!-- Main Image Part -->
   <div class="relative group overflow-hidden w-full lg:w-2/3">
@@ -35,7 +35,7 @@
       >
     {% endif %}
 
-    <div class="absolute top-0 left-0 p-6 flex flex-col justify-between h-[calc(100%-5px)] bg-opacity-90 max-w-[19.375rem]">
+    <div class="absolute top-0 left-0 p-6 flex flex-col justify-between h-[calc(100%-5px)] bg-opacity-90 max-w-[15rem] md:max-w-[19.375rem]">
       <div class="space-y-6">
         <h3 class="text-primary text-2xl font-normal font-catalina leading-12">
           {{ main_title | default: "Woman's Fashion" }}
@@ -66,16 +66,16 @@
           src="{{ card_1_image | image_url: width: 453, height:341 }}"
           alt="{{ card_1_title | escape }}"
           width="453" height="341"
-          class="w-full h-full object-cover origin-right transition-transform duration-500 group-hover:scale-105"
+          class="w-full h-full  transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
-          style="object-position: 100% center;"
+
         >
       {% else %}
         <img
           src="https://placehold.co/453x341"
           alt="Card Image Placeholder"
           width="453" height="341"
-          class="w-full h-full object-cover object-left"
+          class="w-full h-full "
         >
       {% endif %}
 
@@ -107,16 +107,16 @@
           src="{{ card_2_image | image_url: width: 453, height:341 }}"
           alt="{{ card_2_title | escape }}"
           width="453" height="341"
-          class="w-full h-full object-cover origin-right transition-transform duration-500 group-hover:scale-105"
+          class="w-full h-full  transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
-          style="object-position: 1% center;"
+         
         >
       {% else %}
         <img
           src="https://placehold.co/453x341"
           alt="Card Image Placeholder"
           width="453" height="341"
-          class="w-full h-full object-cover object-left"
+          class="w-full h-full object-cover"
         >
       {% endif %}
 

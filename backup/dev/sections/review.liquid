@@ -1,19 +1,19 @@
 
 
-<div class="w-full mb-24 flex justify-center px-[94px] review-section">
+<div class="w-full mb-[6rem] flex justify-center px-4 md:px-24 review-section">
 
-  <div class="w-full px-[50px] pt-[51px] pb-[99px] outline outline-1 outline-offset-[-1px] outline-stone-300 flex flex-col relative overflow-hidden">
+  <div class="w-full px-[1.8rem] py-[3.1875rem] md:px-[2rem] md:py-[3.1875rem] lg:px-[3.125rem] lg:pt-[3.1875rem] lg:pb-[6.1875rem] outline outline-1 outline-offset-[-0.0625rem] outline-stone-300 flex flex-col relative overflow-hidden">
 
     <!-- Slider Wrapper -->
     <div class="w-full flex transition-all duration-500 ease-in-out product-slider" style="gap: 0px;">
 
       {% for block in section.blocks %}
-        <div class="w-full flex-shrink-0 flex flex-col items-center justify-center gap-9" style="min-width: 100%;" data-review-slide>
+        <div class="w-full flex-shrink-0 flex flex-col items-center justify-center gap-[2.25rem]" style="min-width: 100%;" data-review-slide>
 
           <!-- User Info -->
-          <div class="flex justify-center items-center gap-4">
+          <div class="flex justify-center items-center gap-[1rem]">
             {% if block.settings.avatar != blank %}
-              <img class="w-[60px] h-[60px] object-cover" 
+              <img class="w-[3.75rem] h-[3.75rem] object-cover" 
                    src="{{ block.settings.avatar | image_url: width: 60, height: 60 }}" 
                    width="60" height="60" 
                    alt="{{ block.settings.name }}">
@@ -30,7 +30,7 @@
           </div>
 
           <!-- Review Text -->
-          <div class="text-center text-primary text-[32px] font-normal leading-[48px] font-catalina  mx-[93px]">
+          <div class="text-center text-primary text-[2rem] font-normal leading-[3rem] font-catalina md:mx-[5.8125rem]">
             {{ block.settings.review }}
           </div>
 
@@ -40,16 +40,17 @@
     </div>
 
     <!-- Arrows -->
-    <button class="p-2.5 outline outline-1 outline-offset-[-1px] outline-zinc-500 flex items-center justify-center hover:bg-zinc-100 transition absolute h-[44px] w-[44px] left-[49px] top-1/2 -translate-y-1/2 slider-prev">
+    <button class="p-[0.625rem] outline outline-1 outline-offset-[-0.0625rem] outline-zinc-500 hidden lg:flex items-center justify-center hover:bg-zinc-100 transition absolute h-[2.75rem] w-[2.75rem] left-[3.0625rem] top-1/2 -translate-y-1/2 slider-prev">
       {% render 'icon-prev-button' %}
     </button>
 
-    <button class="p-2.5 outline outline-1 outline-offset-[-1px] outline-zinc-500 flex items-center justify-center hover:bg-zinc-100 transition absolute right-[49px] h-[44px] w-[44px] top-1/2 -translate-y-1/2 slider-next">
+    <button class="p-[0.625rem] outline outline-1 outline-offset-[-0.0625rem] outline-zinc-500 hidden lg:flex items-center justify-center hover:bg-zinc-100 transition absolute right-[3.0625rem] h-[2.75rem] w-[2.75rem] top-1/2 -translate-y-1/2 slider-next">
       {% render 'icon-next-button' %}
     </button>
 
   </div>
 </div>
+
 <script src="{{ 'one-card-slider.js' | asset_url }}" defer></script>
 
 {% schema %}

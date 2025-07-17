@@ -630,6 +630,7 @@
         "type": "home-banner",
         "settings": {
           "background_image": "shopify://shop_images/young-woman-standing-against-white-background_1.webp",
+          "background_image_mobile": "shopify://shop_images/young-woman-standing-against-white-background_1_1.png",
           "badge_text": "Just Arrived",
           "badge_text_color": "#2f2f2f",
           "badge_border_color": "#2f2f2f",
@@ -651,6 +652,7 @@
         "type": "man-banner",
         "settings": {
           "background_image": "shopify://shop_images/monochrome-portrait-man-showing-vulnerability-self-acceptance.webp",
+          "background_image_mobile": "shopify://shop_images/monochrome-portrait-man-showing-vulnerability-self-acceptance_1.png",
           "badge_text": "Just Arrived",
           "badge_text_color": "#ffffff",
           "badge_border_color": "#ffffff",
@@ -927,7 +929,6 @@
         "type": "man-shirts",
         "settings": {
           "heading": "Our Shirt Collections",
-          "per_page": 12,
           "collection": "",
           "product_list": [
             "full-shirt",
@@ -1035,6 +1036,7 @@
         ],
         "settings": {
           "heading": "Our New Arrivals",
+          "mobile_per_page": 4,
           "collection": "new-arrivals",
           "product_list": []
         }

@@ -1,0 +1,271 @@
+{% if customer %}
+  <div class="max-w-5xl mx-auto bg-white rounded-lg p-10 min-h-[60rem] shadow-md">
+    <!-- Header Background -->
+    <div class="h-24 bg-gray-200 rounded-t-lg mb-8"></div>
+
+    <div class="flex items-start gap-8">
+      <!-- Profile Pic with Edit Icon -->
+      <div class="relative w-24 h-24 rounded-full bg-gray-300 overflow-hidden flex-shrink-0">
+        <img
+          id="profile-pic"
+          src="{{ customer.metafields.custom.profile_image | default: 'https://placehold.co/100x100' }}"
+          alt="Profile"
+          class="w-full h-full object-cover"
+        />
+        <label
+          for="image-upload"
+          id="edit-image-icon"
+          class="absolute bottom-1 right-1 w-6 h-6 bg-white border rounded-full text-xs flex items-center justify-center cursor-pointer hover:bg-gray-100"
+          title="Edit Profile Image"
+        >✏️</label>
+        <input id="image-upload" type="file" accept="image/*" class="hidden" />
+      </div>
+
+      <!-- Profile Info (Name, Email, Edit Btn) -->
+      <div class="flex-1">
+        <div class="flex items-center gap-4 mb-2">
+          <h2 id="profile-name" class="text-2xl font-semibold text-zinc-800">
+            {{ customer.first_name }} {{ customer.last_name }}
+          </h2>
+          <button id="edit-name" class="text-gray-600 text-sm cursor-pointer" title="Edit Name">✏️</button>
+        </div>
+        <div class="flex items-center gap-4 mb-6 opacity-70">
+          <p id="profile-email" class="text-base text-zinc-800">{{ customer.email }}</p>
+          <button id="edit-email" class="text-gray-600 text-sm cursor-pointer" title="Edit Email">✏️</button>
+        </div>
+        <button
+          id="edit-btn"
+          class="px-6 py-2 bg-slate-500 text-white rounded-lg text-sm"
+        >
+          Edit
+        </button>
+      </div>
+    </div>
+
+    <!-- Profile Form -->
+    <form id="profile-form" class="mt-10 space-y-6 max-w-3xl">
+      <!-- Full Name -->
+      <div>
+        <label for="full_name" class="block mb-1 font-medium text-zinc-800">Full Name</label>
+        <input
+          type="text"
+          id="full_name"
+          name="full_name"
+          value="{{ customer.metafields.custom.full_name }}"
+          placeholder="Enter Full Name"
+          class="w-full h-12 bg-stone-50 rounded-lg px-4 text-zinc-800 opacity-40 disabled:opacity-40"
+          disabled
+        />
+      </div>
+
+      <!-- Gender -->
+      <div>
+        <label for="gender" class="block mb-1 font-medium text-zinc-800">Gender</label>
+        <select
+          id="gender"
+          name="gender"
+          class="w-full h-12 bg-stone-50 rounded-lg px-4 text-zinc-800 opacity-40 disabled:opacity-40"
+          disabled
+        >
+          <option value="Male" {% if customer.metafields.custom.gender == "Male" %}selected{% endif %}>Male</option>
+          <option value="Female" {% if customer.metafields.custom.gender == "Female" %}selected{% endif %}>Female</option>
+          <option value="Other" {% if customer.metafields.custom.gender == "Other" %}selected{% endif %}>Other</option>
+        </select>
+      </div>
+
+      <!-- Language -->
+      <div>
+        <label for="language" class="block mb-1 font-medium text-zinc-800">Language</label>
+        <select
+          id="language"
+          name="language"
+          class="w-full h-12 bg-stone-50 rounded-lg px-4 text-zinc-800 opacity-40 disabled:opacity-40"
+          disabled
+        >
+          <option value="English" {% if customer.metafields.custom.language == "English" %}selected{% endif %}>English</option>
+          <option value="Bengali" {% if customer.metafields.custom.language == "Bengali" %}selected{% endif %}>Bengali</option>
+          <option value="Spanish" {% if customer.metafields.custom.language == "Spanish" %}selected{% endif %}>Spanish</option>
+        </select>
+      </div>
+
+      <!-- Nick Name -->
+      <div>
+        <label for="nick_name" class="block mb-1 font-medium text-zinc-800">Nick Name</label>
+        <input
+          type="text"
+          id="nick_name"
+          name="nick_name"
+          value="{{ customer.metafields.custom.nick_name }}"
+          placeholder="Enter Nick Name"
+          class="w-full h-12 bg-stone-50 rounded-lg px-4 text-zinc-800 opacity-40 disabled:opacity-40"
+          disabled
+        />
+      </div>
+
+      <!-- Country -->
+      <div>
+        <label for="country" class="block mb-1 font-medium text-zinc-800">Country</label>
+        <select
+          id="country"
+          name="country"
+          class="w-full h-12 bg-stone-50 rounded-lg px-4 text-zinc-800 opacity-40 disabled:opacity-40"
+          disabled
+        >
+          <option value="Bangladesh" {% if customer.metafields.custom.country == "Bangladesh" %}selected{% endif %}>Bangladesh</option>
+          <option value="USA" {% if customer.metafields.custom.country == "USA" %}selected{% endif %}>USA</option>
+          <option value="UK" {% if customer.metafields.custom.country == "UK" %}selected{% endif %}>UK</option>
+        </select>
+      </div>
+
+      <!-- Time Zone -->
+      <div>
+        <label for="timezone" class="block mb-1 font-medium text-zinc-800">Time Zone</label>
+        <select
+          id="timezone"
+          name="timezone"
+          class="w-full h-12 bg-stone-50 rounded-lg px-4 text-zinc-800 opacity-40 disabled:opacity-40"
+          disabled
+        >
+          <option value="GMT +6" {% if customer.metafields.custom.timezone == "GMT +6" %}selected{% endif %}>GMT +6</option>
+          <option value="GMT +5" {% if customer.metafields.custom.timezone == "GMT +5" %}selected{% endif %}>GMT +5</option>
+          <option value="GMT +7" {% if customer.metafields.custom.timezone == "GMT +7" %}selected{% endif %}>GMT +7</option>
+        </select>
+      </div>
+    </form>
+
+    <!-- My Email Address Section -->
+    <div class="mt-12 max-w-3xl">
+      <h3 class="text-lg font-medium text-zinc-800 mb-2">My Email Address</h3>
+      <div class="flex items-start gap-4 mb-4">
+        <div class="w-12 h-12 bg-slate-500 opacity-10 rounded-full flex-shrink-0"></div>
+        <div>
+          <p class="text-base text-zinc-800" id="main-email-display">{{ customer.email }}</p>
+          <p class="text-sm text-zinc-800 opacity-50">1 month ago</p>
+        </div>
+      </div>
+      <button
+        id="toggleEmailField"
+        class="text-slate-500 bg-slate-500 bg-opacity-10 px-6 py-2 rounded-lg"
+      >
+        + Add Email Address
+      </button>
+      <div id="emailInputWrapper" class="hidden mt-4 flex items-center gap-4">
+        <input
+          type="email"
+          id="new-email"
+          placeholder="Enter new email"
+          class="w-60 h-12 bg-stone-50 rounded-lg px-4 text-zinc-800"
+        />
+        <button id="save-email-btn" class="bg-slate-500 text-white px-6 py-2 rounded-lg">
+          Save
+        </button>
+      </div>
+    </div>
+
+    <!-- Toast -->
+    <div
+      id="toast"
+      class="fixed bottom-6 right-6 bg-green-500 text-white px-5 py-3 rounded opacity-0 transition-opacity duration-300 pointer-events-none"
+    >
+      Updated Successfully!
+    </div>
+  </div>
+
+  <script>
+    const editBtn = document.getElementById('edit-btn');
+    const inputs = document.querySelectorAll('#profile-form input, #profile-form select');
+    const toggleEmail = document.getElementById('toggleEmailField');
+    const emailWrapper = document.getElementById('emailInputWrapper');
+    const saveEmailBtn = document.getElementById('save-email-btn');
+    const newEmailInput = document.getElementById('new-email');
+    const toast = document.getElementById('toast');
+
+    const editNameBtn = document.getElementById('edit-name');
+    const editEmailBtn = document.getElementById('edit-email');
+    const profileNameSpan = document.getElementById('profile-name');
+    const profileEmailSpan = document.getElementById('profile-email');
+    const fullNameInput = document.getElementById('full_name');
+
+    const imageUploadInput = document.getElementById('image-upload');
+    const profilePic = document.getElementById('profile-pic');
+
+    // Show toast function
+    function showToast(message = "Updated Successfully!") {
+      toast.textContent = message;
+      toast.style.opacity = "1";
+      toast.style.pointerEvents = "auto";
+      setTimeout(() => {
+        toast.style.opacity = "0";
+        toast.style.pointerEvents = "none";
+      }, 3000);
+    }
+
+    // Toggle all inputs disabled on main edit button
+    editBtn.addEventListener('click', () => {
+      const isEditing = inputs[0].disabled === false;
+      inputs.forEach(input => {
+        input.disabled = isEditing;
+        if (isEditing) input.classList.add('opacity-40');
+        else input.classList.remove('opacity-40');
+      });
+      editBtn.innerText = isEditing ? 'Edit' : 'Save';
+
+      if (!isEditing) {
+        // AJAX call to save profile info here (demo: just toast)
+        showToast();
+      }
+    });
+
+    // Edit Name button functionality - only enable full_name input
+    editNameBtn.addEventListener('click', () => {
+      inputs.forEach(input => {
+        input.disabled = true;
+        input.classList.add('opacity-40');
+      });
+      fullNameInput.disabled = false;
+      fullNameInput.classList.remove('opacity-40');
+      fullNameInput.focus();
+    });
+
+    // Edit Email button - just alert or redirect
+    editEmailBtn.addEventListener('click', () => {
+      alert("Please use the 'My Email Address' section below to add or update your email.");
+    });
+
+    // Image upload change event (preview only)
+    imageUploadInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        profilePic.src = evt.target.result;
+        showToast("Profile image updated (preview only).");
+        // Here should be your backend upload call
+      }
+      reader.readAsDataURL(file);
+    });
+
+    toggleEmail.addEventListener('click', () => {
+      emailWrapper.classList.toggle('hidden');
+    });
+
+    saveEmailBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const newEmail = newEmailInput.value.trim();
+      if (!newEmail) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+      // AJAX call to save email here (demo: just update display and toast)
+      document.getElementById('main-email-display').textContent = newEmail;
+      newEmailInput.value = '';
+      emailWrapper.classList.add('hidden');
+      showToast("Email updated successfully!");
+    });
+  </script>
+{% else %}
+  <div class="text-center py-20">
+    Please <a href="/account/login" class="text-blue-600 underline">login</a> to view your profile.
+  </div>
+{% endif %}
