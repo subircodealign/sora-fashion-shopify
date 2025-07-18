@@ -1,6 +1,6 @@
 
 
-<div class="max:w-[978px] lg:max-w-[1080px] mx-auto p-6 mb-24 bg-secondary flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="mx-[1rem] lg:mx-[9rem] xl:mx-[10rem] p-6 mb-12 md:mb-24 bg-secondary flex flex-col md:flex-row justify-between items-center gap-6">
   <div class="flex flex-col justify-center items-start gap-1">
     <h2 class="text-white text-2xl font-normal font-castoro leading-9">
       {{ section.settings.heading | default: "GET IT BEFORE IT'S GONE" }}
@@ -10,38 +10,38 @@
     </p>
   </div>
 
-  <div class="relative flex items-start gap-8">
-
-    <div class="flex flex-col justify-start items-center">
-      <div class="countdown-days text-white text-5xl font-normal font-catalina leading-[64px]">0</div>
-      <div class="text-white text-base font-normal font-figtree leading-relaxed">DAYS</div>
+  <div class="flex items-center gap-4 md:gap-8">
+    <!-- DAYS -->
+    <div class="flex flex-col items-center">
+      <div class="countdown-days text-white text-5xl font-normal font-catalina leading-[4rem]">0</div>
+      <div class="text-white text-[0.75rem] md:text-base font-normal font-figtree leading-relaxed">DAYS</div>
     </div>
 
- 
-    <div class="w-8 h-0 absolute left-[56px] top-[11px] rotate-90 border-t border-white"></div>
+    <!-- Divider -->
+    <div class="w-px h-12 bg-white"></div>
 
- 
-    <div class="flex flex-col justify-start items-center">
-      <div class="countdown-hours text-white text-5xl font-normal font-catalina leading-[64px]">0</div>
-      <div class="text-white text-base font-normal font-figtree leading-relaxed">HOURS</div>
+    <!-- HOURS -->
+    <div class="flex flex-col items-center">
+      <div class="countdown-hours text-white text-5xl font-normal font-catalina leading-[4rem]">0</div>
+      <div class="text-white text-[0.75rem] md:text-base font-normal font-figtree leading-relaxed">HOURS</div>
     </div>
 
-    
-    <div class="w-8 h-0 absolute left-[146px] top-[11px] rotate-90 border-t border-white"></div>
+    <!-- Divider -->
+    <div class="w-px h-12 bg-white"></div>
 
-
-    <div class="flex flex-col justify-start items-center">
-      <div class="countdown-minutes text-white text-5xl font-normal font-catalina leading-[64px]">0</div>
-      <div class="text-white text-base font-normal font-figtree leading-relaxed">MINUTES</div>
+    <!-- MINUTES -->
+    <div class="flex flex-col items-center">
+      <div class="countdown-minutes text-white text-5xl font-normal font-catalina leading-[4rem]">0</div>
+      <div class="text-white text-[0.75rem] md:text-base font-normal font-figtree leading-relaxed">MINUTES</div>
     </div>
 
+    <!-- Divider -->
+    <div class="w-px h-12 bg-white"></div>
 
-    <div class="w-8 h-0 absolute left-[247px] top-[11px] rotate-90 border-t border-white"></div>
-
-
-    <div class="flex flex-col justify-start items-center">
-      <div class="countdown-seconds text-white text-5xl font-normal font-catalina leading-[64px]">0</div>
-      <div class="text-white text-base font-normal font-figtree leading-relaxed">SECONDS</div>
+    <!-- SECONDS -->
+    <div class="flex flex-col items-center">
+      <div class="countdown-seconds text-white text-5xl font-normal font-catalina leading-[4rem]">0</div>
+      <div class="text-white text-[0.75rem] md:text-base font-normal font-figtree leading-relaxed">SECONDS</div>
     </div>
   </div>
 
@@ -54,6 +54,7 @@
     </span>
   </a>
 </div>
+
 
 <div id="countdown-container" data-end-date="{{ section.settings.end_date }}"></div>
 

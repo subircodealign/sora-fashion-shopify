@@ -1,4 +1,4 @@
-<section class="mt-24 bg-white ">
+<section class="mt-12 md:mt-16 lg:mt-24 bg-white ">
   <div class="container mx-auto">
 
      <div class="flex justify-between items-center mb-6 md:mb-[3rem] mx-12 lg:mx-24">
@@ -6,7 +6,7 @@
         {{ section.settings.heading }}
       </h2>
      <!-- Desktop Category Links -->
-      <nav class="hidden lg:flex xl:flex lg:space-x-5 xl:space-x-6 text-primary text-[1.15rem] lg:text-[1.25rem] leading-[2rem]">
+      <nav class="hidden lg:flex xl:flex lg:space-x-4 xl:space-x-6 text-primary text-[1.15rem] lg:text-[1.25rem] leading-[2rem]">
         {% for block in section.blocks %}
           {% if block.type == 'category_link' %}
             <a href="{{ block.settings.link }}" class="hover:text-gray-900">{{ block.settings.label }}</a>
@@ -21,12 +21,12 @@
     </div>
 
 
-    <div id="product-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-12 md:mx-[4.125rem] lg:mx-[10.9375rem] xl:mx-24 gap-[1.5rem] mb-[2.5rem] transition-all duration-300"></div>
+    <div id="product-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-12 md:mx-[4.125rem] lg:mx-[10rem] xl:mx-24 gap-[1.5rem] mb-[2.5rem] transition-all duration-300"></div>
 
 
     <div class="flex justify-center">
 
-       <div class=" w-[20.875rem] md:w-[23.19vw] h-[2.5rem] bg-[#F5F5F5] flex items-center justify-center rounded-md">
+       <div class=" w-[20.875rem] md:w-[24vw] h-[2.5rem] bg-[#F5F5F5] flex items-center justify-center rounded-md">
 
         <div id="pagination-controls" class="flex items-center gap-2"></div>
       </div>

@@ -1,23 +1,18 @@
+<!-- templates/customers/login.liquid -->
 <section class="max-w-lg mx-auto my-20 px-6">
   <h2 class="text-3xl font-bold mb-6 text-center">Login to Your Account</h2>
 
-  {% form 'customer_login' %}
-    {% if form.errors %}
-      <div class="mb-4 text-red-600 text-sm">
-        {% for field in form.errors %}
-          <p>{{ form.errors.messages[field] }}</p>
-        {% endfor %}
-      </div>
-    {% endif %}
+  <form id="login-form" method="post" action="/account/login" class="space-y-6">
+    <div id="login-error" class="text-red-600 text-sm mb-4 hidden"></div>
 
-    <div class="mb-4">
+    <div>
       <label for="CustomerEmail" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-      <input type="email" name="customer[email]" id="CustomerEmail" required class="w-full px-4 py-2 border rounded-md focus:outline-none">
+      <input type="email" name="customer[email]" id="CustomerEmail" required class="w-full px-4 py-2 border rounded-md focus:outline-none" />
     </div>
 
-    <div class="mb-6">
+    <div>
       <label for="CustomerPassword" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
-      <input type="password" name="customer[password]" id="CustomerPassword" required class="w-full px-4 py-2 border rounded-md focus:outline-none">
+      <input type="password" name="customer[password]" id="CustomerPassword" required class="w-full px-4 py-2 border rounded-md focus:outline-none" />
     </div>
 
     <button type="submit" class="w-full bg-black text-white py-2 rounded-md">Login</button>
@@ -25,5 +20,53 @@
     <div class="text-center mt-4">
       <a href="/account/register" class="text-blue-500 underline">Create a new account</a>
     </div>
-  {% endform %}
+  </form>
 </section>
+
+<script>
+  document.getElementById('login-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+    const errorDiv = document.getElementById('login-error');
+    errorDiv.classList.add('hidden');
+    errorDiv.innerHTML = '';
+
+    try {
+      const response = await fetch('/account/login', {
+        method: 'POST',
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: formData
+      });
+
+      // Shopify redirects on successful login
+      if (response.redirected) {
+        window.location.href = response.url;
+        return;
+      }
+
+      // If no redirect, parse response text (Shopify returns login page with errors)
+      const text = await response.text();
+
+      // Extract error message from returned HTML (basic)
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(text, 'text/html');
+      const errorMessage = doc.querySelector('.errors, .error, #login-error, .notice');
+
+      if (errorMessage) {
+        errorDiv.textContent = errorMessage.textContent.trim();
+        errorDiv.classList.remove('hidden');
+      } else {
+        errorDiv.textContent = 'Login failed. Please check your credentials.';
+        errorDiv.classList.remove('hidden');
+      }
+    } catch (error) {
+      errorDiv.textContent = 'Something went wrong. Please try again.';
+      errorDiv.classList.remove('hidden');
+      console.error(error);
+    }
+  });
+</script>

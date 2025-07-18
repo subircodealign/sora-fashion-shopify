@@ -14,9 +14,27 @@
     },
     {
       "type": "range",
-      "id": "per_page",
-      "label": "Products per Page",
-      "min": 3,
+      "id": "per_page_mobile",
+      "label": "Products per Page (Mobile)",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "per_page_tablet",
+      "label": "Products per Page (Tablet)",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "per_page_desktop",
+      "label": "Products per Page (Desktop)",
+      "min": 1,
       "max": 50,
       "step": 1,
       "default": 12
@@ -33,7 +51,7 @@
       "limit": 50
     }
   ],
-    
+
   "presets": [
     {
       "name": "Man Shirts",
@@ -41,4 +59,5 @@
     }
   ]
 }
+
 {% endschema %}

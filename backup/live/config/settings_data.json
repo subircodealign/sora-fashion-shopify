@@ -621,6 +621,7 @@
         "type": "home-banner",
         "settings": {
           "background_image": "shopify://shop_images/young-woman-standing-against-white-background_1.webp",
+          "background_image_mobile": "shopify://shop_images/young-woman-standing-against-white-background_1_1.png",
           "badge_text": "Just Arrived",
           "badge_text_color": "#2f2f2f",
           "badge_border_color": "#2f2f2f",
@@ -642,6 +643,7 @@
         "type": "man-banner",
         "settings": {
           "background_image": "shopify://shop_images/monochrome-portrait-man-showing-vulnerability-self-acceptance.webp",
+          "background_image_mobile": "shopify://shop_images/monochrome-portrait-man-showing-vulnerability-self-acceptance_1.png",
           "badge_text": "Just Arrived",
           "badge_text_color": "#ffffff",
           "badge_border_color": "#ffffff",
@@ -732,17 +734,17 @@
         "type": "man-categories",
         "settings": {
           "section_heading": "Spring styles to wear together or apart, whatever the weather.",
-          "main_image": "shopify://shop_images/f949da56cc6b75484eae3fcd735c40df24a5fbaa_1.webp",
+          "main_image": "shopify://shop_images/mohamad-khosravi-crTazp-cnq4-unsplash.png",
           "main_title": "New Arrivals",
           "main_description": "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us",
           "main_link": "",
           "main_button": "",
-          "card_1_image": "shopify://shop_images/a80e2fde95519d987ad00babd6da1f6daef92b25_3.webp",
+          "card_1_image": "shopify://shop_images/Image_5.png",
           "card_1_title": "Denim Jackets",
           "card_1_description": "",
           "card_1_link": "",
           "card_1_button": "",
-          "card_2_image": "shopify://shop_images/46057b6861b9ec9991f1c75a8e7df88bcf5d9d3f_1_3.webp",
+          "card_2_image": "shopify://shop_images/daniil-onischenko-ghbriXcWdqo-unsplash.png",
           "card_2_title": "Adult’s Fashion",
           "card_2_description": "",
           "card_2_link": "",
@@ -753,6 +755,7 @@
         "type": "woman-banner",
         "settings": {
           "background_image": "shopify://shop_images/beautiful-smiling-woman-with-clean-skin-natural-makeup-white-teeth-gray-background.webp",
+          "background_image_mobile": "shopify://shop_images/beautiful-smiling-woman-with-clean-skin-natural-makeup-white-teeth-gray-background_1.png",
           "badge_text": "Just Arrived",
           "badge_text_color": "#2f2f2f",
           "badge_border_color": "#2f2f2f",
@@ -775,6 +778,7 @@
         "blocks": {
           "category_link_7JMMzg": {
             "type": "category_link",
+            "name": "All Items",
             "settings": {
               "label": "All Items",
               "link": ""
@@ -782,15 +786,25 @@
           },
           "category_link_6YAtnN": {
             "type": "category_link",
+            "name": "Cloths",
             "settings": {
-              "label": "Man",
+              "label": "Cloths",
               "link": ""
             }
           },
           "category_link_nTMaHK": {
             "type": "category_link",
+            "name": "Rings & Wears",
             "settings": {
-              "label": "Man",
+              "label": "Rings & Wears",
+              "link": ""
+            }
+          },
+          "category_link_EXzKaz": {
+            "type": "category_link",
+            "name": "Cosmetics & Accessories",
+            "settings": {
+              "label": "Cosmetics & Accessories",
               "link": ""
             }
           }
@@ -798,13 +812,30 @@
         "block_order": [
           "category_link_7JMMzg",
           "category_link_6YAtnN",
-          "category_link_nTMaHK"
+          "category_link_nTMaHK",
+          "category_link_EXzKaz"
         ],
         "settings": {
           "heading": "Our New Arrivals",
           "per_page": 12,
           "collection": "new-arrivals",
-          "product_list": []
+          "product_list": [
+            "browne-winter-sweater",
+            "browne-winter-sweater-1",
+            "browne-winter-sweater-2",
+            "full-shirt",
+            "gift-card",
+            "mash-winter-sweater",
+            "new-kurta-s-for-boys",
+            "print-sweater-for-winter",
+            "selling-plans-ski-wax",
+            "the-3p-fulfilled-snowboard",
+            "slim-gray-t-shirt-for-boys",
+            "the-collection-snowboard-hydrogen",
+            "the-collection-snowboard-liquid",
+            "the-compare-at-price-snowboard",
+            "the-collection-snowboard-oxygen"
+          ]
         }
       },
       "woman-categories": {
@@ -853,12 +884,12 @@
         "type": "season-categories",
         "settings": {
           "section_heading": "Spring styles to wear together or apart, whatever the weather.",
-          "img1": "shopify://shop_images/605cd461267839d5fe34da414bd461ab7841b749.jpg",
+          "img1": "shopify://shop_images/portrait-smiling-young-woman-standing-against-white-background.png",
           "title1": "Winter Fashion",
           "desc1": "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us",
           "link1": "",
           "btn1": "",
-          "img2": "shopify://shop_images/5af2c472c3a995ef0b7bcb10dfb627222196cbfa.jpg",
+          "img2": "shopify://shop_images/smiling-beautiful-woman-her-handsome-boyfriend-happy-cheerful-couple-outdoors-sunny-day.png",
           "title2": "Winter Fashion",
           "desc2": "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us",
           "link2": "",
@@ -868,7 +899,7 @@
       "season-categories2": {
         "type": "season-categories2",
         "settings": {
-          "img3": "shopify://shop_images/4bab9f8790185a3b7bf3ee1169cc7614ad0ee34c.jpg",
+          "img3": "shopify://shop_images/portrait-cute-couple-love-having-fun-luxury-evening-clothes-expressing-positivity-celebrating-smiling-cheerful-mood.png",
           "title3": "Party & Wedding Fashion",
           "desc3": "The best of this season, Durable shoes made from chemical free cowhide leather. New arrivals that hand pick by us",
           "link3": "",
@@ -879,17 +910,17 @@
         "type": "new-apparels-categories",
         "settings": {
           "section_heading": "Spring styles to wear together or apart, whatever the weather.",
-          "main_image": "shopify://shop_images/category-women1.webp",
+          "main_image": "shopify://shop_images/Image_2.png",
           "main_title": "",
           "main_description": "",
           "main_link": "",
           "main_button": "",
-          "card_1_image": "shopify://shop_images/category-women2.webp",
+          "card_1_image": "shopify://shop_images/Image_5.png",
           "card_1_title": "",
           "card_1_description": "",
           "card_1_link": "",
           "card_1_button": "",
-          "card_2_image": "shopify://shop_images/category-women3.webp",
+          "card_2_image": "shopify://shop_images/Image_4.png",
           "card_2_title": "",
           "card_2_description": "",
           "card_2_link": "",
@@ -918,7 +949,6 @@
         "type": "man-shirts",
         "settings": {
           "heading": "Our Shirt Collections",
-          "per_page": 12,
           "collection": "",
           "product_list": [
             "full-shirt",
@@ -1026,6 +1056,7 @@
         ],
         "settings": {
           "heading": "Our New Arrivals",
+          "mobile_per_page": 4,
           "collection": "new-arrivals",
           "product_list": []
         }
