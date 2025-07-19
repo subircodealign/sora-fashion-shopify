@@ -3,7 +3,7 @@
 <div id="cart-overlay" class="fixed inset-0 bg-black bg-opacity-40 hidden z-40"></div>
 
 <!-- Cart Drawer -->
-<div id="cart-drawer" class="fixed top-0 right-0 w-full max-w-[43.125vw] h-full bg-white shadow-xl transform translate-x-full transition-transform z-50 p-6 flex flex-col">
+<div id="cart-drawer" class="fixed top-0 right-0 w-full md:w-[38.8125rem] h-full bg-white shadow-xl transform translate-x-full transition-transform z-50 p-6 flex flex-col">
   <!-- Header -->
   <div class="flex justify-between items-center mb-4">
     <h2 class="text-4xl font-semibold text-[#2F2F2F]">Your Cart</h2>
@@ -21,18 +21,18 @@
   <p id="cart-empty" class="text-gray-500 text-center mt-10 hidden">Your cart is empty.</p>
 
   <!-- Cart Total & Checkout -->
-  <div class="mt-6 border-t pt-4">
-  <div class="flex justify-between text-4xl font-semibold">
+  <div>
+  <div class="flex justify-between text-2xl md:text-4xl font-semibold">
       <p>Estimated Total:</p> <span id="cart-total">0.00$ USD</span>
   </div>
   <p class="text-accent text-sm mt-3 mb-6">Taxes and shipping calculated at checkout.</p>
   <div class="flex space-x-4 ">
-   <button class="mt-4 block text-center border border-secondary  text-secondary w-2/5 h-[3.125rem]">
+   <button class="mt-4 block text-center border border-secondary  text-secondary w-1/2 md:w-2/5 h-[3.125rem]">
      <a href="/view-cart" >
       View Cart
     </a>
    </button>
-    <button class="mt-4 block text-center bg-secondary text-white w-3/5 h-[3.125rem]">
+    <button class="mt-4 block text-center bg-secondary text-white w-1/2 md:w-3/5 h-[3.125rem]">
 <a href="/checkout" >
       Checkout
     </a>

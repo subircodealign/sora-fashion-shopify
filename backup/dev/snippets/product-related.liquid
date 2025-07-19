@@ -2,10 +2,10 @@
 {% assign current_collection = product.collections.first %}
 
 {% if current_collection.products_count > 1 %}
-  <div class="mb-24 mx-24">
-    <h2 class="text-[48px] leading-[64px] font-catalina text-primary text-center mb-12">Related Products</h2>
+  <div class="mb-12 md:mb-16 lg:mb-24 px-4 md:px-12 lg:px-24 ">
+    <h2 class="text-2xl md:text-5xl leading-[4rem] font-catalina text-primary text-center mb-6 md:mb-8 lg:mb-12">Related Products</h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
       {% assign shown_count = 0 %}
       {% for related_product in current_collection.products %}
         {% if related_product.handle != current_handle %}

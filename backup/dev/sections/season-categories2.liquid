@@ -1,29 +1,29 @@
 
- <div class="px-24 pb-24">
-     <div class="relative group overflow-hidden">
+ <div class="px-4 md:px-12 lg:px-24 py-12 md:py-16 lg:py-24">
+    <div class="relative group overflow-hidden">
     {% if section.settings.img3 != blank %}
       <img src="{{ section.settings.img3 | image_url: width: 1248 }}" alt="{{ section.settings.title3 | escape }}" width="1248" height="707"
-        class="w-full h-[707px] object-cover object-left transition-transform duration-500 group-hover:scale-105" loading="lazy">
+        class="w-full h-[12.6756rem] md:h-[26.32rem] lg:h-[44.1875rem] object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
     {% else %}
-      <img src="https://placehold.co/1248x707" alt="Image 3 Placeholder" width="1248" height="707"
-        class="w-full h-[707px] object-cover object-left">
+      <img src="https://placehold.co/1248x707" alt="Image 1 Placeholder" width="1248" height="707"
+        class="w-full h-[13rem] md:h-[26.32rem] lg:h-[44.1875rem] object-cover ">
     {% endif %}
 
-    <div class="absolute top-0 left-0 p-8 flex flex-col justify-between h-[calc(100%-5px)] bg-opacity-90 max-w-[310px]">
-      <div class="space-y-6">
-        <h3 class="text-primary text-[32px] font-normal font-catalina leading-[48px]">
-          {{ section.settings.title3 | default: "Kids Collection" }}
+    <div class="absolute top-0 left-0 p-[0.57375rem] md:p-[1.19125rem] lg:p-8 flex flex-col justify-between h-[calc(100%-0.3125rem)] bg-opacity-90 max-w-[14rem] md:max-w-[15.67125rem] lg:max-w-[19.375rem]">
+      <div class="space-y-[0.43rem] md:space-y-[0.893125rem] lg:space-y-6">
+        <h3 class="text-primary text-2xl md:text-[1.19125rem] lg:text-[2rem] font-normal font-catalina leading-7 md:leading-[1.786875rem] lg:leading-[3rem]">
+          {{ section.settings.title3 | default: "Woman's Fashion" }}
         </h3>
-        <p class="text-accent text-lg font-normal font-catalina leading-7">
-          {{ section.settings.desc3 | default: "Default description for image 3." }}
+        <p class="text-accent text-[0.75rem] max-w-[9rem] md:max-w-[15.67125rem] lg:max-w-[19.375rem] md:text-[1.0425rem] lg:text-lg font-normal font-catalina leading-[1rem] md:leading-[1.786875rem] lg:leading-7">
+          {{ section.settings.desc3 | default: "Default description for image 2." }}
         </p>
       </div>
 
-      <a href="{{ section.settings.link3 }}" class="mt-6 px-6 py-3 border border-secondary inline-flex items-center gap-1 justify-center transition-colors">
-        <span class="text-secondary text-[16px] font-normal font-figtree leading-relaxed">
-          {{ section.settings.btn3 | default: "View More" }}
+      <a href="{{ section.settings.link3 }}" class="  border border-secondary inline-flex items-center gap-1 justify-center transition-colors mt-1.5 md:mt-6 py-1 md:py-2 max-w-[5.1875rem] md:w-1/2 lg:w-full md:max-w-[12rem] ">
+        <span class="text-secondary text-[0.5rem] md:text-[0.7rem] lg:text-[1rem] font-normal font-figtree leading-relaxed">
+          {{ section.settings.btn3 | default: "Explore More" }}
         </span>
-        <span class="w-6 h-6 flex items-center justify-center">
+        <span class="w-[0.43rem] h-[0.43rem] md:w-[0.893125rem] md:h-[0.893125rem] lg:w-6 lg:h-6 flex items-center justify-center">
           {% render 'icon-arrow' %}
         </span>
       </a>

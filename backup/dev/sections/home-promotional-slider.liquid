@@ -9,7 +9,7 @@
   }
 </style>
 
-<section class="w-full bg-white pb-12 md:pb-24">
+<section class="w-full bg-white pb-12 md:pb-16 lg:pb-24">
   <div class="relative overflow-hidden">
 
     <!-- Slider wrapper -->
@@ -18,7 +18,7 @@
 
       {% for block in section.blocks %}
         <div
-          class="slide snap-center flex-shrink-0 object-cover w-[22.375rem] h-[11rem] md:w-[64.58vw] md:h-[27.125rem] relative {% unless forloop.last %}mr-6{% endunless %} overflow-hidden"
+          class="slide snap-center flex-shrink-0 object-cover w-[22.375rem] h-[11rem] md:w-[41.91964rem] md:h-[21.875rem] lg:w-[64.58vw] lg:h-[27.125rem] relative {% unless forloop.last %}mr-6{% endunless %} overflow-hidden"
           style="scroll-snap-align: center;">
 
           <img src="{{ block.settings.image | image_url: width: 930, height: 434 }}"

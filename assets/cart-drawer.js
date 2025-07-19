@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((err) => console.error("Error loading cart:", err));
   }
 
- function getColorValue(item) {
+function getColorValue(item) {
   const colorMap = {
     'steel blue': '#6B749E',
     'brownish red': '#9E5A4F',
@@ -63,17 +63,30 @@ document.addEventListener("DOMContentLoaded", function () {
     'light cool gray': '#C0C6C6'
   };
 
-  let colorValue = item.options_with_values?.find(opt => opt.name.toLowerCase() === 'color')?.value;
+  let colorValue;
 
-  if (!colorValue && item.variant_options?.length > 0) {
-    colorValue = item.variant_options[0];
+  // Try from options_with_values
+  if (item.options_with_values?.length) {
+    for (const opt of item.options_with_values) {
+      if (opt.name.toLowerCase().includes("color")) {
+        colorValue = opt.value;
+        break;
+      }
+    }
   }
 
-  if (!colorValue) return '#000';
+  // Fallback: try from options if options_with_values doesn't exist
+  if (!colorValue && item.options?.length) {
+    // If you know "Color" is always first option, use [0]
+    colorValue = item.options[0];
+  }
 
-  const lowerCaseColor = colorValue.toLowerCase();
+  if (!colorValue) return '#000'; // fallback color
+
+  const lowerCaseColor = colorValue.toLowerCase().trim();
   return colorMap[lowerCaseColor] || lowerCaseColor;
 }
+
 
 
   // Render cart drawer items
@@ -99,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <div class="flex-1">
           <div class="flex justify-between  ">
-            <div class ="max-w-[11.65625rem]">
+            <div class ="w-[10rem]">
               <p class="text-[1.125rem] leading-[1.75rem] font-medium">${item.product_title}</p>
              
             </div>
@@ -112,11 +125,14 @@ document.addEventListener("DOMContentLoaded", function () {
 </button>
 
           </div>
-          <p class="text-primary font-bold text-2xl my-2">${(item.price / 100).toFixed(2)} $ <span class=" font-normal text-sm text-accent"> 30% Off</span></p>
+         <div class='my-2'>
+          <p class="text-primary font-bold text-2xl">${(item.price / 100).toFixed(2)} $ <span class=" font-normal text-sm text-accent"> 30% Off</span></p>
+         </div>
 
          <div class="mt-3 flex items-center justify-between ">
   <!-- Color Dot -->
-  <div class="w-4 h-4 rounded-full mr-2" style="background-color: ${getColorValue(item)};"></div>
+  <div class="w-4 h-4 rounded-full mr-2 border border-gray-300" style="background-color: ${getColorValue(item)};"></div>
+
 
 
   <!-- Quantity Controls -->

@@ -1,6 +1,6 @@
-<section class="w-full min-h-screen p-[6rem] flex flex-col lg:flex-row justify-between items-start gap-20 bg-white">
+<section class="w-full min-h-screen py-12 md:py-16 lg:py-24 px-4 md:px-12 lg:px-24 flex flex-col lg:flex-row justify-between items-start gap-24 lg:gap-20 xl:gap-24 bg-white">
   <!-- Left Image -->
-  <div class="w-[28.375rem] h-[36.3125rem] lg:w-[35vw] lg:h-auto overflow-hidden">
+  <div class="w-full h-full lg:h-[100vh] xl:h-[80vh] overflow-hidden">
     <img src="{{ section.settings.contact_image | image_url: width: 900 }}"
         width="454" 
         height="581"
@@ -8,9 +8,9 @@
   </div>
 
   <!-- Contact Form and Info -->
-  <div class="w-full lg:w-[55vw] flex flex-col gap-16">
+  <div class="w-full  flex flex-col gap-16">
     <!-- Heading -->
-    <h2 class="text-[2.75rem] leading-[4rem] font-catalina text-primary ">
+    <h2 class="text-5xl leading-[4rem] font-catalina text-primary ">
       {{ section.settings.contact_heading }}
     </h2>
 
@@ -22,7 +22,7 @@
     {% endif %}
 
     <!-- Form and Contact Info -->
-    <div class="flex flex-col md:flex-row justify-between gap-24">
+    <div class="flex flex-col md:flex-row justify-between gap-12 md:gap-16 xl:gap-24">
       <!-- Contact Form -->
       <form
         method="post"
@@ -69,7 +69,7 @@
       </form>
 
       <!-- Contact Info -->
-      <div class="w-full md:w-[35%] flex flex-col gap-10 text-primary font-figtree text-lg">
+      <div class="w-full md:w-[30%] flex flex-col gap-[4.625rem] text-primary font-figtree text-lg">
         <div>
           <div class="font-bold">Contact</div>
           <div>{{ section.settings.contact_email }}</div>
@@ -82,7 +82,7 @@
     </div>
 
     <!-- Submit Button and Socials -->
-    <div class="flex flex-col md:flex-row justify-between items-center gap-6 ">
+    <div class="flex flex-col md:flex-row  md:justify-between md:items-center gap-12 ">
       <button
         id="submit_btn"
         type="submit"

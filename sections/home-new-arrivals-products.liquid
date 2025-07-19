@@ -1,7 +1,7 @@
-<section class="py-[3rem] md:py-[6rem] bg-white px-4 md:px-16 lg:px-32 xl:px-24">
+<section class="py-[3rem] md:py-16 lg:py-[6rem] bg-white ">
   <div>
     <!-- Heading & Category Nav -->
-    <div class="flex justify-between items-center mb-6 md:mb-[3rem]">
+    <div class="flex justify-between items-center mb-6 md:mb-[3rem] px-4 md:px-12 lg:px-24">
       <h2 class="text-2xl md:text-[2.75rem] lg:text-[3rem] leading-[4rem] font-catalina text-primary">
         {{ section.settings.heading }}
       </h2>
@@ -22,7 +22,7 @@
     </div>
 
     <!-- Tablet/Desktop Products  -->
-    <div class="hidden md:grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-6 px-12 md:px-0">
+    <div class="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-12 md:px-[4.125rem] lg:px-[10rem] xl:px-[6rem]">
       {% assign count = 0 %}
       {% assign desktop_products = collections[section.settings.collection].products | default: section.settings.product_list %}
 
