@@ -51,6 +51,31 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((err) => console.error("Error loading cart:", err));
   }
 
+ function getColorValue(item) {
+  const colorMap = {
+    'steel blue': '#6B749E',
+    'brownish red': '#9E5A4F',
+    'light brown': '#AD8A77',
+    'black': '#2F2F2F',
+    'soft ivory': '#EBE1DC',
+    'soft sand': '#E5C3A1',
+    'purple': '#886B9E',
+    'light cool gray': '#C0C6C6'
+  };
+
+  let colorValue = item.options_with_values?.find(opt => opt.name.toLowerCase() === 'color')?.value;
+
+  if (!colorValue && item.variant_options?.length > 0) {
+    colorValue = item.variant_options[0];
+  }
+
+  if (!colorValue) return '#000';
+
+  const lowerCaseColor = colorValue.toLowerCase();
+  return colorMap[lowerCaseColor] || lowerCaseColor;
+}
+
+
   // Render cart drawer items
   function renderCartItems(cart) {
     const validItems = cart.items.filter(item => item.quantity > 0);
@@ -63,14 +88,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     cartEmptyText.classList.add("hidden");
 
-    const html = validItems.map(item => `
-      <div class="cart-item flex gap-4 bg-[#F5F5F5] p-4 rounded relative items-start" data-variant-id="${item.variant_id}">
-        <img src="${item.image}" alt="${item.product_title}" class="w-28 h-32 object-cover rounded" />
+     console.log("Cart Items:");
+  validItems.forEach(item => {
+    console.log(item);
+  });
 
-        <div class="flex-1 pr-6">
-          <div class="flex justify-between items-start">
-            <div>
-              <p class="font-medium">${item.product_title}</p>
+    const html = validItems.map(item => `
+      <div class="cart-item flex  gap-4 bg-[#F5F5F5] p-4 rounded relative " data-variant-id="${item.variant_id}">
+        <img src="${item.image}" alt="${item.product_title}" class="w-28 h-[8rem] object-cover" />
+
+        <div class="flex-1">
+          <div class="flex justify-between  ">
+            <div class ="max-w-[11.65625rem]">
+              <p class="text-[1.125rem] leading-[1.75rem] font-medium">${item.product_title}</p>
              
             </div>
           <button class="remove-item text-gray-400 hover:text-red-600 w-6 h-6 mt-1" title="Remove item" aria-label="Remove item">
@@ -82,13 +112,20 @@ document.addEventListener("DOMContentLoaded", function () {
 </button>
 
           </div>
-          <p class="text-primary font-bold text-2xl mt-1">${(item.price / 100).toFixed(2)} $ <span class=" font-normal text-sm text-accent"> 30% Off</span></p>
+          <p class="text-primary font-bold text-2xl my-2">${(item.price / 100).toFixed(2)} $ <span class=" font-normal text-sm text-accent"> 30% Off</span></p>
 
-          <div class="mt-3 flex items-center border rounded w-max">
-            <button class="decrease-qty px-3 text-xl" aria-label="Decrease quantity">−</button>
-            <span class="px-2 min-w-5 text-center">${item.quantity}</span>
-            <button class="increase-qty px-3 text-xl" aria-label="Increase quantity">+</button>
-          </div>
+         <div class="mt-3 flex items-center justify-between ">
+  <!-- Color Dot -->
+  <div class="w-4 h-4 rounded-full mr-2" style="background-color: ${getColorValue(item)};"></div>
+
+
+  <!-- Quantity Controls -->
+  <div class="flex items-center border px-4 py-3">
+    <button class="decrease-qty px-3 text-xl" aria-label="Decrease quantity">−</button>
+    <span class="quantity-value px-2 min-w-5 text-center">${item.quantity}</span>
+    <button class="increase-qty px-3 text-xl" aria-label="Increase quantity">+</button>
+  </div>
+</div>
         </div>
       </div>
     `).join("");
@@ -134,8 +171,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!cartItem) return;
 
     const variantId = cartItem.getAttribute("data-variant-id");
-    const qtyEl = cartItem.querySelector("span");
-    const currentQty = parseInt(qtyEl.textContent, 10);
+const qtyEl = cartItem.querySelector(".quantity-value");
+const currentQty = parseInt(qtyEl.textContent, 10);
+
 
     if (e.target.closest(".remove-item")) {
       e.preventDefault();
