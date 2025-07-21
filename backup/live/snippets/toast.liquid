@@ -1,0 +1,32 @@
+<!-- snippets/toast.liquid -->
+<div
+  id="toast"
+  class="fixed bottom-6 right-6 bg-green-500 text-white px-5 py-3 rounded opacity-0 transition-opacity duration-300 pointer-events-none z-50"
+>
+  <span id="toast-message">Success!</span>
+</div>
+
+<script>
+  window.showToast = function(message = "Success!", type = "success") {
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toast-message');
+
+    toastMessage.textContent = message;
+
+    if (type === 'error') {
+      toast.classList.remove('bg-green-500');
+      toast.classList.add('bg-red-500');
+    } else {
+      toast.classList.remove('bg-red-500');
+      toast.classList.add('bg-green-500');
+    }
+
+    toast.style.opacity = "1";
+    toast.style.pointerEvents = "auto";
+
+    setTimeout(() => {
+      toast.style.opacity = "0";
+      toast.style.pointerEvents = "none";
+    }, 3000);
+  }
+</script>

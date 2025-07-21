@@ -1,0 +1,58 @@
+{
+  "customer": {
+    "register": {
+      "title": "Create Account",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Create"
+    },
+    "login_page": {
+      "title": "Login",
+      "email": "Email",
+      "password": "Password",
+      "sign_in": "Sign in",
+      "forgot_password": "Forgot your password?",
+      "create_account": "Create account",
+      "cancel": "Cancel",
+      "submit": "Submit",
+      "alternate_provider_separator": "or continue with",
+      "guest_title": "Continue as Guest",
+      "guest_continue": "Continue as Guest"
+    },
+    "recover_password": {
+      "title": "Reset your password",
+      "subtext": "We will send you an email to reset your password.",
+      "success": "An email has been sent with a password reset link."
+    }
+  },
+  "templates": {
+    "contact": {
+      "form": {
+        "error_heading": "There was a problem logging in"
+      }
+    }
+  },
+  "accessibility": {
+    "error": "Error"
+  },
+  "sections": {
+    "main-register": {
+      "name": "Register Form"
+    },
+    "main-login": {
+      "name": "Login Form",
+      "shop_login_button": {
+        "enable": "Enable Shop login button"
+      }
+    },
+    "all": {
+      "padding": {
+        "section_padding_heading": "Section padding",
+        "padding_top": "Padding top",
+        "padding_bottom": "Padding bottom"
+      }
+    }
+  }
+}

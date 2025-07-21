@@ -14,7 +14,7 @@
   <div class="container mx-auto flex items-center justify-between md:space-x-3 lg:space-x-4">
 
     <!-- Logo tab & desktop-->
-    <div class="hidden md:block flex-shrink-0">
+    <div class="hidden lg:block flex-shrink-0">
       <a href="/" class="no-underline">
         {% if section.settings.logo_image != blank %}
           <img src="{{ section.settings.logo_image | image_url: width: 101, height: 28 }}" width="101" height="28" alt="Logo" class="h-10 object-contain" />
@@ -27,7 +27,7 @@
     </div>
 
     <!-- Desktop Menu -->
-    <div class="hidden md:flex flex-grow justify-center">
+    <div class="hidden lg:flex flex-grow justify-center">
       <ul class="flex space-x-3 lg:space-x-[1.5rem]">
         {% for block in section.blocks %}
           {% if block.type == 'menu_item' %}
@@ -153,12 +153,25 @@
 
 
      <!-- Mobile Menu Toggle -->
-    <div class="md:hidden flex items-center">
+    <div class="lg:hidden flex items-center">
       <button id="mobile-menu-button" aria-label="Toggle Mobile Menu" class="text-gray-700 hover:text-gray-900 focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
+    </div>
+
+     <!-- Logo for tab-->
+    <div class="hidden md:flex lg:hidden flex-shrink-0">
+      <a href="/" class="no-underline">
+        {% if section.settings.logo_image != blank %}
+          <img src="{{ section.settings.logo_image | image_url: width: 101, height: 28 }}" width="101" height="28" alt="Logo" class="h-10 object-contain" />
+        {% else %}
+          <span class="font-figtree text-4xl tracking-tight text-gray-900" style="letter-spacing: -0.05em;">
+            {{ section.settings.logo_text | default: "SORA" }}
+          </span>
+        {% endif %}
+      </a>
     </div>
     
     <!-- Icons -->

@@ -1,0 +1,236 @@
+{% comment %} {% if customer %} {% endcomment %}
+<div class="md:mx-12 lg:mx-24 bg-white rounded-lg my-12 lg:mb-24 lg:mt-16">
+
+  <!-- Header Background with Image -->
+  <div class="h-[6.25rem] md:h-[3.7224rem] lg:h-[6.25rem] w-full rounded-t-lg mb-8 overflow-hidden relative">
+
+    {% if section.settings.img != blank %}
+
+        <img src="{{ section.settings.img | image_url: width: 1200 }}" alt="{{ section.settings.label | escape }}" width="1200" height="150"
+        class="w-full object-cover " loading="lazy">
+
+        {% else %}
+    <img
+      id="header-bg-image"
+      src="https://placehold.co/1200x150"
+      alt="Header Background"
+      width="1200"
+      height="150"
+      class="w-full h-full object-cover"
+    />
+  {% endif %}
+  </div>
+
+ <div class="px-4 md:px-[1.1875rem] lg:px-8">
+ <div class="flex gap-[1.125rem] md:gap-[0.893125rem] lg:gap-6 items-center ">
+    <!-- Profile Pic with Edit Icon -->
+    <div class="relative w-[6.25rem] h-[6.25rem] md:w-[3.72rem] md:h-[3.72rem] lg:w-[6.25rem] lg:h-[6.25rem] rounded-full bg-gray-300 overflow-hidden flex-shrink-0">
+      <img
+        id="profile-pic"
+        src="{{ customer.metafields.custom.profile_image | default: 'https://placehold.co/100x100' }}"
+        alt="Profile"
+        width="100"
+        height="100"
+        class="w-full h-full object-cover"
+      />
+      <label
+        for="image-upload"
+        id="edit-image-icon"
+      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center cursor-pointer hover:bg-gray-100"
+
+        title="Edit Profile Image"
+      >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M13.2599 3.59924L5.04985 12.2892C4.73985 12.6192 4.43985 13.2692 4.37985 13.7192L4.00985 16.9592C3.87985 18.1292 4.71985 18.9292 5.87985 18.7292L9.09985 18.1792C9.54985 18.0992 10.1799 17.7692 10.4899 17.4292L18.6999 8.73924C20.1199 7.23924 20.7599 5.52924 18.5499 3.43924C16.3499 1.36924 14.6799 2.09924 13.2599 3.59924Z" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.8901 5.05078C12.3201 7.81078 14.5601 9.92078 17.3401 10.2008" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3 22H21" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+      </label>
+      <input id="image-upload" type="file" accept="image/*" class="hidden" />
+    </div>
+
+    <!-- Profile Info (Name, Email, Edit Btn) -->
+    <div class="flex-1">
+      <div class="flex items-center gap-3 mb-1.5 md:mb-[0.19rem] lg:mb-1.5">
+        <h2 id="profile-name" class="text-xl md:text-[0.744375rem] lg:text-xl font-medium text-primary">
+          {{ customer.first_name }} {{ customer.last_name }}
+        </h2>
+        <button id="edit-name" class="text-gray-600 text-sm cursor-pointer hidden md:block" title="Edit Name">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13" stroke="#2F2F2F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.0399 3.01928L8.15988 10.8993C7.85988 11.1993 7.55988 11.7893 7.49988 12.2193L7.06988 15.2293C6.90988 16.3193 7.67988 17.0793 8.76988 16.9293L11.7799 16.4993C12.1999 16.4393 12.7899 16.1393 13.0999 15.8393L20.9799 7.95928C22.3399 6.59928 22.9799 5.01928 20.9799 3.01928C18.9799 1.01928 17.3999 1.65928 16.0399 3.01928Z" stroke="#2F2F2F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.9102 4.15039C15.5802 6.54039 17.4502 8.41039 19.8502 9.09039" stroke="#2F2F2F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+        </button>
+
+       
+      </div>
+      <div class="flex items-center opacity-50">
+        <p id="profile-email" class="text-base md:text-[0.595625rem] lg:text-base text-primary">{{ customer.email }}</p>
+      </div>
+     
+    </div>
+
+   
+
+    <div>
+      <button
+        id="edit-btn"
+        class="px-6 py-2 bg-secondary text-white rounded-lg text-sm hidden md:block"
+      >
+        Edit
+      </button>
+      {% comment %} only for mobile version {% endcomment %}
+        <button id="edit-icon-btn" class="text-gray-600 text-sm cursor-pointer block md:hidden" title="Edit Name">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13" stroke="#2F2F2F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.0399 3.01928L8.15988 10.8993C7.85988 11.1993 7.55988 11.7893 7.49988 12.2193L7.06988 15.2293C6.90988 16.3193 7.67988 17.0793 8.76988 16.9293L11.7799 16.4993C12.1999 16.4393 12.7899 16.1393 13.0999 15.8393L20.9799 7.95928C22.3399 6.59928 22.9799 5.01928 20.9799 3.01928C18.9799 1.01928 17.3999 1.65928 16.0399 3.01928Z" stroke="#2F2F2F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.9102 4.15039C15.5802 6.54039 17.4502 8.41039 19.8502 9.09039" stroke="#2F2F2F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+        </button>
+    </div>
+  </div>
+
+  <!-- Profile Form -->
+  <form id="profile-form" class="mt-[1.38rem] md:mt-[1.19rem] lg:mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Full Name -->
+    <div>
+      <label for="full_name" class="block mb-3 md:mb-[0.465rem] lg:mb-3 font-normal text-[1rem] md:text-[0.7rem] lg:text-[1rem] text-primary">Full Name</label>
+      <input
+        type="text"
+        id="full_name"
+        name="full_name"
+        value="{{ customer.metafields.custom.full_name }}"
+        placeholder="Your Full Name"
+        class="w-full h-[3.25rem] md:h-[2.25rem] lg:h-[3.25rem] bg-stone-50 rounded-lg px-4 text-primary opacity-40 disabled:opacity-40"
+        disabled
+      />
+    </div>
+
+    <!-- Nick Name -->
+    <div>
+      <label for="nick_name" class="block mb-3 md:mb-[0.465rem] lg:mb-3 font-normal text-[1rem] md:text-[0.7rem] lg:text-[1rem] text-primary">Nick Name</label>
+      <input
+        type="text"
+        id="nick_name"
+        name="nick_name"
+        value="{{ customer.metafields.custom.nick_name }}"
+        placeholder="Your Nick Name"
+        class="w-full h-[3.25rem] md:h-[2.25rem] lg:h-[3.25rem] bg-stone-50 rounded-lg px-4 text-primary opacity-40 disabled:opacity-40"
+        disabled
+      />
+    </div>
+
+    <!-- Gender -->
+    <div>
+      <label for="gender" class="block mb-3 md:mb-[0.465rem] lg:mb-3 font-normal text-[1rem] md:text-[0.7rem] lg:text-[1rem] text-primary">Gender</label>
+      <select
+        id="gender"
+        name="gender"
+        class="w-full h-[3.25rem] md:h-[2.25rem] lg:h-[3.25rem] bg-stone-50 rounded-lg px-4 text-primary opacity-40 disabled:opacity-40"
+        disabled
+      >
+        <option value="">Select Gender</option>
+        <option value="Male" {% if customer.metafields.custom.gender == "Male" %}selected{% endif %}>Male</option>
+        <option value="Female" {% if customer.metafields.custom.gender == "Female" %}selected{% endif %}>Female</option>
+        <option value="Other" {% if customer.metafields.custom.gender == "Other" %}selected{% endif %}>Other</option>
+      </select>
+    </div>
+
+    <!-- Country -->
+    <div>
+      <label for="country" class="block mb-3 md:mb-[0.465rem] lg:mb-3 font-normal text-[1rem] md:text-[0.7rem] lg:text-[1rem] text-primary">Country</label>
+      <select
+        id="country"
+        name="country"
+        class="w-full h-[3.25rem] md:h-[2.25rem] lg:h-[3.25rem] bg-stone-50 rounded-lg px-4 text-primary opacity-40 disabled:opacity-40"
+        disabled
+      >
+        <option value="">Select Country</option>
+        <option value="Bangladesh" {% if customer.metafields.custom.country == "Bangladesh" %}selected{% endif %}>Bangladesh</option>
+        <option value="USA" {% if customer.metafields.custom.country == "USA" %}selected{% endif %}>USA</option>
+        <option value="UK" {% if customer.metafields.custom.country == "UK" %}selected{% endif %}>UK</option>
+      </select>
+    </div>
+
+    <!-- Language -->
+    <div>
+      <label for="language" class="block mb-3 md:mb-[0.465rem] lg:mb-3 font-normal text-[1rem] md:text-[0.7rem] lg:text-[1rem] text-primary">Language</label>
+      <select
+        id="language"
+        name="language"
+        class="w-full h-[3.25rem] md:h-[2.25rem] lg:h-[3.25rem] bg-stone-50 rounded-lg px-4 text-primary opacity-40 disabled:opacity-40"
+        disabled
+      >
+        <option value="">Select Language</option>
+        <option value="English" {% if customer.metafields.custom.language == "English" %}selected{% endif %}>English</option>
+        <option value="Bengali" {% if customer.metafields.custom.language == "Bengali" %}selected{% endif %}>Bengali</option>
+        <option value="Spanish" {% if customer.metafields.custom.language == "Spanish" %}selected{% endif %}>Spanish</option>
+      </select>
+    </div>
+
+    <!-- Time Zone -->
+    <div>
+      <label for="timezone" class="block mb-3 md:mb-[0.465rem] lg:mb-3 font-normal text-[1rem] md:text-[0.7rem] lg:text-[1rem] text-primary">Time Zone</label>
+      <select
+        id="timezone"
+        name="timezone"
+        class="w-full h-[3.25rem] md:h-[2.25rem] lg:h-[3.25rem] bg-stone-50 rounded-lg px-4 text-primary opacity-40 disabled:opacity-40"
+        disabled
+      >
+        <option value="">Select Time Zone</option>
+        <option value="GMT +6" {% if customer.metafields.custom.timezone == "GMT +6" %}selected{% endif %}>GMT +6</option>
+        <option value="GMT +5" {% if customer.metafields.custom.timezone == "GMT +5" %}selected{% endif %}>GMT +5</option>
+        <option value="GMT +7" {% if customer.metafields.custom.timezone == "GMT +7" %}selected{% endif %}>GMT +7</option>
+      </select>
+    </div>
+  </form>
+
+  <!-- My Email Address Section -->
+  <div class="mt-8">
+    <h3 class="text-lg md:text-[0.7rem] lg:text-lg font-medium text-primary mb-5 md:mb-3 lg:mb-4">My email Address</h3>
+    <div class="flex  gap-4 mb-6">
+
+  <div class="w-12 h-12  md:w-[1.79rem] md:h-[1.79rem] lg:w-12 lg:h-12 flex justify-center items-center bg-secondary bg-opacity-10 rounded-full">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M17 3.5H7C4 3.5 2 5 2 8.5V15.5C2 19 4 20.5 7 20.5H17C20 20.5 22 19 22 15.5V8.5C22 5 20 3.5 17 3.5ZM17.47 9.59L14.34 12.09C13.68 12.62 12.84 12.88 12 12.88C11.16 12.88 10.31 12.62 9.66 12.09L6.53 9.59C6.21 9.33 6.16 8.85 6.41 8.53C6.67 8.21 7.14 8.15 7.46 8.41L10.59 10.91C11.35 11.52 12.64 11.52 13.4 10.91L16.53 8.41C16.85 8.15 17.33 8.2 17.58 8.53C17.84 8.85 17.79 9.33 17.47 9.59Z" fill="#6B749E"/>
+    </svg>
+
+</div>
+
+      <div>
+        <p class="text-base md:text-[0.595625rem] lg:text-base text-primary" id="main-email-display">{{ customer.email }}</p>
+        <p class="text-sm md:text-[0.595625rem] lg:text-sm text-primary opacity-50">1 month ago</p>
+      </div>
+    </div>
+    <button
+      id="toggleEmailField"
+      class="text-slate-500 bg-slate-500 bg-opacity-10 px-5 py-2 rounded-lg"
+    >
+      +Add Email Address
+    </button>
+    <div id="emailInputWrapper" class="hidden mt-4 flex items-center gap-4">
+      <input
+        type="email"
+        id="new-email"
+        placeholder="Enter new email"
+        class="w-60 h-12 bg-stone-50 rounded-lg px-4 text-primary"
+      />
+      <button id="save-email-btn" class="bg-secondary text-white px-6 py-2 rounded-lg">
+        Save
+      </button>
+    </div>
+  </div>
+  </div>
+
+  <!-- Toast is common in theme.liquid, so no local toast div here -->
+
+</div>
+<script src="{{ 'account-update.js' | asset_url }}" defer></script>
+
+{% comment %} {% else %}
+<div class="text-center py-20">
+  Please <a href="/account/login" class="text-blue-600 underline">login</a> to view your profile.
+</div>
+{% endif %} {% endcomment %}
+

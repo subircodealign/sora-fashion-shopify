@@ -1,42 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>{{ page_title }} - {{ shop.name }}</title>
+    <title>
+      {{ page_title }}
+      -
+      {{ shop.name }}
+    </title>
 
-  {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
 
-  {{ content_for_header }}
-</head>
-<body class="font-figtree">
+    {{ content_for_header }}
+  </head>
+  <body class="font-figtree">
+    {% section 'header' %}
 
-  {% section 'header' %}  
+    {{ content_for_layout }}
 
-  {{ content_for_layout }}
+    {% section 'footer' %}
 
-  {% section 'footer' %}  
+    {% render 'cart-drawer' %}
+    <script src="{{ 'cart-drawer.js' | asset_url }}" defer></script>
 
-{% render 'cart-drawer' %}
-<script src="{{ 'cart-drawer.js' | asset_url }}" defer></script>
-
-
-  <script src="{{ 'header.js' | asset_url }}" defer></script>
-
-</body>
-<!-- Custom Toast Container -->
-<div
-  id="toast"
-  class="fixed top-5 right-5 max-w-xs w-full bg-white rounded shadow-lg pointer-events-none opacity-0 transition-opacity duration-300 z-50"
-  role="alert"
-  aria-live="assertive"
-  aria-atomic="true"
->
-  <div id="toast-content" class="flex items-center gap-3 px-4 py-3">
-    <div id="toast-icon" class="flex-shrink-0"></div>
-    <div id="toast-message" class="text-gray-800 text-sm font-medium"></div>
-  </div>
-</div>
-
+    <script src="{{ 'header.js' | asset_url }}" defer></script>
+    
+    {% render 'toast' %}
+  </body>
 </html>
