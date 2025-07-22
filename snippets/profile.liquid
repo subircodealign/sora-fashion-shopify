@@ -36,7 +36,7 @@
       <label
         for="image-upload"
         id="edit-image-icon"
-      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center cursor-pointer hover:bg-gray-100"
+      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center cursor-pointer "
 
         title="Edit Profile Image"
       >
@@ -46,7 +46,7 @@
 <path d="M3 22H21" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
       </label>
-      <input id="image-upload" type="file" accept="image/*" class="hidden" />
+      <input id="image-upload" type="file" name="image" accept="image/*" class="hidden" />
     </div>
 
     <!-- Profile Info (Name, Email, Edit Btn) -->
@@ -76,6 +76,7 @@
     <div>
       <button
         id="edit-btn"
+        type="submit"
         class="px-6 py-2 bg-secondary text-white rounded-lg text-sm hidden md:block"
       >
         Edit
@@ -92,7 +93,12 @@
   </div>
 
   <!-- Profile Form -->
-  <form id="profile-form" class="mt-[1.38rem] md:mt-[1.19rem] lg:mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+  <form 
+    id="profile-form"
+      action="/apps/sora_fashion/proxy/update-profile"
+  method="POST"
+  enctype="multipart/form-data"
+     class="mt-[1.38rem] md:mt-[1.19rem] lg:mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
     <!-- Full Name -->
     <div>
       <label for="full_name" class="block mb-3 md:mb-[0.465rem] lg:mb-3 font-normal text-[1rem] md:text-[0.7rem] lg:text-[1rem] text-primary">Full Name</label>
@@ -216,7 +222,7 @@
         placeholder="Enter new email"
         class="w-60 h-12 bg-stone-50 rounded-lg px-4 text-primary"
       />
-      <button id="save-email-btn" class="bg-secondary text-white px-6 py-2 rounded-lg">
+      <button id="save-email-btn" type="submit" class="bg-secondary text-white px-6 py-2 rounded-lg">
         Save
       </button>
     </div>
