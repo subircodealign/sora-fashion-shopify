@@ -9,8 +9,8 @@ module.exports = {
     extend: {
       fontFamily: {
           figtree: ['Figtree', 'sans-serif'],
-          catalina: ['"Catalina Village"', 'serif'],
-          castoro: ['"Castoro Titling"', 'sans-serif'],
+          catalina: ['Catalina Village', 'serif'],
+          castoro: ['Castoro Titling', 'sans-serif'],
       },
       colors: {
         primary: '#2F2F2F',

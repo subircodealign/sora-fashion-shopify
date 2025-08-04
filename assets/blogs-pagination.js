@@ -31,7 +31,7 @@ function blogPaginationFunction(container, pagination, dataDiv) {
             </a>
             <p class="text-zinc-500 text-[16px] leading-[24px] mb-3">${blog.description}</p>
           </div>
-          <a href="${blog.url}" class="mt-auto border border-secondary text-secondary text-[16px] leading-[26px] px-6 py-3 flex items-center justify-center hover:bg-gray-100 transition duration-150">
+          <a href="${blog.url}" class="mt-auto border border-secondary text-secondary text-[16px] leading-[26px] px-6 py-3 flex items-center justify-center btn-hover">
             Read More
             ${document.getElementById('icon-read-more')?.innerHTML || ''}
           </a>

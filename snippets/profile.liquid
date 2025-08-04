@@ -209,12 +209,23 @@
         <p class="text-sm md:text-[0.595625rem] lg:text-sm text-primary opacity-50">1 month ago</p>
       </div>
     </div>
-    <button
+   <div class="flex items-center justify-between">
+     <button
       id="toggleEmailField"
       class="text-slate-500 bg-slate-500 bg-opacity-10 px-5 py-2 rounded-lg"
     >
       +Add Email Address
     </button>
+
+    <a
+  href="#"
+  onclick="handleLogoutRedirect(event)"
+  class="inline-block text-[#F34A4A] bg-[#F34A4A] bg-opacity-10 px-4 py-2 rounded-lg"
+>
+  Log Out
+</a>
+
+   </div>
     <div id="emailInputWrapper" class="hidden mt-4 flex items-center gap-4">
       <input
         type="email"
@@ -232,6 +243,14 @@
   <!-- Toast is common in theme.liquid, so no local toast div here -->
 
 </div>
+
+<script>
+  function handleLogoutRedirect(event) {
+    event.preventDefault();
+    window.location.href = '/account/logout?return_url=/account/login'; 
+  }
+</script>
+
 <script src="{{ 'account-update.js' | asset_url }}" defer></script>
 
 {% comment %} {% else %}
@@ -239,4 +258,5 @@
   Please <a href="/account/login" class="text-blue-600 underline">login</a> to view your profile.
 </div>
 {% endif %} {% endcomment %}
+
 

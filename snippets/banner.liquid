@@ -4,7 +4,7 @@
     <!-- Mobile layout (index only): Text & Buttons -->
     <div class="block md:hidden p-4">
       {% if badge_text != blank %}
-        <button class="w-[10rem] h-[3rem] py-[0.75rem] px-[1.5rem] text-[1rem] leading-[1.625rem]"
+        <button class="w-[10rem] h-[3rem] py-[0.75rem] px-[1.5rem] text-[1rem] leading-[1.625rem] btn-hover"
           style="color: {{ badge_text_color }}; border: 1px solid {{ badge_border_color }};">
           {{ badge_text }}
         </button>
@@ -25,17 +25,31 @@
 
       <div class="flex flex-col sm:flex-row items-start gap-6">
         {% if primary_button_text != blank %}
-          <a href="{{ primary_button_link }}"
-            style="background-color: {{ primary_button_bg_color }}; color: {{ primary_button_text_color }};"
-            class="text-[1rem] flex justify-center items-center leading-[1.625rem] mt-8 py-[0.75rem] px-[1.5rem] w-full h-[3.125rem] hover:opacity-90 transition">
-            {{ primary_button_text }}
-          </a>
-        {% endif %}
+  <a href="{{ primary_button_link }}"
+    style="background-color: {{ primary_button_bg_color }}; color: {{ primary_button_text_color }};"
+    class="group text-[1rem] flex justify-center items-center leading-[1.625rem] py-[0.75rem] px-[1.5rem] mt-8 w-full h-[3.125rem] hover:opacity-90 transition relative overflow-hidden">
+    
+    <!-- Normal Text -->
+    <span class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+      {{ primary_button_text }}
+    </span>
+
+    <!-- Hover Text with Icon -->
+    <span class="absolute inset-0 flex items-center justify-center gap-1 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+      {{ primary_button_text }}
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      </svg>
+    </span>
+    
+  </a>
+{% endif %}
+
 
         {% if secondary_button_text != blank %}
           <a href="{{ secondary_button_link }}"
             style="border-color: {{ secondary_button_border_color }}; color: {{ secondary_button_text_color }};"
-            class="border text-[1rem] flex justify-center items-center leading-[1.625rem] w-full h-[3.125rem] px-[1.5rem] py-[0.75rem] hover:bg-gray-100 transition">
+            class="border text-[1rem] flex justify-center items-center leading-[1.625rem] w-full h-[3.125rem] px-[1.5rem] py-[0.75rem] btn-hover">
             {{ secondary_button_text }}
           </a>
         {% endif %}
@@ -75,7 +89,7 @@
 
   <div class="p-4 md:p-12 lg:pl-32 xl:pl-24 py-8 md:py-0 z-10 relative">
     {% if badge_text != blank %}
-      <button class="w-[10rem] h-[3rem] lg:w-[10.4375rem] lg:h-[3.125rem] py-[0.75rem] px-[1.5rem] text-[1rem] leading-[1.625rem] mb-[2rem]"
+      <button class="w-[10rem] h-[3rem] lg:w-[10.4375rem] lg:h-[3.125rem] py-[0.75rem] px-[1.5rem] text-[1rem] leading-[1.625rem] mb-[2rem] btn-hover hover:border-0"
         style="color: {{ badge_text_color }}; border: 1px solid {{ badge_border_color }};">
         {{ badge_text }}
       </button>
@@ -97,17 +111,31 @@
 
     <div class="flex flex-col sm:flex-row items-center gap-[1rem]">
       {% if primary_button_text != blank %}
-        <a href="{{ primary_button_link }}"
-          style="background-color: {{ primary_button_bg_color }}; color: {{ primary_button_text_color }};"
-          class="text-[1rem] flex justify-center items-center leading-[1.625rem] py-[0.75rem] px-[1.5rem] w-full md:w-[14.21875rem] lg:w-[19.5625rem] h-[3.125rem] hover:opacity-90 transition">
-          {{ primary_button_text }}
-        </a>
-      {% endif %}
+  <a href="{{ primary_button_link }}"
+    style="background-color: {{ primary_button_bg_color }}; color: {{ primary_button_text_color }};"
+    class="group text-[1rem] flex justify-center items-center leading-[1.625rem] py-[0.75rem] px-[1.5rem] w-full h-[3.125rem] hover:opacity-90 transition relative overflow-hidden">
+    
+    <!-- Normal Text -->
+    <span class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+      {{ primary_button_text }}
+    </span>
+
+    <!-- Hover Text with Icon -->
+    <span class="absolute inset-0 flex items-center justify-center gap-1 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+      {{ primary_button_text }}
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      </svg>
+    </span>
+    
+  </a>
+{% endif %}
+
 
       {% if secondary_button_text != blank %}
         <a href="{{ secondary_button_link }}"
           style="border-color: {{ secondary_button_border_color }}; color: {{ secondary_button_text_color }};"
-          class="border text-[1rem] flex justify-center items-center leading-[1.625rem] w-full md:w-[14.21875rem] lg:w-[19.5625rem] h-[3.125rem] px-[1.5rem] py-[0.75rem] hover:bg-gray-100 transition">
+          class="border text-[1rem] flex justify-center items-center leading-[1.625rem] w-full md:w-[14.21875rem] lg:w-[19.5625rem] h-[3.125rem] px-[1.5rem] py-[0.75rem] btn-hover transition">
           {{ secondary_button_text }}
         </a>
       {% endif %}

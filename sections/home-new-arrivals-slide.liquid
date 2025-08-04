@@ -1,7 +1,7 @@
 <div class="md:mx-16 lg:mx-24 max-w-full bg-slate-200 px-4 py-12 md:p-12 mb-12 md:mb-24 flex flex-col gap-12">
 
   <div class="w-full flex justify-between items-center">
-    <h2 class="text-primary text-[1.5rem]  lg:text-[3rem] font-normal font-catalina leading-[4rem]">
+    <h2 class="text-primary text-[1.5rem]  md:text-[3rem] font-normal font-catalina leading-[4rem]">
       {{ section.settings.heading }}
     </h2>
     {% comment %} desktop category{% endcomment %}
@@ -48,7 +48,7 @@
 
     <div class="flex flex-col items-center justify-center gap-4  lg:w-1/2 xl:w-full">
 
-      <div class="new-arrival-slider-section  flex items-center lg:w-full">
+      <div class="new-arrival-slider-section  flex items-center justify-end lg:w-full">
 
         <button class=" slider-prev p-[0.625rem] w-[2.75rem] h-[2.75rem] hidden md:flex justify-center items-center outline outline-1 outline-zinc-500 hover:bg-zinc-300 transition z-10">
           {% render 'icon-prev-button' %}
@@ -107,7 +107,7 @@
 
                 </div>
 
-                <button type="button" class="mt-auto border border-secondary text-secondary text-[16px] leading-[26px] px-6 py-3 flex items-center justify-center hover:bg-gray-100 transition duration-150" data-product-id="{{ product.id }}">
+                <button type="button" class="mt-auto border border-secondary text-secondary text-[16px] leading-[26px] px-6 py-3 flex items-center justify-center btn-hover transition duration-150" data-product-id="{{ product.id }}">
                   Add To Cart
                   {% render 'icon-add-cart' %}
                 </button>

@@ -41,7 +41,7 @@ function mobilePaginationFunction(container, pagination, dataDiv, cartIconHTML) 
             </a>
             <p class="text-[24px] leading-[36px] font-bold mb-3">${product.price}$</p>
           </div>
-          <button type="button" class="mt-auto border border-secondary text-secondary text-[16px] leading-[26px] px-6 py-3 flex items-center justify-center hover:bg-gray-100 transition duration-150">
+          <button type="button" class="mt-auto border btn-hover border-secondary text-secondary text-[16px] leading-[26px] px-6 py-3 flex items-center justify-center">
             Add To Cart ${cartIconHTML}
           </button>
         </div>
@@ -172,7 +172,7 @@ function desktopPaginationFunction(container, pagination, dataDiv, cartIconHTML)
             <p class="text-[24px] leading-[36px] font-bold mb-3">${product.price}$</p>
             <div class="flex space-x-2 mb-4">${colorsHTML}</div>
           </div>
-          <button type="button" class="mt-auto border border-secondary text-secondary text-[16px] leading-[26px] px-6 py-3 flex items-center justify-center hover:bg-gray-100 transition duration-150">
+          <button type="button" class="mt-auto border border-secondary text-secondary text-[16px] leading-[26px] px-6 py-3 flex items-center justify-center btn-hover">
             Add To Cart ${cartIconHTML}
           </button>
         </div>

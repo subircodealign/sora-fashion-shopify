@@ -1,8 +1,68 @@
 @font-face {
+  font-family: 'Figtree';
+  src: url('{{ "Figtree-Light.woff2" | asset_url }}') format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('{{ "Figtree-Regular.woff2" | asset_url }}') format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('{{ "Figtree-Medium.woff2" | asset_url }}') format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('{{ "Figtree-SemiBold.woff2" | asset_url }}') format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('{{ "Figtree-Bold.woff2" | asset_url }}') format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('{{ "Figtree-Black.woff2" | asset_url }}') format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+@font-face {
   font-family: 'Castoro Titling';
   src: url('{{ "CastoroTitling-Regular.woff2" | asset_url }}') format('woff2');
   font-weight: normal;
   font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Catalina Village';
+  src: url('{{ "Catalina-Village.woff2" | asset_url }}') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.btn-hover{
+  @apply hover:bg-secondary hover:text-white transition duration-150;
+}
+
+.btn-hover:hover{
+  color: white !important;
+  border: 0 !important;
 }
 
 
