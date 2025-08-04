@@ -1142,6 +1142,16 @@
           "contact_email": "hello@green.com",
           "contact_location": "Los Angeles, California"
         }
+      },
+      "customer-login": {
+        "type": "customer-login",
+        "settings": {}
+      },
+      "profile-section": {
+        "type": "profile-section",
+        "settings": {
+          "img": "shopify://shop_images/Rectangle_6691.png"
+        }
       }
     },
     "content_for_index": []
